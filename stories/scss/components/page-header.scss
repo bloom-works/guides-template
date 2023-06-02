@@ -1,0 +1,21 @@
+.page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 1rem;
+  background: var(--c-accent);
+  height: max(60vh, min-content);
+  margin-bottom: calc(var(--t-leading-rem) * 2);
+  
+  > * {
+    color: var(--c-accent-text);
+  }
+}
+
+.page-header-buttons {
+  display: flex;
+  gap: 0.5rem;
+}

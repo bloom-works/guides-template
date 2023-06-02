@@ -1,0 +1,22 @@
+table {
+	max-inline-size: unset;
+}
+
+td, th {
+	padding: 0.5rem;
+	border: 1px solid;
+	font-size: var(--t-small);
+}
+
+th {
+	background: var(--c-accent);
+	color: var(--c-accent-text);
+	border-color: var(--c-accent-text);
+	border-bottom: 0;
+	vertical-align: middle;
+}
+
+td {
+	border-color: #ccc;
+	vertical-align: top;
+}

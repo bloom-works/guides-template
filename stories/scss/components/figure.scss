@@ -1,0 +1,23 @@
+.figure figcaption {
+  display: flex;
+  width: 100%;
+  max-inline-size: unset;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: var(--t-paragraph);
+
+  span {
+    margin-block-end: 0;
+  }
+
+  a {
+    display: flex;
+    gap: 0.25rem;
+
+    svg {
+      width: var(--t-leading-rem);
+      aspect-ratio: 1 / 1;
+    }
+  }
+}

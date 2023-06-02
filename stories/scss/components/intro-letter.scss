@@ -1,0 +1,25 @@
+.intro-letter {
+  background: #fff;
+  box-shadow: 0 4px 1.5em rgba(#000, 0.06);
+  padding: calc(var(--t-leading-rem) * 2);
+  transform: rotate(-0.5deg);
+  margin-block: var(--t-leading-rem);
+  max-inline-size: unset;
+}
+
+.intro-letter-signatory {
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+
+  img {
+    object-fit: cover;
+    width: var(--t-leading-rem);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+  }
+
+  p {
+    font-size: 0.875em;
+  }
+}

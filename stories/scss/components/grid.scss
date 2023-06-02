@@ -1,0 +1,14 @@
+.grid-3col,
+.grid-4col {
+  margin-block: calc(var(--t-paragraph) * 2);
+}
+
+.grid-icon {
+  color: var(--c-accent);
+  margin-bottom: 0.5rem;
+  
+  svg {
+      width: calc(var(--t-leading-rem) * 2);
+      aspect-ratio: 1 / 1;
+  }
+}
