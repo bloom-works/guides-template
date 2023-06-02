@@ -1,0 +1,41 @@
+{
+  "name": "storybook-sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=[insert]"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.22.4",
+    "@storybook/addon-a11y": "^7.0.18",
+    "@storybook/addon-actions": "^7.0.18",
+    "@storybook/addon-essentials": "^7.0.18",
+    "@storybook/addon-interactions": "^7.0.18",
+    "@storybook/addon-links": "^7.0.18",
+    "@storybook/addon-viewport": "^7.0.18",
+    "@storybook/html": "^7.0.18",
+    "@storybook/html-webpack5": "^7.0.18",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/testing-library": "^0.1.0",
+    "babel-loader": "^8.2.5",
+    "chromatic": "^6.7.4",
+    "css-loader": "^6.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.54.4",
+    "sass-loader": "^13.0.2",
+    "storybook": "^7.0.18",
+    "style-loader": "^3.3.1"
+  },
+  "dependencies": {
+    "bootstrap-icons": "^1.10.5"
+  }
+}
