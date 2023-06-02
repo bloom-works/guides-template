@@ -1,0 +1,68 @@
+// Universal styles
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+::selection {
+  background: var(--c-accent);
+  color: var(--c-accent-text);
+}
+
+::-moz-selection {
+  background: var(--c-accent);
+  color: var(--c-accent-text);
+}
+
+// Visually hidden content
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+// "Skip to content" button
+
+#content:focus {
+  outline:none;
+}
+
+.skip-link {
+  background: var(--c-accent);
+  color: var(--c-accent-text);
+  font-family: var(--font-secondary);
+  text-decoration: none;
+  font-size: 2em;
+  opacity: 0;
+  position: fixed;
+  transition: opacity 0.15s ease-in;
+  white-space: nowrap;
+  inset-inline: 1em;
+  inset-block-end: 1em;
+  padding: 1em;
+  text-align: center;
+  z-index: 999;
+
+  &:hover, &:active, &:focus {
+    background: var(--c-accent);
+    color: var(--c-accent-text);
+  }
+
+  &:focus {
+    outline: none;
+    opacity: 1;
+  }
+}
