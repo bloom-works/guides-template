@@ -1,4 +1,10 @@
 .callout {
+  background: var(--c-accent-light);
+  padding-block: calc(var(--t-leading-rem) * 3);
+  margin-block: calc(var(--t-leading-rem) * 2);
+}
+
+.callout-inner {
   display: flex;
   gap: var(--g-column-gap);
   align-items: start;

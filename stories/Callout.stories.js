@@ -13,20 +13,17 @@ export default {
   args: {
     'content': "Agile project management and human centered design methods may be new for the partner, and will require some socialization and training. Keep in mind that this method of working and the pace of the sprint may be an adjustment for the partner.",
   },
-  parameters: {
-    // Remove layout parameter for full-width components
-    layout: 'centered',
-  },
-  decorators: [(Story) => `
-    <div class="l-text-wrapper">
-      ${Story()}
-    </div>
-  `],
 };
 
 export const Callout = (args) => `
+</div> <!-- /.l-text-wrapper -->
   <div class="callout">
-    <span class="callout-icon">${bootstrapIconLightbulb}</span>
-    <p>${args.content}</p>
+    <div class="l-text-wrapper">
+      <div class="callout-inner">
+        <span class="callout-icon">${bootstrapIconLightbulb}</span>
+        <p>${args.content}</p>
+      </div>
+    </div>
   </div>
+<div class="l-text-wrapper">
 `;
