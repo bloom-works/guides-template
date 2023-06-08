@@ -1,12 +1,17 @@
 .callout {
   display: flex;
-  gap: 1rem;
+  gap: var(--g-column-gap);
   align-items: start;
 }
 
-.callout svg {
-  fill: var(--c-accent);
+.callout-icon {
+  background: var(--c-accent);
+  padding: calc(var(--t-leading-rem) / 2);
+  border-radius: var(--radius);
+}
+
+.callout-icon svg {
+  fill: var(--c-accent-text);
   width: 8em;
   aspect-ratio: 1 / 1;
-  transform: rotate(-15deg);
 }

@@ -26,7 +26,7 @@ export default {
 
 export const Callout = (args) => `
   <div class="callout">
-    ${bootstrapIconLightbulb}
+    <span class="callout-icon">${bootstrapIconLightbulb}</span>
     <p>${args.content}</p>
   </div>
 `;
