@@ -54,4 +54,11 @@
 
   --section-padding: calc(var(--t-leading-rem) * 3);
   --section-margin: calc(var(--t-leading-rem) * 2);
+
+  /*  Sizing for pictographic bullets like:
+      - Checklist boxes
+      - Key questions
+   */
+  --list-glyph-size: var(--t-leading-em);
+  --list-glyph-padding: calc(var(--list-glyph-size) + 1em);
 }

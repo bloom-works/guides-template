@@ -1,8 +1,5 @@
 .checklist {
   background: #faf3eb;
-
-  --checkbox-size: var(--t-leading-rem);
-  --checkbox-margin: 0.5rem;
 }
 
 .checklist ul {
@@ -12,7 +9,7 @@
 }
 
 .checklist li {
-  padding: 0 0 0 calc(var(--checkbox-size) + var(--checkbox-margin));
+  padding: 0 0 0 var(--list-glyph-padding);
   position: relative;
 }
 
@@ -22,7 +19,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: var(--checkbox-size);
+  width: var(--list-glyph-size);
   aspect-ratio: 1 / 1;
   border: 3px solid var(--c-text);
   border-radius: var(--radius);
@@ -40,7 +37,7 @@
   left: 0;
   position: absolute;
   z-index: 2;
-  width: var(--checkbox-size);
+  width: var(--list-glyph-size);
   aspect-ratio: 1 / 1;
   text-align: center;
   /* "check-lg" icon from Bootstrap Icons */
