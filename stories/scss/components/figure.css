@@ -10,14 +10,17 @@
 
 .inline-figcaption span {
   margin-block-end: 0;
+  flex: 1;
 }
 
 .inline-figcaption a {
   display: flex;
   gap: 0.25rem;
+  flex: none;
 }
 
 .inline-figcaption a svg {
-  width: var(--t-leading-rem);
+  height: var(--t-leading-em);
   aspect-ratio: 1 / 1;
+  flex: none;
 }
