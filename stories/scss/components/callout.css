@@ -16,6 +16,6 @@
 
 .callout-icon svg {
   fill: var(--c-accent-text);
-  width: 8em;
+  width: 3em;
   aspect-ratio: 1 / 1;
 }
