@@ -6,9 +6,9 @@
 .grid-icon {
   color: var(--c-accent);
   margin-bottom: 0.5rem;
-  
-  svg {
-      width: calc(var(--t-leading-rem) * 2);
-      aspect-ratio: 1 / 1;
-  }
+}
+
+.grid-icon svg {
+  width: calc(var(--t-leading-rem) * 2);
+  aspect-ratio: 1 / 1;
 }

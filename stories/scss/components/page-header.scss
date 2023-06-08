@@ -9,10 +9,10 @@
   background: var(--c-accent);
   height: max(60vh, min-content);
   margin-bottom: calc(var(--t-leading-rem) * 2);
-  
-  > * {
-    color: var(--c-accent-text);
-  }
+}
+
+.page-header  > * {
+  color: var(--c-accent-text);
 }
 
 .page-header-buttons {

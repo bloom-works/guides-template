@@ -1,11 +1,8 @@
-$margin-basic: 1.5rem;
-
-// Outer containers
+/* Outer containers */
 
 .container {
   padding: 3rem;
 }
-
 
 .l-wrapper,
 .l-text-wrapper {
@@ -21,11 +18,12 @@ $margin-basic: 1.5rem;
   max-inline-size: var(--t-measure);
 }
 
-// Media wrapper with intrinsic aspect ratio
-//
-// Customize the aspect ratio by overriding
-// var(--l-frame-width) and var(--l-frame-height)
-// within specific components
+/*
+.l-frame: Media wrapper with an intrinsic aspect ratio.
+
+Customize the aspect ratio by overriding var(--l-frame-width)
+and var(--l-frame-height) within specific components.
+*/
 
 .l-frame {
   --l-frame-width: 16;
@@ -35,38 +33,47 @@ $margin-basic: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  > img,
-  > iframe {
-    inline-size: 100%;
-    block-size: 100%;
-  }
 }
 
-// Grid wrapper that automatically tries to
-// size columns according to typographic measure
-//
-// Customize the gutters by overriding var(--g-column-gap)
-// within specific components
+.l-frame > img,
+.l-frame > iframe {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+/*
+.l-grid: A grid wrapper that automatically tries to
+size columns according to the typographic measure.
+
+Customize the gutters by overriding var(--g-column-gap)
+within specific components.
+*/
 
 .l-grid {
   --grid-gap: var(--g-column-gap);
   display: grid;
   flex-wrap: wrap;
   gap: var(--grid-gap);
-  
-  @supports (width: Min(30rem, 100%)) {
+}
+
+@supports (width: Min(30rem, 100%)) {
+  .l-grid {
     grid-template-columns: repeat(auto-fit, minmax(Min(calc(var(--t-measure) / 2), 100%), 1fr));
   }
 }
 
-// For columns:
-// All direct descendants of .l-stack-basic
-// (and all descendants, including nested elements, of .l-stack)
-// are spaced equally apart from each other
-//
-// You can customize the exact amount of spacing by
-// overriding var(--stack-layout-gap) within specific components
+/*
+## For vertical layouts (like multi-paragraph blocks of prose:)
+
+All *direct* descendants of .l-stack-basic are spaced equally apart
+from each other.
+
+*Every* descendant of .l-stack (including nested descendants)
+are spaced equally apart from each other.
+
+You can customize the exact amount of spacing by overriding var(--l-stack-gap)
+within specific components.
+*/
 
 
 .l-stack-basic,
@@ -76,32 +83,31 @@ $margin-basic: 1.5rem;
   justify-content: flex-start;
 }
 
-.l-stack-basic {
-  > * {
-    margin-block: 0;
-
-    + * {
-      margin-block-start: var(--l-stack-gap, var(--t-paragraph));
-    }
-  } 
+.l-stack-basic > * {
+  margin-block: 0;
 }
 
-.l-stack {
-  * {
-    margin-block: 0;
-
-    + * {
-      margin-block-start: var(--l-stack-gap, var(--t-paragraph));
-    }
-  } 
+.l-stack-basic + * {
+  margin-block-start: var(--l-stack-gap, var(--t-paragraph));
 }
 
-// For rows:
-// All direct descendants of .l-cluster are spaced equally
-// apart from each other
-//
-// You can customize the exact amount of spacing by
-// overriding var(--stack-layout-gap) within specific components
+.l-stack * {
+  margin-block: 0;
+}
+
+.l-stack * + * {
+  margin-block-start: var(--l-stack-gap, var(--t-paragraph));
+}
+
+/*
+## For horizontal layouts (like rows of links):
+
+All direct descendants of .l-cluster are spaced equally apart from
+each other.
+
+You can customize the exact amount of spacing by overriding
+var(--stack-layout-gap) within specific components.
+*/
 
 .l-cluster {
   display: flex;

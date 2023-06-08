@@ -1,4 +1,4 @@
-// Universal styles
+/* Universal styles */
 
 *,
 *::before,
@@ -22,7 +22,7 @@ svg {
   color: var(--c-accent-text);
 }
 
-// Visually hidden content
+/* Visually hidden content */
 
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
@@ -34,7 +34,7 @@ svg {
   white-space: nowrap;
 }
 
-// "Skip to content" button
+/* "Skip to content" button */
 
 #content:focus {
   outline:none;
@@ -55,14 +55,16 @@ svg {
   padding: 1em;
   text-align: center;
   z-index: 999;
+}
 
-  &:hover, &:active, &:focus {
-    background: var(--c-accent);
-    color: var(--c-accent-text);
-  }
+.skip-link:focus {
+  outline: none;
+  opacity: 1;
+}
 
-  &:focus {
-    outline: none;
-    opacity: 1;
-  }
+.skip-link:hover,
+.skip-link:active,
+.skip-link:focus {
+  background: var(--c-accent);
+  color: var(--c-accent-text);
 }

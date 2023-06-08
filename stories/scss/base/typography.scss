@@ -1,5 +1,4 @@
-// Set maximum width of all prose elements
-// to typographic measure
+/* Set maximum width of all prose elements to typographic measure */
 
 * {
   max-inline-size: var(--t-measure);
@@ -17,7 +16,7 @@ iframe {
   max-inline-size: unset;
 }
 
-// Responsive font sizing
+/* Responsive font sizing */
 
 :root {
   font-size: clamp(1rem, calc(-1rem + 4vw), 2.5rem);
@@ -27,7 +26,7 @@ html {
   line-height: var(--t-leading);
 }
 
-// Base style
+/* Base style */
 
 body {
   font-family: var(--font-primary);
@@ -38,13 +37,13 @@ body {
   background: var(--c-bg);
 }
 
-// Set bold weight according to imported font
+/* Set bold weight according to imported font */
 
 b, strong {
   font-weight: var(--t-bold);
 }
 
-// Heading styles
+/* Heading styles */
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -87,9 +86,10 @@ h4, .h4 {
 h3, .h3 {  
   font-size: var(--t-medium);
   font-weight: var(--t-normal);
-  + * {
-    --l-stack-gap: calc(var(--t-leading-rem) * 0.5);
-  }
+}
+
+h3 + *, .h3 + * {
+  --l-stack-gap: calc(var(--t-leading-rem) * 0.5);
 }
 
 h4, .h4 {
@@ -112,7 +112,7 @@ h5, .h5, dt, h6, .h6 {
   color: var(--c-secondary);
 }
 
-// Lists
+/* Lists */
 
 dt {
   margin-block-end: 0.25em;
@@ -121,13 +121,14 @@ dt {
 ul,
 ol {
   padding-inline-start: 1rem;
-
-  li {
-    padding-inline-start: 0.5rem;
-  }
 }
 
-// Other elements
+ul li,
+ol li {
+  padding-inline-start: 0.5rem;
+}
+
+/* Other elements */
 
 a {
   text-decoration-color: rgba(var(--c-link-text-rgb, var(--c-accent-dark-rgb)), 0.6);

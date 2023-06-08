@@ -18,8 +18,8 @@ export default {
 };
 
 export const Figure = (args) => `
-  <figure class="figure">
-    <figcaption>
+  <figure>
+    <figcaption class="inline-figcaption">
       <span class="h4">${args.title}</span>
       <strong><a href="#" class="figure-button">${bootstrapIconFiletypePDF}<span>Download</span></a></strong>
     </figcaption>

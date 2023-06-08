@@ -2,11 +2,11 @@
   display: flex;
   gap: 1rem;
   align-items: start;
+}
 
-  svg {
-    fill: var(--c-accent);
-    width: 8em;
-    aspect-ratio: 1 / 1;
-    transform: rotate(-15deg);
-  }
+.callout svg {
+  fill: var(--c-accent);
+  width: 8em;
+  aspect-ratio: 1 / 1;
+  transform: rotate(-15deg);
 }

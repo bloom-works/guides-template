@@ -1,44 +1,30 @@
-@use "sass:color";
-
-$highSeverityColor: #97312F;
-$mediumSeverityColor: #E2B27E;
-
 .alert {
   position: relative;
   --color: var(--c-accent);
   --color-rgb: var(--c-accent-rgb);
 
-  --high-severity: #{$highSeverityColor};
-  --high-severity-rgb: #{
-                  color.red($highSeverityColor),
-                  color.green($highSeverityColor),
-                  color.blue($highSeverityColor)
-                };
+  --high-severity: #97312F;
+  --high-severity-rgb: 151, 49, 47;
 
-  --medium-severity: #{$mediumSeverityColor};
-  --medium-severity-rgb: #{
-                  color.red($mediumSeverityColor),
-                  color.green($mediumSeverityColor),
-                  color.blue($mediumSeverityColor)
-                };
+  --medium-severity: #E2B27E;
+  --medium-severity-rgb: 226, 178, 126;
 
   border: 1px solid rgba(var(--color-rgb), 0.3);
   background: rgba(var(--color-rgb), 0.1);
   padding: 0.5rem 1rem;
   padding-left: calc(var(--t-leading-rem) + 1rem);
   border-radius: 4px;
+}
 
-
-  &::before {
-    content: "";
-    border-radius: 50%;
-    position: absolute;
-    left: 0.5rem;
-    top: 0.5rem;
-    width: var(--t-leading-rem);
-    aspect-ratio: 1 / 1;
-    background: var(--color);
-  }
+.alert::before {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  width: var(--t-leading-rem);
+  aspect-ratio: 1 / 1;
+  background: var(--color);
 }
 
 .alert-high {

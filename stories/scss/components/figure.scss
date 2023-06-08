@@ -1,4 +1,4 @@
-.figure figcaption {
+.inline-figcaption {
   display: flex;
   width: 100%;
   max-inline-size: unset;
@@ -6,18 +6,18 @@
   align-items: center;
   justify-content: space-between;
   margin-block-end: var(--t-paragraph);
+}
 
-  span {
-    margin-block-end: 0;
-  }
+.inline-figcaption span {
+  margin-block-end: 0;
+}
 
-  a {
-    display: flex;
-    gap: 0.25rem;
+.inline-figcaption a {
+  display: flex;
+  gap: 0.25rem;
+}
 
-    svg {
-      width: var(--t-leading-rem);
-      aspect-ratio: 1 / 1;
-    }
-  }
+.inline-figcaption a svg {
+  width: var(--t-leading-rem);
+  aspect-ratio: 1 / 1;
 }

@@ -5,21 +5,21 @@ button {
   font-weight: var(--t-bold);
   border: 0;
   padding: 0.75rem 3rem;
-  box-shadow: 0 4px 6px -1px rgba(#000, 0.1),
-              0 2px 4px -1px rgba(#000, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border-radius: 0;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
+}
 
-  &.button-inverted {
-    background: var(--c-accent-text);
-    color: var(--c-accent);
-  }
+button.button-inverted {
+  background: var(--c-accent-text);
+  color: var(--c-accent);
+}
 
-  &[data-size="small"] {
-    font-size: var(--t-small);
-    padding: 0.5rem 2rem;
-  }
+button[data-size="small"] {
+  font-size: var(--t-small);
+  padding: 0.5rem 2rem;
 }

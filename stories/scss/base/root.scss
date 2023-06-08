@@ -1,49 +1,42 @@
-@use "sass:color";
-
-$accentColor: #2f9764;
-
 :root {
-  // TYPOGRAPHY
+  /* TYPOGRAPHY */
 
-  // Font families
+  /* Font families */
   --font-primary: "Barlow Semi Condensed", system-ui, sans-serif;
   --font-secondary: Georgia, serif;
 
-  // Font sizes
-  --t-huge: 1.818181818rem; // 20px
-  --t-large: 1.454545rem; // 16px
-  --t-medium: 1.181818rem; // 13px
-  --t-base: 1rem; // 11px
-  --t-small: 0.82rem; // 9px
+  /* Font sizes */
+  --t-huge: 1.818181818rem; /* 20px */
+  --t-large: 1.454545rem; /* 16px */
+  --t-medium: 1.181818rem; /* 13px */
+  --t-base: 1rem; /* 11px */
+  --t-small: 0.82rem; /* 9px */
   --t-leading: 1.25;
   --t-leading-em: calc(var(--t-leading) * 1em);
   --t-leading-rem: calc(var(--t-base) * var(--t-leading));
   --t-paragraph: calc(var(--t-leading-rem) * 0.75);
 
-  // Font weights
+  /* Font weights */
   --t-normal: 300;
   --t-bold: 700;
 
-  // Type colors
+  /* Type colors */
   --c-headline: #343434;
   --c-text: #434343;
   --c-secondary: #666;
 
-  // COLORS
+  /* COLORS */
 
   --c-bg: #faf7f5;
 
   --c-accent: #2f9764;
-  --c-accent-rgb: #{
-                    color.red($accentColor),
-                    color.green($accentColor),
-                    color.blue($accentColor)
-                  };
+  --c-accent-rgb: 47, 151, 100;
+
   --c-accent-text: #fff;
   --c-link-text: var(--c-accent);
-  --c-accent-light: #{color.scale($accentColor, $lightness: 30%)};
+  --c-accent-light: #f3f9f6;
 
-  // LAYOUT WIDTHS
+  /* LAYOUT WIDTHS */
 
   --t-measure: 60ch;
   --w-container: 90%;
