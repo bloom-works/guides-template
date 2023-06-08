@@ -2,6 +2,7 @@ import "./scss/app.scss";
 
 import { Callout } from "./Callout.stories";
 import { Checklist } from "./Checklist.stories";
+import { KeyQuestions } from "./KeyQuestions.stories";
 import { PageHeader } from "./PageHeader.stories";
 import { Footer } from "./Footer.stories";
 
@@ -14,7 +15,7 @@ const bootstrapIconArrowRight = `
 // organ donation foreword
 
 export default {
-  title: 'Rough Example Pages/Section Page',
+  title: 'Rough Example Pages/Section 1',
   args: {
     header: {
       title: 'Section 1: About the Playbook',
@@ -79,13 +80,10 @@ And that’s it! This playbook is by no means exhaustive, or set in stone. We ch
 
 ${Checklist({'item1': 'I understand what the heck this thing is now'})}
 
-<h3>Key questions</h3>
+${KeyQuestions({
+  'question1': 'Are you ready to dive into the fast-paced, exciting world of Discovery Sprints? Let’s go!'
+})}
 
-<ul>
-
-<li>Are you ready to dive into the fast-paced, exciting world of Discovery Sprints? Let’s go!
-</li>
-</ul>
 <h2 id="1-3-what-to-expect">1.3 What to expect</h2>
 
 
@@ -278,7 +276,7 @@ Our default is to assume our own cultural lens when approaching our work. Acknow
   },
 };
 
-export const SectionPage = (args) => `
+export const Section1 = (args) => `
 ${PageHeader(args.header)}
 <div class="l-text-wrapper">
 <div class="l-stack-basic">
