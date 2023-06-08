@@ -15,21 +15,20 @@ export default {
   },
 };
 
-export const Checklist = (args) => `
-</div> <!-- /.l-stack-basic -->
+export const Checklist = (args) => `</div> <!-- /.l-stack-basic -->
 </div> <!-- /.l-text-wrapper -->
 <div class="l-section checklist">
   <div class="l-text-wrapper">
     <h3 class="h4">Checklist</h3>
     <ul class="l-stack">
-      <li>${args.item1}</li>
-      <li>${args.item2}</li>
-      <li>${args.item3}</li>
-      <li>${args.item4}</li>
-      <li>${args.item5}</li>
+      ${args.item1 ? `<li>${args.item1}</li>` : ``}
+      ${args.item2 ? `<li>${args.item2}</li>` : ``}
+      ${args.item3 ? `<li>${args.item3}</li>` : ``}
+      ${args.item4 ? `<li>${args.item4}</li>` : ``}
+      ${args.item5 ? `<li>${args.item5}</li>` : ``}
+
     </ul>
   </div>
 </div>
 <div class="l-text-wrapper">
-<div class="l-stack-basic">
-`;
+<div class="l-stack-basic">`;
