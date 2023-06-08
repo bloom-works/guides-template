@@ -7,7 +7,7 @@ const bootstrapIconFiletypePDF = `
 `;
 
 export default {
-  title: 'Out of Scope?/Components/Figure',
+  title: 'Components/Figure',
   args: {
     'title': 'Figure 1: Governance and Oversight in the Organ Donation Process'
   },
