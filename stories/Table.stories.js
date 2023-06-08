@@ -3,7 +3,7 @@ import "./scss/app.scss";
 // Section 1.3, definitely necessary for Organ Donation Section 10 Appendices
 
 export default {
-  title: 'Out of Scope?/Elements/Table',
+  title: 'Elements/Table',
   decorators: [(Story) => `
     <div class="l-wrapper">
       <div class="l-stack-basic">
