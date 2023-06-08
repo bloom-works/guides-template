@@ -14,6 +14,7 @@ const bootstrapIconFileEarmarkText = `<svg xmlns="http://www.w3.org/2000/svg" wi
 export default {
   title: 'Components/Resources',
   args: {
+    'headline': 'Additional Resources',
     'resource1Title': 'Casey Predictive Analytics Research Plan',
     'resource2Title': 'Child Welfare Background Check Research Plan',
     'resource3Title': 'ODI CalHR Sprint 2 Research Plan',
@@ -32,34 +33,42 @@ export default {
 };
 
 export const Resources = (args) => `
-<h2>Additional Resources</h2>
+<h2>${args.headline}</h2>
 <div class="l-cluster">
-  <a class="resource" href="#">
-    <span class="resource-icon">
-      ${bootstrapIconFileEarmarkText}
-    </span>
-    <span class="resource-text">${args.resource1Title}</span>
-  </a>
+  ${args.resource1Title ? `
+    <a class="resource" href="${args.resource1Link}">
+      <span class="resource-icon">
+        ${bootstrapIconFileEarmarkText}
+      </span>
+      <span class="resource-text">${args.resource1Title}</span>
+    </a>
+  ` : ``}
 
-  <a class="resource" href="#">
-    <span class="resource-icon">
-      ${bootstrapIconFileEarmarkText}
-    </span>
-    <span class="resource-text">${args.resource2Title}</span>
-  </a>
+  ${args.resource2Title ? `
+    <a class="resource" href="${args.resource2Link}">
+      <span class="resource-icon">
+        ${bootstrapIconFileEarmarkText}
+      </span>
+      <span class="resource-text">${args.resource2Title}</span>
+    </a>
+  `: ``}
 
-  <a class="resource" href="#">
-    <span class="resource-icon">
-      ${bootstrapIconFileEarmarkText}
-    </span>
-    <span class="resource-text">${args.resource3Title}</span>
-  </a>
+  ${args.resource3Title ? `
+    <a class="resource" href="${args.resource3Link}">
+      <span class="resource-icon">
+        ${bootstrapIconFileEarmarkText}
+      </span>
+      <span class="resource-text">${args.resource3Title}</span>
+    </a>
+  `: ``}
 
-  <a class="resource" href="#">
-    <span class="resource-icon">
-      ${bootstrapIconFiletypePDF}
-    </span>
-    <span class="resource-text">${args.resource4Title}</span>
-  </a>
+  ${args.resource4Title ? `
+    <a class="resource" href="${args.resource4Link}">
+      <span class="resource-icon">
+        ${bootstrapIconFiletypePDF}
+      </span>
+      <span class="resource-text">${args.resource4Title}</span>
+    </a>
+  `: ``}
 </div>
 `;
