@@ -126,6 +126,12 @@ ol {
 ul li,
 ol li {
   padding-inline-start: 0.5rem;
+  margin-block-end: var(--t-paragraph);
+}
+
+ul li:last-child,
+ol li:last-child {
+  margin-block-end: 0;
 }
 
 /* Other elements */
