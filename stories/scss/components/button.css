@@ -1,4 +1,5 @@
-button {
+button,
+.button {
   -webkit-appearance: none;
   background: var(--c-accent);
   color: var(--c-accent-text);
@@ -10,16 +11,24 @@ button {
   border-radius: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
+  text-decoration: none;
+  width: fit-content;
 }
 
-button.button-inverted {
+.button-icon svg {
+  width: 1em;
+  aspect-ratio: 1 / 1;
+}
+
+.button-inverted {
   background: var(--c-accent-text);
   color: var(--c-accent);
 }
 
-button[data-size="small"] {
+.button[data-size="small"] {
   font-size: var(--t-small);
   padding: 0.5rem 2rem;
 }

@@ -18,6 +18,12 @@
   max-inline-size: var(--t-measure);
 }
 
+/* Horizontal centering */
+
+.l-center {
+  margin-inline: auto;
+}
+
 /*
 .l-frame: Media wrapper with an intrinsic aspect ratio.
 
@@ -60,6 +66,10 @@ within specific components.
   .l-grid {
     grid-template-columns: repeat(auto-fit, minmax(Min(calc(var(--t-measure) / 2), 100%), 1fr));
   }
+}
+
+.l-grid > * {
+  margin-bottom: var(--t-leading-rem);
 }
 
 /*

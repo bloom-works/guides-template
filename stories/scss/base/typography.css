@@ -19,7 +19,7 @@ iframe {
 /* Responsive font sizing */
 
 :root {
-  font-size: clamp(1rem, calc(-1rem + 4vw), 2.5rem);
+  font-size: clamp(1.25rem, calc(-1rem + 4vw), 2.5rem);
 }
 
 html {
@@ -48,16 +48,27 @@ b, strong {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   padding: 0;
-  font-weight: var(--t-bold);
 }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6{
   color: var(--c-headline);
   margin-inline: 0;
+  margin-block-start: 0;
   margin-block-end: var(--t-paragraph);
   width: fit-content;
 }
+
+h1, h2, h4,
+.h1, .h2, .h4 {
+  font-weight: var(--t-bold);
+}
+
+h3, h5, h6,
+.h3, .h5, .h6, dt {
+  font-weight: var(--t-normal);
+}
+
 
 h1, .h1,
 h2, .h2,
@@ -75,7 +86,7 @@ h1, .h1 {
 h2, .h2 {
   font-size: var(--t-large);
   line-height: 1.2;
-  border-bottom: 4px solid var(--c-accent);
+  border-bottom: 0.125em solid var(--c-accent);
 }
 
 h3, .h3,
@@ -85,22 +96,18 @@ h4, .h4 {
 
 h3, .h3 {  
   font-size: var(--t-medium);
-  font-weight: var(--t-normal);
 }
 
 h3 + *, .h3 + * {
   --l-stack-gap: calc(var(--t-leading-rem) * 0.5);
 }
 
-h4, .h4 {
+h4, .h4, h5, .h5, dt, h6, .h6 {
   font-size: var(--t-base);
-  font-weight: 700;
 }
 
 h5, .h5, dt, h6, .h6 {
-  font-size: var(--t-base);
   color: var(--c-accent);
-  font-weight: var(--t-normal);
 }
 
 .subhead {

@@ -3,12 +3,18 @@
   margin-block: calc(var(--t-paragraph) * 2);
 }
 
+.grid-icon,
+.grid-icon svg {
+  aspect-ratio: 1 / 1;
+}
+
 .grid-icon {
   color: var(--c-accent);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5em;
+  display: inline-block;
 }
 
 .grid-icon svg {
   width: calc(var(--t-leading-rem) * 2);
-  aspect-ratio: 1 / 1;
+  display: block;
 }
