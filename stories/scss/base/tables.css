@@ -1,5 +1,6 @@
 table {
 	max-inline-size: unset;
+  position: relative;
 }
 
 td, th {
@@ -11,12 +12,75 @@ td, th {
 th {
 	background: var(--c-accent);
 	color: var(--c-accent-text);
-	border-color: var(--c-accent-text);
-	border-bottom: 0;
+  border: 0;
+  border-right: 1px solid var(--c-accent-text);
 	vertical-align: middle;
+  position: sticky;
+  top: 0;
+}
+
+th:last-child {
+  border-right: 0;
 }
 
 td {
 	border-color: #ccc;
 	vertical-align: top;
+}
+
+@media screen and (max-width: 38rem) {
+  table {
+    border: 0;
+  }
+
+  /* Visually hide the table head while still
+     displaying it to screen readers */
+  thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  tr {
+    border-end-start-radius: var(--radius);
+    border-end-end-radius: var(--radius);
+    border-bottom: 2px solid var(--c-accent);
+    display: block;
+    margin-bottom: var(--t-leading-rem);
+  }
+
+  td:first-child {
+    border-start-start-radius: var(--radius);
+    border-start-end-radius: var(--radius);
+  }
+
+  td {
+    border: 1px solid var(--c-accent);
+    border-bottom: 0;
+    display: flex;
+    position: relative;
+  }
+
+  /*  */
+
+  td::before {
+    content: attr(data-label);
+    padding-right: var(--t-leading-rem);
+    min-width: 15ch;
+    max-width: 15ch;
+    font-weight: var(--t-bold);
+    color: var(--t-headline);
+    position: sticky;
+    top: 0.5em;
+    align-self: flex-start;
+  }
+
+  td:last-child {
+    border-bottom: 0;
+  }
 }
