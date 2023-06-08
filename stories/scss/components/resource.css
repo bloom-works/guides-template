@@ -1,5 +1,5 @@
 .resource {
-  border-radius: 4px;
+  border-radius: var(--radius);
   border: 1px solid var(--c-accent);
   max-inline-size: calc(var(--t-measure) / 2);
   display: flex;

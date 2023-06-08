@@ -25,6 +25,9 @@
   --c-text: #434343;
   --c-secondary: #666;
 
+  /* Standard border radius  */
+  --radius: 2px;
+
   /* COLORS */
 
   --c-bg: #faf7f5;

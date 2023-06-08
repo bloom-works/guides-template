@@ -13,7 +13,7 @@
   background: rgba(var(--color-rgb), 0.1);
   padding: 0.5rem 1rem;
   padding-left: calc(var(--t-leading-rem) + 1rem);
-  border-radius: 4px;
+  border-radius: var(--radius);
 }
 
 .alert::before {

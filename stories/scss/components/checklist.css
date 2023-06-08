@@ -21,7 +21,7 @@
   width: var(--checkbox-size);
   aspect-ratio: 1 / 1;
   border: 3px solid var(--c-text);
-  border-radius: 3px;
+  border-radius: var(--radius);
 }
 
 .checklist li.checked::before {
