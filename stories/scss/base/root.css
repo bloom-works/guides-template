@@ -49,4 +49,9 @@
   --w-max: 80rem;
   --w-max-unitless: 80;
   --g-column-gap: calc(var(--t-paragraph) * 2);
+
+  /* Padding between sections */
+
+  --section-padding: calc(var(--t-leading-rem) * 3);
+  --section-margin: calc(var(--t-leading-rem) * 2);
 }

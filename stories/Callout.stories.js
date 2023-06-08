@@ -16,8 +16,9 @@ export default {
 };
 
 export const Callout = (args) => `
+</div> <!-- /.l-stack-basic -->
 </div> <!-- /.l-text-wrapper -->
-  <div class="callout">
+  <div class="l-section callout">
     <div class="l-text-wrapper">
       <div class="callout-inner">
         <span class="callout-icon">${bootstrapIconLightbulb}</span>
@@ -26,4 +27,5 @@ export const Callout = (args) => `
     </div>
   </div>
 <div class="l-text-wrapper">
+<div class="l-stack-basic">
 `;

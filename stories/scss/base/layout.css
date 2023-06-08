@@ -114,3 +114,14 @@ var(--stack-layout-gap) within specific components.
   flex-wrap: wrap;
   gap: var(--cluster-gap, var(--g-column-gap));
 }
+
+/* Padded sections */
+
+.l-section {
+  padding-block: var(--section-padding);
+  margin-block: var(--section-margin);
+}
+
+.l-section + .l-section {
+  margin-block-start: 0;
+}

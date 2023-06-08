@@ -1,5 +1,6 @@
 .footer {
   background: var(--c-accent);
+  margin-top: calc(var(--t-leading-rem) * 2);
 }
 
 .footer-inner {

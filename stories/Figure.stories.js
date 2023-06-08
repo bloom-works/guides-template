@@ -11,18 +11,22 @@ export default {
   args: {
     'title': 'Figure 1: Governance and Oversight in the Organ Donation Process'
   },
-  parameters: {
-    // Remove layout parameter for full-width components
-    layout: 'centered',
-  },
 };
 
 export const Figure = (args) => `
-  <figure>
-    <figcaption class="inline-figcaption">
-      <span class="h4">${args.title}</span>
-      <strong><a href="#" class="figure-button">${bootstrapIconFiletypePDF}<span>Download</span></a></strong>
-    </figcaption>
-    <img src="/images/pdf-thumbnail.jpg" alt="Thumbnail for ${args.title}" />
-  </figure>
+  </div> <!-- /.l-stack-basic -->
+  </div> <!-- /.l-text-wrapper -->
+  <div class="l-section figure">
+    <div class="l-text-wrapper">
+      <figure>
+        <figcaption class="inline-figcaption">
+          <span class="h4">${args.title}</span>
+          <strong><a href="#" class="figure-button">${bootstrapIconFiletypePDF}<span>Download</span></a></strong>
+        </figcaption>
+        <img src="/images/pdf-thumbnail.jpg" alt="Thumbnail for ${args.title}" />
+      </figure>
+    </div>
+  </div>
+  <div class="l-text-wrapper">
+    <div class="l-stack-basic">
 `;

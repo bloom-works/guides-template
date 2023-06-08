@@ -13,19 +13,23 @@ export default {
     'item4': 'Identify responsibility gaps or areas of ambiguity to address before kickoff.',
     'item5': 'Internal client research participants identified for week 1 sessions.',
   },
-  parameters: {
-    // Remove layout parameter for full-width components
-    layout: 'centered',
-  },
 };
 
 export const Checklist = (args) => `
-  <h2>Checklist</h2>
-  <ul class="l-stack checklist">
-    <li class="checked">${args.item1}</li>
-    <li class="checked">${args.item2}</li>
-    <li>${args.item3}</li>
-    <li>${args.item4}</li>
-    <li>${args.item5}</li>
-  </ul>
+</div> <!-- /.l-stack-basic -->
+</div> <!-- /.l-text-wrapper -->
+<div class="l-section checklist">
+  <div class="l-text-wrapper">
+    <h3 class="h4">Checklist</h3>
+    <ul class="l-stack">
+      <li>${args.item1}</li>
+      <li>${args.item2}</li>
+      <li>${args.item3}</li>
+      <li>${args.item4}</li>
+      <li>${args.item5}</li>
+    </ul>
+  </div>
+</div>
+<div class="l-text-wrapper">
+<div class="l-stack-basic">
 `;
