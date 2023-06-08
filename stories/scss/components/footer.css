@@ -1,5 +1,8 @@
 .footer {
   background: var(--c-accent);
+}
+
+.footer-inner {
   padding-block: calc(var(--t-leading-rem) * 2);
 }
 
@@ -51,13 +54,32 @@
   max-width: var(--t-leading-rem);
 }
 
-.footer-icons {
-}
-
 .footer-icons a {
   text-decoration: none;
 }
 
 .footer svg {
   width: var(--t-leading-rem);
+}
+
+.footer-sba-banner {
+  background: #04301B;
+  color: var(--c-accent-text);
+}
+
+.footer-sba-banner p {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-block: var(--t-leading-rem);
+  gap: 1em;
+  font-size: var(--t-small);
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  text-wrap: balance;
+}
+
+.footer-sba-banner img {
+  max-width: calc(var(--t-leading-rem) * 2);
 }
