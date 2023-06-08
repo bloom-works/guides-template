@@ -3,7 +3,6 @@ import "./scss/app.scss";
 // - Completion indicator?
 // - Nested? (See the end of the playbook)
 
-
 export default {
   title: 'Components/Checklist',
   args: {
@@ -12,23 +11,32 @@ export default {
     'item3': 'Background material and related research has been shared.',
     'item4': 'Identify responsibility gaps or areas of ambiguity to address before kickoff.',
     'item5': 'Internal client research participants identified for week 1 sessions.',
+    'prevSection': false,
+    'nextSection': false,
   },
 };
 
-export const Checklist = (args) => `</div> <!-- /.l-stack-basic -->
-</div> <!-- /.l-text-wrapper -->
-<div class="l-section checklist">
-  <div class="l-text-wrapper">
-    <h3 class="h4">Checklist</h3>
-    <ul class="l-stack">
-      ${args.item1 ? `<li>${args.item1}</li>` : ``}
-      ${args.item2 ? `<li>${args.item2}</li>` : ``}
-      ${args.item3 ? `<li>${args.item3}</li>` : ``}
-      ${args.item4 ? `<li>${args.item4}</li>` : ``}
-      ${args.item5 ? `<li>${args.item5}</li>` : ``}
+export const Checklist = (args) => `
+  ${args.prevSection ? `` : `
+    </div> <!-- /.l-stack-basic -->
+    </div> <!-- /.l-text-wrapper -->`
+  }
 
-    </ul>
+  <div class="l-section checklist">
+    <div class="l-text-wrapper">
+      <h3 class="h4">Checklist</h3>
+      <ul class="l-stack">
+        ${args.item1 ? `<li>${args.item1}</li>` : ``}
+        ${args.item2 ? `<li>${args.item2}</li>` : ``}
+        ${args.item3 ? `<li>${args.item3}</li>` : ``}
+        ${args.item4 ? `<li>${args.item4}</li>` : ``}
+        ${args.item5 ? `<li>${args.item5}</li>` : ``}
+      </ul>
+    </div>
   </div>
-</div>
-<div class="l-text-wrapper">
-<div class="l-stack-basic">`;
+
+  ${args.nextSection ? `` : `
+    <div class="l-text-wrapper">
+    <div class="l-stack-basic">
+  `}
+`;

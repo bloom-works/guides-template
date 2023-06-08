@@ -9,13 +9,18 @@ const bootstrapIconFiletypePDF = `
 export default {
   title: 'Components/Figure',
   args: {
-    'title': 'Figure 1: Governance and Oversight in the Organ Donation Process'
+    'title': 'Figure 1: Governance and Oversight in the Organ Donation Process',
+    'prevSection': false,
+    'nextSection': false,
   },
 };
 
 export const Figure = (args) => `
-  </div> <!-- /.l-stack-basic -->
-  </div> <!-- /.l-text-wrapper -->
+  ${args.prevSection ? `` : `
+    </div> <!-- /.l-stack-basic -->
+    </div> <!-- /.l-text-wrapper -->`
+  }
+
   <div class="l-section figure">
     <div class="l-text-wrapper">
       <figure>
@@ -26,7 +31,10 @@ export const Figure = (args) => `
         <img src="/images/pdf-thumbnail.jpg" alt="Thumbnail for ${args.title}" />
       </figure>
     </div>
-  </div>
-  <div class="l-text-wrapper">
+   </div>
+
+   ${args.nextSection ? `` : `
+    <div class="l-text-wrapper">
     <div class="l-stack-basic">
+  `}
 `;

@@ -14,12 +14,17 @@ export default {
     'content': `
       <p>Agile project management and human centered design methods may be new for the partner, and will require some socialization and training. Keep in mind that this method of working and the pace of the sprint may be an adjustment for the partner.</p>
     `,
+    'prevSection': false,
+    'nextSection': false,
   },
 };
 
 export const Callout = (args) => `
-</div> <!-- /.l-stack-basic -->
-</div> <!-- /.l-text-wrapper -->
+ ${args.prevSection ? `` : `
+    </div> <!-- /.l-stack-basic -->
+    </div> <!-- /.l-text-wrapper -->`
+  }
+
   <div class="l-section callout">
     <div class="l-text-wrapper">
       <div class="callout-inner">
@@ -28,5 +33,9 @@ export const Callout = (args) => `
       </div>
     </div>
   </div>
-<div class="l-text-wrapper">
-<div class="l-stack-basic">`;
+
+  ${args.nextSection ? `` : `
+    <div class="l-text-wrapper">
+    <div class="l-stack-basic">
+  `}
+`;
