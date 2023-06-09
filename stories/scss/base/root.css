@@ -41,7 +41,7 @@
 
   /* LAYOUT WIDTHS */
 
-  --t-measure: 60ch;
+  --t-measure: 55ch; /* Typographic measure */
   --w-container: 90%;
   --w-container-unitless: 90;
   --w-content-max: 60rem;
