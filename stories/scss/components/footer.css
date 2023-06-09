@@ -7,7 +7,8 @@
   padding-block: calc(var(--t-leading-rem) * 2);
 }
 
-.footer ::selection {  color: var(--c-accent);
+.footer ::selection {
+  color: var(--c-accent);
   background: var(--c-accent-text);
 }
 
@@ -62,7 +63,7 @@
 }
 
 .footer-sba-banner {
-  background: #04301B;
+  background: var(--c-accent-dark);
   color: var(--c-accent-text);
 }
 
