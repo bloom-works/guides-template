@@ -77,16 +77,6 @@ h3, .h3 {
   text-wrap: balance;
 }
 
-h1 + *,
-h2 + *,
-h3 + *,
-.h1 + *,
-.h2 + *,
-.h3 + * {
-  --l-stack-gap: calc(var(--t-paragraph) * 0.5);
-
-}
-
 h1, .h1 {
   font-size: var(--t-huge);
   margin-block-end: 0.5em;
@@ -106,15 +96,6 @@ h3, .h3 {
 
 h4, .h4 {
   --l-stack-gap: calc(var(--t-paragraph) * 1.5);
-}
-
-h4 + *,
-h5 + *,
-h6 + *,
-.h4 + *,
-.h5 + *,
-.h6 + * {
-  --l-stack-gap: calc(var(--t-paragraph) * 0.33);
 }
 
 h4, .h4, h5, .h5, dt, h6, .h6 {
