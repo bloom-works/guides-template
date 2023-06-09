@@ -4,7 +4,7 @@
   max-inline-size: calc(var(--t-measure) / 2);
   display: flex;
   background: #fff;
-  box-shadow: 0 2px 4px rgba(#000, 0.06);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
   text-decoration: none;
 }
 
