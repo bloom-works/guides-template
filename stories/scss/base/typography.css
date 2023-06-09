@@ -73,33 +73,48 @@ h3, h5, h6,
 h1, .h1,
 h2, .h2,
 h3, .h3 {
-  --l-stack-gap: calc(var(--t-paragraph) * 3);
   text-transform: uppercase;
   text-wrap: balance;
 }
 
+h1 + *,
+h2 + *,
+h3 + *,
+.h1 + *,
+.h2 + *,
+.h3 + * {
+  --l-stack-gap: calc(var(--t-paragraph) * 0.5);
+
+}
+
 h1, .h1 {
   font-size: var(--t-huge);
-  line-height: 1.1;
+  margin-block-end: 0.5em;
 }
 
 h2, .h2 {
   font-size: var(--t-large);
-  line-height: 1.2;
   border-bottom: 0.125em solid var(--c-accent);
-}
-
-h3, .h3,
-h4, .h4 {
-  line-height: 1.2;
+  margin-block-start: 2.5em;
+  --l-stack-gap: calc(var(--t-paragraph) * 2.5);
 }
 
 h3, .h3 {  
   font-size: var(--t-medium);
+  --l-stack-gap: calc(var(--t-paragraph) * 2);
 }
 
-h3 + *, .h3 + * {
-  --l-stack-gap: calc(var(--t-leading-rem) * 0.5);
+h4, .h4 {
+  --l-stack-gap: calc(var(--t-paragraph) * 1.5);
+}
+
+h4 + *,
+h5 + *,
+h6 + *,
+.h4 + *,
+.h5 + *,
+.h6 + * {
+  --l-stack-gap: calc(var(--t-paragraph) * 0.33);
 }
 
 h4, .h4, h5, .h5, dt, h6, .h6 {
