@@ -26,7 +26,7 @@ export default {
     layout: 'centered',
   },
   decorators: [(Story) => `
-    <div class="l-wrapper">
+    <div class="l-text-wrapper">
       ${Story()}
     </div>
   `],
@@ -34,7 +34,7 @@ export default {
 
 export const Resources = (args) => `
 <h2>${args.headline}</h2>
-<div class="l-cluster">
+<div class="resources l-cluster">
   ${args.resource1Title ? `
     <a class="resource" href="${args.resource1Link}">
       <span class="resource-icon">

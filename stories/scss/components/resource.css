@@ -1,7 +1,12 @@
+.resources {
+  --cluster-gap: 1em;
+}
+
 .resource {
   border-radius: var(--radius);
   border: 1px solid var(--c-accent);
   max-inline-size: calc(50% - var(--cluster-gap));
+  font-size: var(--t-small);
   display: flex;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
@@ -9,11 +14,12 @@
 }
 
 .resource  > * {
-  padding: 1rem;
+  padding: 1em;
 }
 
 .resource-text {
   align-self: center;
+  text-wrap: balance;
 }
 
 .resource-icon {
