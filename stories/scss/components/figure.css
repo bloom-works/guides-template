@@ -4,7 +4,7 @@
 
 .inline-figcaption {
   display: flex;
-  width: 100%;
+  inline-size: 100%;
   max-inline-size: unset;
   gap: 1rem;
   align-items: center;
@@ -24,7 +24,7 @@
 }
 
 .inline-figcaption a svg {
-  height: var(--t-leading-em);
-  aspect-ratio: 1 / 1;
+  inline-size: var(--t-leading-em);
+  block-size: var(--t-leading-em);
   flex: none;
 }

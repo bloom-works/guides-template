@@ -17,9 +17,9 @@
   color: var(--c-accent);
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: var(--list-glyph-size);
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: var(--list-glyph-size);
   aspect-ratio: 1 / 1;
   background-size: 90% 90%;
   background-position: center;

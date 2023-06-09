@@ -10,11 +10,11 @@
 
 .grid-icon {
   color: var(--c-accent);
-  margin-bottom: 0.5em;
+  margin-block-end: 0.5em;
   display: inline-block;
 }
 
 .grid-icon svg {
-  width: calc(var(--t-leading-rem) * 2);
+  inline-size: calc(var(--t-leading-rem) * 2);
   display: block;
 }

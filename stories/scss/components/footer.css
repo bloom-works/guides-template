@@ -1,14 +1,13 @@
 .footer {
   background: var(--c-accent);
-  margin-top: calc(var(--t-leading-rem) * 2);
+  margin-block-start: calc(var(--t-leading-rem) * 2);
 }
 
 .footer-inner {
   padding-block: calc(var(--t-leading-rem) * 2);
 }
 
-.footer ::selection {
-  color: var(--c-accent);
+.footer ::selection {  color: var(--c-accent);
   background: var(--c-accent-text);
 }
 
@@ -17,13 +16,12 @@
   background: var(--c-accent-text);
 }
 
-
 .footer .l-cluster {
   justify-content: space-between;
 }
 
 .footer .l-cluster + .l-cluster {
-  margin-top: var(--t-leading-rem);
+  margin-block-start: var(--t-leading-rem);
 }
 
 .footer * {
@@ -37,7 +35,7 @@
 }
 
 .footer li {
-  margin-bottom: 0.5rem;
+  margin-block-end: 0.5rem;
 }
 
 .footer-meta {
@@ -52,7 +50,7 @@
 }
 
 .footer-meta img {
-  max-width: var(--t-leading-rem);
+  max-inline-size: var(--t-leading-rem);
 }
 
 .footer-icons a {
@@ -60,7 +58,7 @@
 }
 
 .footer svg {
-  width: var(--t-leading-rem);
+  max-inline-size: var(--t-leading-rem);
 }
 
 .footer-sba-banner {
@@ -82,5 +80,5 @@
 }
 
 .footer-sba-banner img {
-  max-width: calc(var(--t-leading-rem) * 2);
+  max-inline-size: calc(var(--t-leading-rem) * 2);
 }

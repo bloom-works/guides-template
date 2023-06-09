@@ -69,7 +69,7 @@ within specific components.
 }
 
 .l-grid > * {
-  margin-bottom: var(--t-leading-rem);
+  margin-block-end: var(--t-leading-rem);
 }
 
 /*

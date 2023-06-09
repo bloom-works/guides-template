@@ -7,8 +7,8 @@
   text-align: center;
   padding: 6rem 1rem;
   background: var(--c-accent);
-  height: max(60vh, min-content);
-  margin-bottom: calc(var(--t-leading-rem) * 2);
+  block-size: max(40vh, min-content);
+  margin-block-end: calc(var(--t-leading-rem) * 2);
 }
 
 .page-header  > * {

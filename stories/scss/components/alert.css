@@ -11,8 +11,9 @@
 
   border: 1px solid rgba(var(--color-rgb), 0.3);
   background: rgba(var(--color-rgb), 0.1);
-  padding: 0.5rem 1rem;
-  padding-left: calc(var(--t-leading-rem) + 1rem);
+  padding-block: 0.5rem;
+  padding-inline-start: calc(var(--t-leading-rem) + 1rem);
+  padding-inline-end: 1rem;
   border-radius: var(--radius);
 }
 
@@ -20,9 +21,9 @@
   content: "";
   border-radius: 50%;
   position: absolute;
-  left: 0.5rem;
-  top: 0.5rem;
-  width: var(--t-leading-rem);
+  inset-inline-start: 0.5rem;
+  inset-block-start: 0.5rem;
+  inline-size: var(--t-leading-rem);
   aspect-ratio: 1 / 1;
   background: var(--color);
 }

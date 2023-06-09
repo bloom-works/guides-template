@@ -1,7 +1,7 @@
 .resource {
   border-radius: var(--radius);
   border: 1px solid var(--c-accent);
-  max-inline-size: calc(var(--t-measure) / 2);
+  max-inline-size: calc(50% - var(--cluster-gap));
   display: flex;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
@@ -19,7 +19,7 @@
 .resource-icon {
   display: block;
   align-self: stretch;
-  width: calc(var(--t-leading-rem) * 3);
+  inline-size: calc(var(--t-leading-rem) * 3);
   color: var(--c-accent-text);
   background: var(--c-accent);
   display: flex;
@@ -28,5 +28,5 @@
 }
 
 .resource-icon svg {
-  width: 100%;
+  inline-size: 100%;
 }

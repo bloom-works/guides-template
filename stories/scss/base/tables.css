@@ -13,14 +13,14 @@ th {
 	background: var(--c-accent);
 	color: var(--c-accent-text);
   border: 0;
-  border-right: 1px solid var(--c-accent-text);
+  border-inline-end: 1px solid var(--c-accent-text);
 	vertical-align: middle;
   position: sticky;
-  top: 0;
+  inset-block-start: 0;
 }
 
 th:last-child {
-  border-right: 0;
+  border-inline-end: 0;
 }
 
 td {
@@ -47,11 +47,19 @@ td {
   }
 
   tr {
+    display: block;
     border-end-start-radius: var(--radius);
     border-end-end-radius: var(--radius);
-    border-bottom: 2px solid var(--c-accent);
-    display: block;
-    margin-bottom: var(--t-leading-rem);
+    border-block-end: 2px solid var(--c-accent);
+    margin-block-end: var(--t-leading-rem);
+  }
+
+
+  td {
+    border: 1px solid var(--c-accent);
+    border-block-end: 0;
+    display: flex;
+    position: relative;
   }
 
   td:first-child {
@@ -59,28 +67,20 @@ td {
     border-start-end-radius: var(--radius);
   }
 
-  td {
-    border: 1px solid var(--c-accent);
-    border-bottom: 0;
-    display: flex;
-    position: relative;
+  td:last-child {
+    border-block-end: 0;
   }
-
-  /*  */
 
   td::before {
     content: attr(data-label);
-    padding-right: var(--t-leading-rem);
-    min-width: 15ch;
-    max-width: 15ch;
+    padding-inline-end: var(--t-leading-rem);
+    min-inline-size: 15ch;
+    max-inline-size: 15ch;
     font-weight: var(--t-bold);
     color: var(--t-headline);
     position: sticky;
-    top: 0.5em;
+    inset-block-start: 0.5em;
     align-self: flex-start;
   }
 
-  td:last-child {
-    border-bottom: 0;
-  }
 }

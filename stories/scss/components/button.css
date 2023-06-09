@@ -15,11 +15,11 @@ button,
   gap: 0.5rem;
   cursor: pointer;
   text-decoration: none;
-  width: fit-content;
+  inline-size: fit-content;
 }
 
 .button-icon svg {
-  width: 1em;
+  inline-size: 1em;
   aspect-ratio: 1 / 1;
 }
 
