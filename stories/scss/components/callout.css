@@ -12,10 +12,11 @@
   background: var(--c-accent);
   padding: calc(var(--t-leading-rem) / 2);
   border-radius: var(--radius);
+  flex: none;
 }
 
 .callout-icon svg {
   fill: var(--c-accent-text);
-  width: 3em;
+  width: 2rem;
   aspect-ratio: 1 / 1;
 }
