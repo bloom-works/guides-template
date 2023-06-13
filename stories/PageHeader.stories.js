@@ -3,12 +3,16 @@ import "./scss/app.scss";
 export default {
   title: 'Layout/Page Header',
   args: {
-    'title': 'Section 1: About the Playbook',
+    'subhead': 'Section 1',
+    'title': 'About the Playbook',
   }
 };
 
 export const PageHeader = (args) => `
-  <div class="page-header">
-    <h1>${args.title}</h1>
-  </div>
+  <header role="banner" class="page-header">
+      <h1>
+        ${args.subhead ? `<span>${args.subhead}</span>` : ``}
+        <span class="sr-only">: </span>${args.title}
+      </h1>
+  </header>
 `;

@@ -5,14 +5,23 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 6rem 1rem;
+  padding: calc(var(--t-leading-rem) * 4) 1rem;
   background: var(--c-accent);
   block-size: max(40vh, min-content);
   margin-block-end: calc(var(--t-leading-rem) * 2);
 }
 
-.page-header  > * {
+.page-header h1,
+.page-header h1 span {
   color: var(--c-accent-text);
+}
+
+.page-header h1 span {
+  display: block;
+  margin-block-end: 0;
+  margin-inline: auto;
+  opacity: 0.9;
+  font-size: var(--t-base);
 }
 
 .page-header-buttons {
