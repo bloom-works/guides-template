@@ -4,8 +4,10 @@ import { Callout } from "./Callout.stories";
 import { Checklist } from "./Checklist.stories";
 import { Footer } from "./Footer.stories";
 import { KeyQuestions } from "./KeyQuestions.stories";
+import { Navigation } from "./Navigation.stories";
 import { PageHeader } from "./PageHeader.stories";
 import { Resources } from "./Resources.stories";
+import { TableOfContents } from "./TableOfContents.stories";
 
 const bootstrapIconArrowRight = `
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -19,10 +21,21 @@ export default {
   title: 'Rough Example Pages/Section 5',
   args: {
     header: {
-      title: 'Section 5: Design & Refine',
+      subhead: 'Section 5',
+      title: 'Design & Refine',
+    },
+    toc: {
+      link1: `5-1-interpret-and-synthesize-data`,
+      item1: `5.1 Interpret and synthesize data`,
+      link2: `5-2-draw-conclusions`,
+      item2: `5.2 Draw conclusions`,
+      link3: `5-3-draft-recommendations`,
+      item3: `5.3 Draft recommendations`,
+      link4: `5-4-generate-your-deliverables-as-a-team`,
+      item4: `5.4 Generate your deliverables as a team!`,
     },
     body: `
-      <h2>
+      <h2 id="5-1-interpret-and-synthesize-data">
       5.1 Interpret and synthesize data</h2>
 
       <p>After collecting data, the next step is to interpret, analyze, and synthesize the data. This involves sorting, categorizing, and transforming raw data into something that is valuable and meaningful. Identifying new relationships within the existing data allows us to understand the problem in a new way. <br><br>To accomplish this, it is essential to involve all team members. Having everyone on the same page ensures that all perspectives are considered and any biases are accounted for. If it’s not feasible to have everyone present, it’s crucial to complete the synthesis process with at least one other teammate. This will help to avoid any misunderstandings and ensure that the data is interpreted accurately. <br><br>During the synthesis process, use tools such as Mural or Miro to organize the data. These tools can assist in identifying patterns, trends, and relationships within the data. By using this approach, it’s easier to make sense of complex data sets and identify relevant insights that can inform decision making.
@@ -55,7 +68,7 @@ export default {
         'question3': 'Do the pulled notes/quotes/etc. provide context? Or is there a risk of the data being misconstrued?',
       })}
 
-      <h2>5.2 Draw conclusions</h2>
+      <h2 id="5-2-draw-conclusions">5.2 Draw conclusions</h2>
 
       <p>
       After interpreting, analyzing, and synthesizing the data, drawing conclusions is the next essential step. It involves identifying key insights, patterns, and themes from the data that can help inform decision-making.
@@ -147,7 +160,7 @@ export default {
       })}
 
 
-      <h2>5.4 Generate your deliverables as a team! </h2>
+      <h2 id="5-4-generate-your-deliverables-as-a-team">5.4 Generate your deliverables as a team! </h2>
 
 
       <p>
@@ -206,9 +219,11 @@ export default {
 };
 
 export const Section5 = (args) => `
+${Navigation({guideName: 'Employee Handbook'})}
 ${PageHeader(args.header)}
 <div class="l-text-wrapper">
 <div class="l-stack-basic">
+${TableOfContents(args.toc)}
 ${args.body}
 <p class="l-center">
   <a href="#" class="button button-icon">Read the next section ${bootstrapIconArrowRight}</a>

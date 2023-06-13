@@ -1,5 +1,6 @@
 import "./scss/app.scss";
 
+import { Navigation } from "./Navigation.stories";
 import { PageHeader } from "./PageHeader.stories";
 
 // organ donation foreword
@@ -31,6 +32,7 @@ export default {
 };
 
 export const IntroLetter = (args) => `
+${Navigation({guideName: 'The Costly Effects of an Outdated Organ Donation System'})}
 ${PageHeader(args.header)}
 <div class="l-wrapper">
   <section class="intro-letter">

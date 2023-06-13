@@ -2,9 +2,11 @@ import "./scss/app.scss";
 
 import { Callout } from "./Callout.stories";
 import { Checklist } from "./Checklist.stories";
+import { Footer } from "./Footer.stories";
+import { Navigation } from "./Navigation.stories";
 import { KeyQuestions } from "./KeyQuestions.stories";
 import { PageHeader } from "./PageHeader.stories";
-import { Footer } from "./Footer.stories";
+import { TableOfContents } from "./TableOfContents.stories";
 
 const bootstrapIconArrowRight = `
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -18,7 +20,16 @@ export default {
   title: 'Rough Example Pages/Section 1',
   args: {
     header: {
-      title: 'Section 1: About the Playbook',
+      subhead: 'Section 1',
+      title: 'About the Playbook',
+    },
+    toc: {
+      link1: `1-1-what-is-a-discovery-sprint`,
+      item1: `1.1 What is a discovery sprint?`,
+      link2: `1-2-how-to-use-the-playbook`,
+      item2: `1.2 How to use the playbook`,
+      link3: `1-3-what-to-expect`,
+      item3: `1.3 What to expect`,
     },
     body: `
       <h2 id="1-1-what-is-a-discovery-sprint">1.1 What is a discovery sprint?</h2>
@@ -274,9 +285,11 @@ export default {
 };
 
 export const Section1 = (args) => `
+${Navigation({guideName: 'Employee Handbook'})}
 ${PageHeader(args.header)}
 <div class="l-text-wrapper">
 <div class="l-stack-basic">
+${TableOfContents(args.toc)}
 ${args.body}
 <p class="l-center">
   <a href="#" class="button button-icon">Read the next section ${bootstrapIconArrowRight}</a>
