@@ -39,6 +39,10 @@
   margin-block-end: 0.5rem;
 }
 
+.footer a {
+  text-decoration: none;
+}
+
 .footer-meta {
   font-size: var(--t-small);
 }
@@ -52,10 +56,6 @@
 
 .footer-meta img {
   max-inline-size: var(--t-leading-rem);
-}
-
-.footer-icons a {
-  text-decoration: none;
 }
 
 .footer svg {
