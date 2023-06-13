@@ -41,9 +41,11 @@ svg {
 }
 
 .skip-link {
-  background: var(--c-accent);
+  background: var(--c-accent-dark);
+  border: 2px solid var(--c-accent-text);
+  border-radius: var(--radius);
   color: var(--c-accent-text);
-  font-family: var(--font-secondary);
+  font-weight: var(--t-bold);
   text-decoration: none;
   font-size: 2em;
   opacity: 0;
@@ -65,6 +67,6 @@ svg {
 .skip-link:hover,
 .skip-link:active,
 .skip-link:focus {
-  background: var(--c-accent);
+  background: var(--c-accent-dark);
   color: var(--c-accent-text);
 }
