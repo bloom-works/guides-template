@@ -1,0 +1,40 @@
+/* Reset appearance of <details> element */
+details,
+details summary {
+  padding-inline-start: 0;
+  list-style: none;
+  background-image: none;
+  -webkit-appearance: none;
+}
+
+.toc {
+  border: 0.125em solid var(--c-accent);
+  width: 100%;
+  padding: 0.5em;
+  background: var(--c-accent-light);
+}
+
+.toc summary {
+  font-weight: var(--t-bold);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.toc summary svg {
+  inline-size: calc(var(--t-leading-em) * 1.25);
+  transition: transform 120ms ease-in-out;
+}
+
+.toc[open] summary svg {
+  transform: rotate(45deg);
+}
+
+.toc summary::details-marker {
+  back: none;
+}
+
+.toc li {
+  margin-bottom: calc(var(--t-paragraph) / 2);
+}
