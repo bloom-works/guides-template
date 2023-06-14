@@ -22,20 +22,22 @@ export default {
 export const Callout = (args) => `
  ${args.prevSection ? `` : `
     </div> <!-- /.l-stack-basic -->
-    </div> <!-- /.l-text-wrapper -->`
+    </section> <!-- /.l-text-wrapper -->`
   }
 
-  <div class="l-section callout">
+  <section class="l-section callout">
     <div class="l-text-wrapper">
       <div class="callout-inner">
         <span class="callout-icon">${bootstrapIconLightbulb}</span>
-        <div class="l-stack-basic">${args.content}</div>
+        <div class="l-stack-basic">
+          ${args.content}
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
   ${args.nextSection ? `` : `
-    <div class="l-text-wrapper">
+    <section class="l-text-wrapper">
     <div class="l-stack-basic">
   `}
 `;

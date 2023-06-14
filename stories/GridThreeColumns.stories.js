@@ -33,12 +33,12 @@ export default {
   },
   decorators: [(Story) => `
     <div class="l-stack-basic">
-      <div class="l-text-wrapper">
+      <section class="l-text-wrapper">
         <p>The 58 OPOs across the country are tasked with managing and coordinating an organ recovery process that broadly consists of three phases:</p>
-      </div>
-      <div class="l-wrapper">
+      </section>
+      <section class="l-wrapper">
         ${Story()}
-      </div>
+      </section>
     </div>
   `],
 };

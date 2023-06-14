@@ -16,10 +16,10 @@ export default {
 export const KeyQuestions = (args) => `
  ${args.prevSection ? `` : `
     </div> <!-- /.l-stack-basic -->
-    </div> <!-- /.l-text-wrapper -->`
+    </section> <!-- /.l-text-wrapper -->`
   }
 
-  <div class="l-section key-questions">
+  <section class="l-section key-questions">
     <div class="l-text-wrapper">
       <h3 class="h4">Key Questions</h3>
       <ul class="l-stack">
@@ -33,7 +33,7 @@ export const KeyQuestions = (args) => `
   </div>
 
   ${args.nextSection ? `` :
-  `<div class="l-text-wrapper">
+  `<section class="l-text-wrapper">
   <div class="l-stack-basic">`
   }
 `;

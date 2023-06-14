@@ -18,10 +18,10 @@ export default {
 export const Figure = (args) => `
   ${args.prevSection ? `` : `
     </div> <!-- /.l-stack-basic -->
-    </div> <!-- /.l-text-wrapper -->`
+    </section> <!-- /.l-text-wrapper -->`
   }
 
-  <div class="l-section figure">
+  <section class="l-section figure">
     <div class="l-text-wrapper">
       <figure>
         <figcaption class="inline-figcaption">
@@ -31,10 +31,10 @@ export const Figure = (args) => `
         <img src="/images/pdf-thumbnail.jpg" alt="Thumbnail for ${args.title}" />
       </figure>
     </div>
-   </div>
+   </section>
 
    ${args.nextSection ? `` : `
-    <div class="l-text-wrapper">
+    <section class="l-text-wrapper">
     <div class="l-stack-basic">
   `}
 `;

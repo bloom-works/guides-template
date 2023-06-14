@@ -19,10 +19,10 @@ export default {
 export const Checklist = (args) => `
   ${args.prevSection ? `` : `
     </div> <!-- /.l-stack-basic -->
-    </div> <!-- /.l-text-wrapper -->`
+    </section> <!-- /.l-text-wrapper -->`
   }
 
-  <div class="l-section checklist">
+  <section class="l-section checklist">
     <div class="l-text-wrapper">
       <h3 class="h4">Checklist</h3>
       <ul class="l-stack">
@@ -33,10 +33,10 @@ export const Checklist = (args) => `
         ${args.item5 ? `<li>${args.item5}</li>` : ``}
       </ul>
     </div>
-  </div>
+  </section>
 
   ${args.nextSection ? `` : `
-    <div class="l-text-wrapper">
+    <section class="l-text-wrapper">
     <div class="l-stack-basic">
   `}
 `;

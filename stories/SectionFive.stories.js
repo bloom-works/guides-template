@@ -221,7 +221,7 @@ export default {
 export const Section5 = (args) => `
 ${Navigation({guideName: 'Employee Handbook'})}
 ${PageHeader(args.header)}
-<div class="l-text-wrapper">
+<section class="l-text-wrapper">
 <div class="l-stack-basic">
 ${TableOfContents(args.toc)}
 ${args.body}
@@ -229,6 +229,6 @@ ${args.body}
   <a href="#" class="button button-icon">Read the next section ${bootstrapIconArrowRight}</a>
 </p>
 </div>
-</div>
+</section>
 ${Footer()}
 `;

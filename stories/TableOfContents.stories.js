@@ -42,11 +42,11 @@ export default {
   },
   decorators: [(Story) => `
     <div class="container">
-      <div class="l-text-wrapper">
+      <section class="l-text-wrapper">
         <div class="l-stack-basic">
           ${Story()}
         </div>
-      </div>
+      </section>
     </div>
   `],
 };

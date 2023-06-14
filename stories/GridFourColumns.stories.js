@@ -38,12 +38,10 @@ export default {
     'col4_text': 'Frontline and/or program staff that provide insight into relevant department processes, data and workflows, communication activities, and technology.',
   },
   decorators: [(Story) => `
-    <div class="l-text-wrapper">
-    </div>
-    <div class="l-wrapper">
+    <section class="l-wrapper">
       <h2>Client Roles</h2>
       ${Story()}
-    </div>
+    </section>
   `],
 };
 

@@ -26,9 +26,9 @@ export default {
     layout: 'centered',
   },
   decorators: [(Story) => `
-    <div class="l-text-wrapper">
+    <section class="l-text-wrapper">
       ${Story()}
-    </div>
+    </section>
   `],
 };
 
