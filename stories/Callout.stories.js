@@ -11,6 +11,7 @@ const bootstrapIconLightbulb = `
 export default {
   title: 'Components/Callout',
   args: {
+    'header': `A helpful tip`,
     'content': `
       <p>Agile project management and human centered design methods may be new for the partner, and will require some socialization and training. Keep in mind that this method of working and the pace of the sprint may be an adjustment for the partner.</p>
     `,
@@ -30,6 +31,7 @@ export const Callout = (args) => `
       <div class="callout-inner">
         <span class="callout-icon">${bootstrapIconLightbulb}</span>
         <div class="l-stack-basic">
+          <h3 class="sr-only">${args.header}</h3>
           ${args.content}
         </div>
       </div>
