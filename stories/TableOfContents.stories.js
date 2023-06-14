@@ -7,7 +7,7 @@ const bootstrapIconPlus = `
 `;
 
 export default {
-  title: 'Layout/Table of Contents',
+  title: 'Layout/Table Of Contents',
   args: {
     "link1": "",
     "item1": "At-will notice",
