@@ -11,18 +11,29 @@ const bootstrapIconFileEarmarkText = `<svg xmlns="http://www.w3.org/2000/svg" wi
   <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
 </svg>`;
 
+const bootstrapIconFileEarmarkLock = `
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-lock" viewBox="0 0 16 16">
+  <path d="M10 7v1.076c.54.166 1 .597 1 1.224v2.4c0 .816-.781 1.3-1.5 1.3h-3c-.719 0-1.5-.484-1.5-1.3V9.3c0-.627.46-1.058 1-1.224V7a2 2 0 1 1 4 0zM7 7v1h2V7a1 1 0 0 0-2 0zM6 9.3v2.4c0 .042.02.107.105.175A.637.637 0 0 0 6.5 12h3a.64.64 0 0 0 .395-.125c.085-.068.105-.133.105-.175V9.3c0-.042-.02-.107-.105-.175A.637.637 0 0 0 9.5 9h-3a.637.637 0 0 0-.395.125C6.02 9.193 6 9.258 6 9.3z"/>
+  <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+</svg>
+`;
+
 export default {
   title: 'Components/Resources',
   args: {
     'headline': 'Additional Resources',
     'resource1Title': 'Casey Predictive Analytics Research Plan',
     'resource1Link': "#",
+    'resource1Private': false,
     'resource2Title': 'Child Welfare Background Check Research Plan',
     'resource2Link': "#",
+    'resource2Private': true,
     'resource3Title': 'ODI CalHR Sprint 2 Research Plan',
     'resource3Link': "#",
+    'resource3Private': true,
     'resource4Title': 'Figure 1: Governance and Oversight in the Organ Donation Process',
     'resource4Link': "#",
+    'resource4Private': false,
   },
   parameters: {
     // Remove layout parameter for full-width components
@@ -41,9 +52,9 @@ export const Resources = (args) => `
   <ul class="l-cluster">
     ${args.resource1Title ? `
       <li>
-        <a href="${args.resource1Link}">
+        <a href="${args.resource1Link}"${ args.resource1Private ? ` data-link-private` : ``}>
           <span class="resource-icon">
-            ${bootstrapIconFileEarmarkText}
+            ${ args.resource1Private ? bootstrapIconFileEarmarkLock : bootstrapIconFileEarmarkText}
           </span>
           <span class="resource-text">${args.resource1Title}</span>
         </a>
@@ -52,9 +63,9 @@ export const Resources = (args) => `
 
     ${args.resource2Title ? `
       <li>
-        <a href="${args.resource2Link}">
+        <a href="${args.resource2Link}"${ args.resource2Private ? ` data-link-private` : ``}>
           <span class="resource-icon">
-            ${bootstrapIconFileEarmarkText}
+            ${ args.resource2Private ? bootstrapIconFileEarmarkLock : bootstrapIconFileEarmarkText}
           </span>
           <span class="resource-text">${args.resource2Title}</span>
         </a>
@@ -63,9 +74,9 @@ export const Resources = (args) => `
 
     ${args.resource3Title ? `
       <li>
-        <a href="${args.resource3Link}">
+        <a href="${args.resource3Link}"${ args.resource3Private ? ` data-link-private` : ``}>
           <span class="resource-icon">
-            ${bootstrapIconFileEarmarkText}
+            ${ args.resource3Private ? bootstrapIconFileEarmarkLock : bootstrapIconFileEarmarkText}
           </span>
           <span class="resource-text">${args.resource3Title}</span>
         </a>
@@ -74,9 +85,9 @@ export const Resources = (args) => `
 
     ${args.resource4Title ? `
       <li>
-        <a href="${args.resource4Link}">
+        <a href="${args.resource4Link}"${ args.resource4Private ? ` data-link-private` : ``}>
           <span class="resource-icon">
-            ${bootstrapIconFiletypePDF}
+            ${ args.resource4Private ? bootstrapIconFileEarmarkLock : bootstrapIconFiletypePDF}
           </span>
           <span class="resource-text">${args.resource4Title}</span>
         </a>

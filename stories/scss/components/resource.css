@@ -47,6 +47,10 @@
   flex: none;
 }
 
+[data-link-private] .resource-icon {
+  background: var(--c-accent-dark);
+}
+
 .resource-icon svg {
   inline-size: 100%;
 }
