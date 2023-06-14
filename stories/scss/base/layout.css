@@ -130,6 +130,7 @@ var(--stack-layout-gap) within specific components.
 .l-section {
   padding-block: var(--section-padding);
   margin-block: var(--section-margin);
+  max-inline-size: unset;
 }
 
 .l-section + .l-section,
