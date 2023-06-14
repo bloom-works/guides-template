@@ -22,7 +22,19 @@ export const Typography = (args) => `
     <li>Item Three</li>
   </ul>
   <ol>
-    <li>Item One</li>
+    <li>Item One
+      <ol>
+        <li>Nested list</li>
+        <li>Nested list
+          <ol>
+            <li>Nested two levels</li>
+            <li>Nested two levels</li>
+            <li>Nested two levels</li>
+          </ol>
+        </li>
+        <li>Nested list</li>
+      </ol>
+    </li>
     <li>Item Two</li>
     <li>Item Three</li>
   </ol>

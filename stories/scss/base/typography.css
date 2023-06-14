@@ -132,6 +132,21 @@ ol li {
   margin-block-end: var(--t-paragraph);
 }
 
+ol li li {
+  list-style-type: lower-alpha;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-block-start: var(--t-paragraph);
+}
+
+ol li li li {
+  list-style-type: lower-roman;
+}
+
 ul li:last-child,
 ol li:last-child {
   margin-block-end: 0;
