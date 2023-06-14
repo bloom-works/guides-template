@@ -1,19 +1,33 @@
-.resources {
+.resources ul,
+.resources li {
+  max-inline-size: unset;
+  margin: 0;
+  padding: 0;
   --cluster-gap: 1em;
 }
 
-.resource {
+.resources ul {
+  display: flex;
+  list-style: none;
+}
+
+.resources li {
+  display: flex;
+  align-items: stretch;
+  max-inline-size: calc(50% - (var(--cluster-gap) * 2));
+}
+
+.resources li a {
+  display: flex;
   border-radius: var(--radius);
   border: 1px solid var(--c-accent);
-  max-inline-size: calc(50% - var(--cluster-gap));
   font-size: var(--t-small);
-  display: flex;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
   text-decoration: none;
 }
 
-.resource  > * {
+.resources li a  > * {
   padding: 1em;
 }
 

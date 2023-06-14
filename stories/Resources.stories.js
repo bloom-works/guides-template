@@ -16,10 +16,13 @@ export default {
   args: {
     'headline': 'Additional Resources',
     'resource1Title': 'Casey Predictive Analytics Research Plan',
+    'resource1Link': "#",
     'resource2Title': 'Child Welfare Background Check Research Plan',
+    'resource2Link': "#",
     'resource3Title': 'ODI CalHR Sprint 2 Research Plan',
+    'resource3Link': "#",
     'resource4Title': 'Figure 1: Governance and Oversight in the Organ Donation Process',
-
+    'resource4Link': "#",
   },
   parameters: {
     // Remove layout parameter for full-width components
@@ -34,41 +37,51 @@ export default {
 
 export const Resources = (args) => `
 <h2>${args.headline}</h2>
-<div class="resources l-cluster">
-  ${args.resource1Title ? `
-    <a class="resource" href="${args.resource1Link}">
-      <span class="resource-icon">
-        ${bootstrapIconFileEarmarkText}
-      </span>
-      <span class="resource-text">${args.resource1Title}</span>
-    </a>
-  ` : ``}
+<div class="resources">
+  <ul class="l-cluster">
+    ${args.resource1Title ? `
+      <li>
+        <a href="${args.resource1Link}">
+          <span class="resource-icon">
+            ${bootstrapIconFileEarmarkText}
+          </span>
+          <span class="resource-text">${args.resource1Title}</span>
+        </a>
+      </li>
+    ` : ``}
 
-  ${args.resource2Title ? `
-    <a class="resource" href="${args.resource2Link}">
-      <span class="resource-icon">
-        ${bootstrapIconFileEarmarkText}
-      </span>
-      <span class="resource-text">${args.resource2Title}</span>
-    </a>
-  `: ``}
+    ${args.resource2Title ? `
+      <li>
+        <a href="${args.resource2Link}">
+          <span class="resource-icon">
+            ${bootstrapIconFileEarmarkText}
+          </span>
+          <span class="resource-text">${args.resource2Title}</span>
+        </a>
+      </li>
+    `: ``}
 
-  ${args.resource3Title ? `
-    <a class="resource" href="${args.resource3Link}">
-      <span class="resource-icon">
-        ${bootstrapIconFileEarmarkText}
-      </span>
-      <span class="resource-text">${args.resource3Title}</span>
-    </a>
-  `: ``}
+    ${args.resource3Title ? `
+      <li>
+        <a href="${args.resource3Link}">
+          <span class="resource-icon">
+            ${bootstrapIconFileEarmarkText}
+          </span>
+          <span class="resource-text">${args.resource3Title}</span>
+        </a>
+      </li>
+    `: ``}
 
-  ${args.resource4Title ? `
-    <a class="resource" href="${args.resource4Link}">
-      <span class="resource-icon">
-        ${bootstrapIconFiletypePDF}
-      </span>
-      <span class="resource-text">${args.resource4Title}</span>
-    </a>
-  `: ``}
+    ${args.resource4Title ? `
+      <li>
+        <a href="${args.resource4Link}">
+          <span class="resource-icon">
+            ${bootstrapIconFiletypePDF}
+          </span>
+          <span class="resource-text">${args.resource4Title}</span>
+        </a>
+      </li>
+    `: ``}
+  </ul>
 </div>
 `;
