@@ -37,13 +37,13 @@ export const Navigation = (args) => `
 
       <div class="nav-buttons">
         <button class="nav-search-button">${bootstrapIconSearch}Search</button>
-        <button id="all-sections-button">${bootstrapIconBook}All Sections</button>
+        <button id="all-sections-button">${bootstrapIconBook}All Chapters</button>
       </div>
     </div>
   </nav>
   <dialog id="all-sections-modal" class="all-sections-menu">
     <header>
-      <span>Jump to a section</span>
+      <span>Jump to a chapter</span>
       <form method="dialog">
         <button>${bootstrapIconXCircle} <span class="sr-only">Close</button>
       </form>
