@@ -53,7 +53,7 @@ export default {
 
 export const TableOfContents = (args) => `
   <details class="toc">
-    <summary>What’s in this chapter? ${bootstrapIconPlus}</summary>
+    <summary>In this chapter ${bootstrapIconPlus}</summary>
     <ol>
       ${args.item1 ? `<li><a href="#${args.link1}">${args.item1}</a></li>` : ``}
       ${args.item2 ? `<li><a href="#${args.link2}">${args.item2}</a></li>` : ``}
