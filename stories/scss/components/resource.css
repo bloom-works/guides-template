@@ -14,7 +14,7 @@
 .resources li {
   display: flex;
   align-items: stretch;
-  max-inline-size: calc(50% - (var(--cluster-gap) * 2));
+  max-inline-size: calc(50% - var(--cluster-gap));
 }
 
 .resources li a {
