@@ -1,13 +1,19 @@
 .nav {
   background: var(--c-accent-dark);
   padding-block: 0.5em;
+  --search-button-padding: 2em;
 }
 
 .nav .l-wrapper {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: start;
+  justify-content: start;
   flex-direction: column;
+  position: relative;
+}
+
+.nav-meta {
+  padding-inline-end: var(--search-button-padding);
 }
 
 .nav strong {
@@ -27,12 +33,53 @@
   flex: none;
 }
 
-.nav-buttons button {
-  padding-block: 0;
-  padding-inline: 1em;
+.nav-button {
+  padding-block: 0.5em;
+  padding-inline: 0;
+  inline-size: 50vi;
   font-size: var(--t-small);
   text-transform: uppercase;
+  justify-content: start;
   background: transparent;
+}
+
+.nav-search-button {
+  background: var(--c-accent-light);
+  border-radius: var(--radius);
+  color: var(--c-accent-dark);
+  padding: 0.375em;
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+  flex: none;
+}
+
+@media screen and (min-width: 45em) {
+  .nav .l-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-meta {
+    padding-inline-end: 0;
+  }
+
+  .nav-buttons {
+    padding-inline-end: var(--search-button-padding);
+  }
+
+  .nav-button {
+    padding-inline: 1em;
+    padding-block: 0.25em;
+    white-space: nowrap;
+    justify-content: center;
+    inline-size: fit-content;
+  }
+
+  .nav-search-button {
+    position: static;
+  }
 }
 
 .all-sections-menu {
@@ -181,10 +228,4 @@ html:has(dialog[open]) {
   inset-inline-start: 0;
   inline-size: 100%;
   block-size: 100%;
-}
-
-@media screen and (min-width: 35em) {
-  .nav .l-wrapper {
-    flex-direction: row;
-  }
 }
