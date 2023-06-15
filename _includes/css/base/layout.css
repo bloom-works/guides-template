@@ -1,0 +1,139 @@
+/* Outer containers */
+
+.container {
+  padding: 3rem;
+}
+
+.l-wrapper,
+.l-text-wrapper {
+  inline-size: var(--w-container);
+  margin: 0 auto;
+}
+
+.l-wrapper {
+  max-inline-size: var(--w-max);
+}
+
+.l-text-wrapper {
+  max-inline-size: var(--t-measure);
+}
+
+/* Horizontal centering */
+
+.l-center {
+  margin-inline: auto;
+}
+
+/*
+.l-frame: Media wrapper with an intrinsic aspect ratio.
+
+Customize the aspect ratio by overriding var(--l-frame-width)
+and var(--l-frame-height) within specific components.
+*/
+
+.l-frame {
+  --l-frame-width: 16;
+  --l-frame-height: 9;
+  aspect-ratio: var(--l-frame-width) / var(--l-frame-height);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.l-frame > img,
+.l-frame > iframe {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+/*
+.l-grid: A grid wrapper that automatically tries to
+size columns according to the typographic measure.
+
+Customize the gutters by overriding var(--g-column-gap)
+within specific components.
+*/
+
+.l-grid {
+  --grid-gap: var(--g-column-gap);
+  display: grid;
+  flex-wrap: wrap;
+  gap: var(--grid-gap);
+}
+
+@supports (width: Min(30rem, 100%)) {
+  .l-grid {
+    grid-template-columns: repeat(auto-fit, minmax(Min(calc(var(--t-measure) / 2), 100%), 1fr));
+  }
+}
+
+.l-grid > * {
+  margin-block-end: var(--t-leading-rem);
+}
+
+/*
+## For vertical layouts (like multi-paragraph blocks of prose:)
+
+.l-stack: All children of this element (including nested children)
+is spaced equally apart from each other.
+
+.l-stack-basic: All *direct* descendants of this element (e.g. one level deep)
+are spaced equally apart from each other.
+
+You can customize the exact amount of spacing by overriding var(--l-stack-gap)
+within specific components.
+*/
+
+
+.l-stack-basic,
+.l-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.l-stack-basic > * {
+  margin-block: 0;
+}
+
+.l-stack-basic > * + * {
+  margin-block-start: var(--l-stack-gap, var(--t-paragraph));
+}
+
+.l-stack * {
+  margin-block: 0;
+}
+
+.l-stack * + * {
+  margin-block-start: var(--l-stack-gap, var(--t-paragraph));
+}
+
+/*
+## For horizontal layouts (like rows of links):
+
+All direct descendants of .l-cluster are spaced equally apart from
+each other.
+
+You can customize the exact amount of spacing by overriding
+var(--stack-layout-gap) within specific components.
+*/
+
+.l-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cluster-gap, var(--g-column-gap));
+}
+
+/* Padded sections */
+
+.l-section {
+  padding-block: var(--section-padding);
+  margin-block: var(--section-margin);
+  max-inline-size: unset;
+}
+
+.l-section + .l-section,
+.l-text-wrapper:has(.l-stack-basic:empty) + .l-section {
+  margin-block-start: calc(var(--section-margin) * -1);
+}
