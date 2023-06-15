@@ -10,16 +10,59 @@ details summary {
 .toc {
   border: 0.125em solid var(--c-accent);
   width: 100%;
-  padding: 0.5em;
-  background: var(--c-accent-light);
-}
-
-.toc ol {
-  padding: 0;
-  margin-block-start: 0.5em;
+  background: #fff;
 }
 
 .toc summary {
+  padding-block: 0.5em;
+  padding-inline: 1em;
+}
+
+.toc ol {
+  padding: 1em;
+  margin: 0;
+  font-size: var(--t-small);
+  border-block-start: 1px solid rgba(var(--c-accent-rgb), 0.4);
+  max-inline-size: unset;
+  counter-reset: toc-menu;
+  list-style: none;
+}
+
+
+.toc li {
+  --counter-size: calc(var(--t-leading-em) * 1.5);
+  position: relative;
+  counter-increment: toc-menu;
+  margin-bottom: calc(var(--t-paragraph) / 2);
+  padding-inline-start: calc(var(--counter-size) + 0.5em);
+  padding-block: 0.25em;
+
+}
+
+.toc li:before {
+  content: counter(toc-menu);
+  font-weight: var(--t-bold);
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 50%;
+  margin-block-start: calc(var(--counter-size) * -0.5);
+  border-radius: 50%;
+  color: var(--c-accent);
+  border: 1px solid var(--c-accent);
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--counter-size);
+  block-size: var(--counter-size);
+}
+
+.toc li a {
+  font-weight: var(--t-bold);
+}
+
+.toc summary {
+  background: var(--c-accent-light);
   font-weight: var(--t-bold);
   display: flex;
   align-items: center;
@@ -38,10 +81,4 @@ details summary {
 
 .toc summary::details-marker {
   back: none;
-}
-
-.toc li {
-  margin-bottom: calc(var(--t-paragraph) / 2);
-  list-style-position: inside;
-  padding-inline-start: 0;
 }
