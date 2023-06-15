@@ -16,7 +16,9 @@ iframe {
   max-inline-size: unset;
 }
 
-/* Responsive font sizing */
+/* Responsive font sizing
+   (See https://css-tricks.com/simplified-fluid-typography/ for a detailed explanation)
+*/
 
 :root {
   font-size: clamp(1.25rem, calc(-1rem + 4vw), 2rem);
