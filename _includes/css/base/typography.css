@@ -112,11 +112,7 @@ h6, .h6 {
 }
 
 .subhead {
-  font-family: var(--font-secondary);
   font-size: var(--t-small);
-  word-spacing: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
   color: var(--c-secondary);
 }
 

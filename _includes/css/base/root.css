@@ -26,8 +26,8 @@
 
   /* Type colors */
   --c-headline: #000;
-  --c-text: #434343;
-  --c-secondary: #666;
+  --c-text: #000;
+  --c-secondary: #555;
 
   /* Standard border radius  */
   --radius: 2px;
