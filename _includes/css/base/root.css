@@ -6,14 +6,14 @@
   --font-secondary: Georgia, serif;
 
   /* Font sizes taken from Bloom Visual Style Guide*/
-  --t-huge: 1.818181818rem; /* ~20px equivalent */
-  --t-large: 1.454545rem; /* ~16px equivalent */
-  --t-medium: 1.181818rem; /* ~13px equivalent */
-  --t-base: 1rem; /* ~11px equivalent */
-  --t-small: 0.82rem; /* ~9px equivalent */
+  --t-huge: 3rem;
+  --t-large: 2.25rem;
+  --t-medium: 1.875rem;
+  --t-base: 1.25rem;
+  --t-small: 0.82rem;
 
   /* Line heights */
-  --t-leading: 1.25;
+  --t-leading: 1.2;
   --t-leading-em: calc(var(--t-leading) * 1em);
   --t-leading-rem: calc(var(--t-base) * var(--t-leading));
 
@@ -25,7 +25,7 @@
   --t-bold: 700;
 
   /* Type colors */
-  --c-headline: #343434;
+  --c-headline: #000;
   --c-text: #434343;
   --c-secondary: #666;
 
@@ -36,8 +36,8 @@
 
   --c-bg: #faf7f5;
 
-  --c-accent: #2f9764;
-  --c-accent-rgb: 47, 151, 100;
+  --c-accent: #19825A;
+  --c-accent-rgb: 25, 130, 90;
 
   --c-accent-text: #fff;
   --c-link-text: var(--c-accent);

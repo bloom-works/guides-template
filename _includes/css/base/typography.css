@@ -60,26 +60,26 @@ h1, h2, h3, h4, h5, h6,
   inline-size: fit-content;
 }
 
-h1, h2, h4,
-.h1, .h2, .h4 {
+h1, h2, h4, h5,
+.h1, .h2, .h4, .h5 {
   font-weight: var(--t-bold);
 }
 
-h3, h5, h6,
-.h3, .h5, .h6, dt {
+h3, h6,
+.h3, .h6, dt {
   font-weight: var(--t-normal);
 }
 
 h1, .h1,
 h2, .h2,
 h3, .h3 {
-  text-transform: uppercase;
   text-wrap: balance;
 }
 
 h1, .h1 {
   font-size: var(--t-huge);
   margin-block-end: 0.5em;
+  line-height: 1.1;
 }
 
 h2, .h2 {
@@ -91,6 +91,7 @@ h2, .h2 {
 
 h3, .h3 {  
   font-size: var(--t-medium);
+  color: var(--c-accent);
   --l-stack-gap: calc(var(--t-paragraph) * 2);
 }
 
@@ -104,6 +105,10 @@ h4, .h4, h5, .h5, dt, h6, .h6 {
 
 h5, .h5, dt, h6, .h6 {
   color: var(--c-accent);
+}
+
+h6, .h6 {
+  font-weight: var(--t-normal);
 }
 
 .subhead {
@@ -123,13 +128,13 @@ dt {
 
 ul,
 ol {
-  padding-inline-start: 1rem;
+  padding-inline-start: min(10vw, 2.5rem);
 }
 
 ul li,
 ol li {
   padding-inline-start: 0.5rem;
-  margin-block-end: var(--t-paragraph);
+  margin-block-end: calc(var(--t-leading-em) / 2);
 }
 
 ol li li {
@@ -140,7 +145,7 @@ ul ul,
 ul ol,
 ol ol,
 ol ul {
-  margin-block-start: var(--t-paragraph);
+  margin-block-start: calc(var(--t-leading-em) / 2);
 }
 
 ol li li li {
