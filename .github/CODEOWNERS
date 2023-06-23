@@ -1,0 +1,21 @@
+# Each line is a file pattern followed by one or more owners.
+# Order is important; the last matching pattern takes the most
+# precedence. This means that you should put broad things first.
+
+
+# ---
+# Layout and design changes should be reviewed by a designer and developer
+_*/*  @bloom-works/guides-designers @bloom-works/guides-developers
+css/* @bloom-works/guides-designers @bloom-works/guides-developers
+img/* @bloom-works/guides-designers @bloom-works/guides-developers
+*.njk @bloom-works/guides-designers @bloom-works/guides-developers
+
+# ---
+# Any config changes should be reviewed by a developer
+.github/* @bloom-works/guides-developers
+.ci/* @bloom-works/guides-developers
+.github/* @bloom-works/guides-developers
+.ci/* @bloom-works/guides-developers
+.editorconfig @bloom-works/guides-developers
+*.js @bloom-works/guides-developers
+*.toml @bloom-works/guides-developers
