@@ -84,7 +84,10 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: var(--t-large);
-  border-block-end: 0.125em solid var(--c-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 0.125em;
+  text-decoration-color: var(--c-accent);
+  text-underline-offset: 0.15em;
   margin-block-start: 2.5em;
   --l-stack-gap: calc(var(--t-paragraph) * 2.5);
 }
