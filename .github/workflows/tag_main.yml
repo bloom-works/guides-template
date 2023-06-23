@@ -1,0 +1,32 @@
+# Run when the PR is closed
+# ---
+
+name: Tag main branch
+on: 
+  pull_request:
+    types: [closed]
+    branches: main
+
+jobs:
+  tag_main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # Gets all the tags
+      - name: Tag major release
+        if: contains(github.event.pull_request.labels.*.name, 'release-major')
+        run: git tag $(bash ci/semver.sh bump major $(git tag -l --sort "v:refname" "*.*.*" | tail -1))
+      - name: Tag major release
+        if: contains(github.event.pull_request.labels.*.name, 'release-minor')
+        run: git tag $(bash ci/semver.sh bump minor $(git tag -l --sort "v:refname" "*.*.*" | tail -1))
+      - name: Tag patch release
+        if: contains(github.event.pull_request.labels.*.name, 'release-patch')
+        run: git tag $(bash ci/semver.sh bump patch $(git tag -l --sort "v:refname" "*.*.*" | tail -1))
+      - name: Push tag
+        run: git push origin --tags
+      - name: Build and publish artifacts (passing in version tag)
+        run: sh ci/publish_build.sh $(git tag -l --sort "v:refname" "*.*.*" | tail -1)
+
+ 
