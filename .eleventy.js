@@ -6,6 +6,9 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 
+const ChecklistComponent = require("./_includes/components/Checklist.js");
+const KeyQuestionsComponent = require("./_includes/components/KeyQuestions.js");
+
 module.exports = function(eleventyConfig) {
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
@@ -89,6 +92,9 @@ module.exports = function(eleventyConfig) {
     ui: false,
     ghostMode: false
   });
+
+  eleventyConfig.addPairedShortcode("Checklist", ChecklistComponent);
+  eleventyConfig.addPairedShortcode("KeyQuestions", KeyQuestionsComponent);
 
   return {
     // Control which files Eleventy will process
