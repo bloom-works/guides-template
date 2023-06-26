@@ -1,5 +1,9 @@
-function renderPageHeader(subhead, title){
-  return `
+// Strip whitespace
+const { html } = require('common-tags');
+
+//
+function renderPageHeader(subhead, title) ß{
+  return html`
     <header role="banner" class="page-header">
       <div class="l-wrapper">
         <h1>
