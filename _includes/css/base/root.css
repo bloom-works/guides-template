@@ -1,0 +1,71 @@
+:root {
+  /* TYPOGRAPHY */
+
+  /* Font families */
+  --font-primary: "Barlow Semi Condensed", system-ui, sans-serif;
+  --font-secondary: Georgia, serif;
+
+  /* Font sizes taken from Bloom Visual Style Guide*/
+  --t-huge: 3rem;
+  --t-large: 2.25rem;
+  --t-medium: 1.875rem;
+  --t-base: 1.25rem;
+  --t-small: 0.82rem;
+
+  /* Line heights */
+  --t-leading: 1.2;
+  --t-leading-em: calc(var(--t-leading) * 1em);
+  --t-leading-rem: calc(var(--t-base) * var(--t-leading));
+
+ /* Spacing between paragraphs */
+  --t-paragraph: calc(var(--t-leading-rem) * 0.75);
+
+  /* Font weights */
+  --t-normal: 300;
+  --t-bold: 700;
+
+  /* Type colors */
+  --c-headline: #000;
+  --c-text: #000;
+  --c-secondary: #555;
+
+  /* Standard border radius  */
+  --radius: 2px;
+
+  /* COLORS */
+
+  --c-bg: #faf7f5;
+
+  --c-accent: #19825A;
+  --c-accent-rgb: 25, 130, 90;
+
+  --c-accent-text: #fff;
+  --c-link-text: var(--c-accent);
+  --c-accent-light: #f3f9f6;
+  --c-accent-light-rgb: 243, 249, 246;
+  --c-accent-dark: #04301B;
+  --c-accent-dark-rgb: 4, 48, 27;
+
+  /* LAYOUT WIDTHS */
+
+  --t-measure: 55ch; /* Typographic measure */
+  --w-container: 90%;
+  --w-container-unitless: 90;
+  --w-content-max: 60rem;
+  --w-content-max-unitless: 60;
+  --w-max: 80rem;
+  --w-max-unitless: 80;
+  --g-column-gap: calc(var(--t-paragraph) * 2);
+
+  /* Padding between sections */
+
+  --section-padding: calc(var(--t-leading-rem) * 3);
+  --section-margin: calc(var(--t-leading-rem) * 2);
+
+  /*  Sizing for pictographic bullets like:
+      - Checklist boxes
+      - Key questions
+   */
+  --list-glyph-size: var(--t-leading-em);
+  --list-glyph-padding: calc(var(--list-glyph-size) + 1em);
+}
