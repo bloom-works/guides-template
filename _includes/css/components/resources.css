@@ -1,0 +1,69 @@
+.resources ul,
+.resources li {
+  max-inline-size: unset;
+  margin: 0;
+  padding: 0;
+  --cluster-gap: 1em;
+}
+
+.resources ul {
+  display: flex;
+  list-style: none;
+}
+
+.resources li {
+  display: flex;
+  align-items: stretch;
+  min-inline-size: calc(50% - var(--cluster-gap));
+}
+
+.resources li a {
+  --c-resource-accent: var(--c-accent);
+  color: var(--c-resource-accent);
+  display: flex;
+  inline-size: 100%;
+  font-size: var(--t-small);
+  text-decoration: none;
+  position: relative;
+}
+
+.resources li a::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: #fff;
+  border: 1px solid var(--c-resource-accent);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius);
+}
+
+
+.resources li a  > * {
+  padding: 1em;
+}
+
+.resource-text {
+  align-self: center;
+  text-wrap: balance;
+}
+
+.resource-icon {
+  display: block;
+  align-self: stretch;
+  inline-size: calc(var(--t-leading-rem) * 2);
+  color: var(--c-accent-text);
+  background: var(--c-resource-accent);
+  display: flex;
+  align-items: center;
+  flex: none;
+  position: relative;
+}
+
+.resources li [data-link-private] {
+  --c-resource-accent: var(--c-accent-dark);
+}
+
+.resource-icon svg {
+  inline-size: 100%;
+}
