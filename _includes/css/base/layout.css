@@ -137,3 +137,18 @@ var(--stack-layout-gap) within specific components.
 .l-text-wrapper:has(.l-stack-basic:empty) + .l-section {
   margin-block-start: calc(var(--section-margin) * -1);
 }
+
+/* Creating a sticky footer */
+
+body {
+  min-height: 100dvh;
+  display: grid;
+  /* 4 rows for:
+     - Site navigation
+     - Page headers
+     - #content
+     - Site footer
+   */
+  grid-template-rows: auto auto 1fr auto;
+
+}
