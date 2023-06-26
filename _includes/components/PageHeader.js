@@ -4,7 +4,8 @@ function renderPageHeader(subhead, title){
       <div class="l-wrapper">
         <h1>
           ${ subhead ? `<span>${ subhead }</span>` : `` }
-          <span class="sr-only">: </span>${ title }
+          <span class="sr-only">: </span>
+          ${ title }
         </h1>
       </div>
     </header>
