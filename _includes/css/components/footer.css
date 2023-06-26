@@ -1,3 +1,30 @@
+/* Basic layout */
+
+.footer {
+  margin-block-start: calc(var(--t-leading-rem) * 2);
+}
+
+.footer-inner {
+  padding-block: calc(var(--t-leading-rem) * 2);
+}
+
+.footer * {
+  color: var(--c-accent-text);
+}
+
+.footer .l-cluster {
+  justify-content: space-between;
+}
+
+.footer .l-cluster + .l-cluster {
+  margin-block-start: var(--t-leading-rem);
+}
+
+/* Backgrounds are applied to pseudo-elements
+   so they can be distorted by SVG filters
+   independently from their contents
+*/
+
 .footer,
 .footer-sba-banner {
   position: relative;
@@ -10,7 +37,6 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  transform: scaleX(1.02) translateZ(0);
 }
 
 .footer::before {
@@ -21,13 +47,7 @@
   background: var(--c-accent-dark);
 }
 
-.footer {
-  margin-block-start: calc(var(--t-leading-rem) * 2);
-}
-
-.footer-inner {
-  padding-block: calc(var(--t-leading-rem) * 2);
-}
+/* Invert user selection colors */
 
 .footer ::selection {
   color: var(--c-accent);
@@ -39,17 +59,7 @@
   background: var(--c-accent-text);
 }
 
-.footer .l-cluster {
-  justify-content: space-between;
-}
-
-.footer .l-cluster + .l-cluster {
-  margin-block-start: var(--t-leading-rem);
-}
-
-.footer * {
-  color: var(--c-accent-text);
-}
+/* Icons and links */
 
 .footer ul,
 .footer li {
@@ -76,17 +86,16 @@
   gap: 1em;
 }
 
-.footer-meta img {
-  max-inline-size: var(--t-leading-rem);
+.footer-meta img,
+.footer svg {
+  inline-size: var(--t-leading-rem);
 }
 
 .footer-icons a {
   text-decoration: none;
 }
 
-.footer svg {
-  max-inline-size: var(--t-leading-rem);
-}
+/* SBA "Women-Owned Small Business" banner */
 
 .footer-sba-banner {
   color: var(--c-accent-text);
@@ -103,6 +112,7 @@
   justify-content: center;
   margin-inline: auto;
   text-wrap: balance;
+  /* See https://developer.chrome.com/blog/css-text-wrap-balance/ */
 }
 
 .footer-sba-banner img {
