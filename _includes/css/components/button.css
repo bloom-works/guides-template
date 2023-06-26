@@ -1,0 +1,48 @@
+button,
+.button {
+  -webkit-appearance: none;
+  background: var(--c-accent);
+  color: var(--c-accent-text);
+  font-weight: var(--t-bold);
+  border: 0;
+  padding: 0.75em 3em;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  inline-size: fit-content;
+}
+
+.button[data-icon] {
+  justify-content: space-between;
+}
+
+.button[data-icon] svg {
+  inline-size: 1em;
+  aspect-ratio: 1 / 1;
+}
+
+.button-inverted {
+  background: var(--c-accent-text);
+  color: var(--c-accent);
+}
+
+.button[data-size="small"] {
+  font-size: var(--t-small);
+  padding: 0.5em 2em;
+}
+
+.button[data-size="large"] {
+  font-size: var(--t-medium);
+  width: 100%;
+  padding: 0.75em 2em;
+}
+
+.button[data-size="large"][data-icon] svg {
+  inline-size: 1.5em;
+}
