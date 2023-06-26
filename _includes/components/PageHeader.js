@@ -2,7 +2,7 @@
 const { html } = require('common-tags');
 
 //
-function renderPageHeader(subhead, title) ß{
+function renderPageHeader(subhead, title) {
   return html`
     <header role="banner" class="page-header">
       <div class="l-wrapper">
