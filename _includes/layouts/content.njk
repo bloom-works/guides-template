@@ -1,7 +1,16 @@
 <main{% if templateClass %} class="{{ templateClass }}"{% endif %} id="content">
-  <div class="l-text-wrapper">
-    <div class="l-stack-basic">
-      {{ content | safe }}
-    </div>
+  <div class="l-wrapper">
+    {% if content | toc %}
+      <div class="l-sidebar">
+        {% TableOfContents %}
+          {{ content | toc | safe }}
+        {% endTableOfContents %}
+    {% endif %}
+        <div class="l-stack-basic">
+          {{ content | safe }}
+        </div>
+    {% if content | toc %}
+      </div> {# /.l-sidebar #}
+    {% endif %}
   </div>
 </main>

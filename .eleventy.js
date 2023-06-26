@@ -3,14 +3,22 @@ const fs = require("fs");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
+const pluginTOC = require('eleventy-plugin-nesting-toc');
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+
+const TableOfContentsComponent = require("./_includes/components/TableOfContents");
 
 module.exports = function(eleventyConfig) {
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.addPlugin(pluginTOC, {
+    tags: ['h2'],
+    wrapper: 'div',
+    wrapperClass: 'l-stack'
+  });
 
   // https://www.11ty.dev/docs/data-deep-merge/
   eleventyConfig.setDataDeepMerge(true);
@@ -66,9 +74,7 @@ module.exports = function(eleventyConfig) {
     breaks: true,
     linkify: true
   }).use(markdownItAnchor, {
-    permalink: true,
-    permalinkClass: "direct-link",
-    permalinkSymbol: "#"
+    permalink: markdownItAnchor.permalink.headerLink()
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
 
@@ -89,6 +95,8 @@ module.exports = function(eleventyConfig) {
     ui: false,
     ghostMode: false
   });
+
+  eleventyConfig.addPairedShortcode("TableOfContents", TableOfContentsComponent);
 
   return {
     // Control which files Eleventy will process

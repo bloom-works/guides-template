@@ -137,3 +137,28 @@ var(--stack-layout-gap) within specific components.
 .l-text-wrapper:has(.l-stack-basic:empty) + .l-section {
   margin-block-start: calc(var(--section-margin) * -1);
 }
+
+/* .l-sidebar */
+
+.l-sidebar {
+  --l-sidebar-content-width: 61.8%;
+  --l-sidebar-width: 15rem;
+  --l-sidebar-gap: var(--g-column-gap);
+
+  max-inline-size: var(--w-max);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--l-sidebar-gap);
+}
+
+.l-sidebar > :first-child {
+  flex-basis: var(--l-sidebar-width);
+  flex-grow: 1;
+}
+
+.l-sidebar > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: var(--l-sidebar-content-width);
+}
