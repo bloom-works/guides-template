@@ -75,6 +75,13 @@
   text-decoration: none;
 }
 
+.footer a:focus,
+.footer a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.0625em;
+  text-underline-offset: 0.125em;
+}
+
 .footer-meta {
   font-size: var(--t-small);
 }
@@ -93,6 +100,21 @@
 
 .footer-icons a {
   text-decoration: none;
+}
+
+.footer-icons a:focus,
+.footer-icons a:hover {
+  transform: scale(1.1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .footer-icons a {
+    transition: transform 0.2s ease-out;
+  }
+
+  .footer-icons a:active {
+    transform: scale(1.03);
+  }
 }
 
 /* SBA "Women-Owned Small Business" banner */
