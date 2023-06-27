@@ -15,7 +15,6 @@ th {
   border: 0;
   border-inline-end: 1px solid var(--c-accent-text);
 	vertical-align: middle;
-
 }
 
 th:last-child {
@@ -58,6 +57,7 @@ td {
     border-block-end: 0;
     display: flex;
     position: relative;
+    max-inline-size: unset;
   }
 
   td:first-child {
