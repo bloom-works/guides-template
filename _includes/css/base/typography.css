@@ -1,0 +1,198 @@
+/* Set maximum width of all prose elements to typographic measure */
+
+* {
+  max-inline-size: var(--t-measure);
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer,
+figure,
+iframe {
+  max-inline-size: unset;
+}
+
+/* Responsive font sizing
+   (See https://css-tricks.com/simplified-fluid-typography/ for a detailed explanation)
+*/
+
+:root {
+  font-size: clamp(1.25rem, calc(-1rem + 4vw), 1.6rem);
+}
+
+/* Base style */
+
+html {
+  line-height: var(--t-leading);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--c-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--c-bg);
+}
+
+/* Set bold weight according to imported font */
+
+b, strong {
+  font-weight: var(--t-bold);
+}
+
+/* Heading styles */
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: var(--c-headline);
+  margin-inline: 0;
+  margin-block-end: var(--t-paragraph);
+  inline-size: fit-content;
+}
+
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+  font-weight: var(--t-bold);
+}
+
+h6, .h6, dt {
+  font-weight: var(--t-normal);
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  text-wrap: balance;
+}
+
+h1, .h1 {
+  font-size: var(--t-huge);
+  margin-block-end: 0.5em;
+  line-height: 1.1;
+}
+
+h2, .h2 {
+  font-size: var(--t-large);
+  text-decoration: underline;
+  text-decoration-thickness: 0.125em;
+  text-decoration-color: var(--c-accent);
+  text-underline-offset: 0.3125em;
+  margin-block-start: 2.5em;
+  --l-stack-gap: calc(var(--t-paragraph) * 2.5);
+}
+
+h3, .h3 {  
+  font-size: var(--t-medium);
+  color: var(--c-accent);
+  --l-stack-gap: calc(var(--t-paragraph) * 2);
+}
+
+h4, .h4 {
+  --l-stack-gap: calc(var(--t-paragraph) * 1.5);
+}
+
+h4, .h4, h5, .h5, dt, h6, .h6 {
+  font-size: var(--t-base);
+}
+
+h5, .h5, dt, h6, .h6 {
+  color: var(--c-accent);
+}
+
+h6, .h6 {
+  font-weight: var(--t-normal);
+}
+
+.subhead {
+  font-size: var(--t-small);
+  color: var(--c-secondary);
+}
+
+/* Lists */
+
+dt {
+  margin-block-end: 0.25em;
+}
+
+ul,
+ol {
+  padding-inline-start: min(10vw, 2.5rem);
+}
+
+ul li,
+ol li {
+  padding-inline-start: 0.5rem;
+  margin-block-end: calc(var(--t-leading-em) / 2);
+}
+
+ol li li {
+  list-style-type: lower-alpha;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-block-start: calc(var(--t-leading-em) / 2);
+}
+
+ol li li li {
+  list-style-type: lower-roman;
+}
+
+ul li:last-child,
+ol li:last-child {
+  margin-block-end: 0;
+}
+
+/* Other elements */
+
+a {
+  text-decoration-color: rgba(var(--c-link-text-rgb, var(--c-accent-dark-rgb)), 0.6);
+  color: var(--c-link-text, var(--c-accent-text));
+  text-decoration-thickness: 1px;
+  text-decoration-skip-ink: all;
+}
+
+blockquote {
+  border-inline-start: 0.5rem solid var(--c-accent);
+  padding-inline-start: var(--t-paragraph);
+  color: var(--c-headline);
+}
+
+blockquote + figcaption {
+  margin-block-start: var(--t-paragraph);
+}
+
+figcaption {
+  color: var(--c-base);
+  font-size: var(--t-small);
+}
+
+hr {
+  --hr-margin: calc(var(--t-leading-rem) * 2);
+  border: 0;
+  border-block-start: 1px solid var(--c-accent-light);
+  color: inherit;
+  margin-block-end: var(--hr-margin);
+  inline-size: 100%;
+}
+
+hr, hr + * {
+  --l-stack-gap: var(--hr-margin);
+}
+
+time {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
