@@ -1,13 +1,13 @@
 .resources ul,
 .resources li {
+  --grid-gap: 1em;
+  --grid-col-width: calc(var(--t-measure) / 3);
   max-inline-size: unset;
   margin: 0;
   padding: 0;
-  --cluster-gap: 1em;
 }
 
 .resources ul {
-  display: flex;
   list-style: none;
 }
 
