@@ -25,14 +25,12 @@
    independently from their contents
 */
 
-.footer,
-.footer-sba-banner {
+.footer {
   position: relative;
   overflow: hidden;
 }
 
-.footer::before,
-.footer-sba-banner::before {
+.footer::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -41,10 +39,6 @@
 
 .footer::before {
   background: var(--c-accent);
-}
-
-.footer-sba-banner::before {
-  background: var(--c-accent-dark);
 }
 
 /* Invert user selection colors */
@@ -84,6 +78,7 @@
 
 .footer-meta {
   font-size: var(--t-small);
+  max-inline-size: calc(var(--t-measure) * 0.75);
 }
 
 .footer-meta,
@@ -115,28 +110,4 @@
   .footer-icons a:active {
     transform: scale(1.03);
   }
-}
-
-/* SBA "Women-Owned Small Business" banner */
-
-.footer-sba-banner {
-  color: var(--c-accent-text);
-}
-
-.footer-sba-banner p {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding-block: var(--t-leading-rem);
-  gap: 1em;
-  font-size: var(--t-small);
-  align-items: center;
-  justify-content: center;
-  margin-inline: auto;
-  text-wrap: balance;
-  /* See https://developer.chrome.com/blog/css-text-wrap-balance/ */
-}
-
-.footer-sba-banner img {
-  max-inline-size: calc(var(--t-leading-rem) * 2);
 }
