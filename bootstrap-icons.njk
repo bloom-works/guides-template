@@ -3,6 +3,7 @@ permalink: /bootstrap-icons.svg
 icons:
   - arrow-90deg-up
   - book
+  - car-front
   - calendar-week
   - check-lg
   - envelope
@@ -11,12 +12,21 @@ icons:
   - file-earmark-text
   - filetype-pdf
   - heart
+  - hospital
   - lightbulb
   - linkedin
+  - person-rolodex
   - question-circle
   - search
   - x-circle
 ---
+
+{#
+  All icons in /_includes/icon-paths/
+  are copied from icons.getbootstrap.com,
+  with the <svg> tags manually removed
+  since they're not necessary for this sprite.
+ #}
 
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   {% for icon in icons %}
