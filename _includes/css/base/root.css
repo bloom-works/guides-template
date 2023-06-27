@@ -13,7 +13,7 @@
   --t-small: 0.82rem;
 
   /* Line heights */
-  --t-leading: 1.2;
+  --t-leading: 1.4;
   --t-leading-em: calc(var(--t-leading) * 1em);
   --t-leading-rem: calc(var(--t-base) * var(--t-leading));
 
