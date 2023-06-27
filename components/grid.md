@@ -3,7 +3,7 @@ layout: layouts/base.njk
 permalink: "components/grid/"
 ---
 
-{%- Grid 2 -%}
+{%- Grid -%}
   {%- GridColumn "Phase 1: Procurement", "hospital" -%}
     Coordinating with donor hospitals to procure organs from deceased donor patients who meet clinical criteria for donation.
   {%- endGridColumn -%}
