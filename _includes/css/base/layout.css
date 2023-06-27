@@ -133,8 +133,3 @@ var(--stack-layout-gap) within specific components.
   margin-block: var(--section-margin);
   max-inline-size: var(--t-measure);
 }
-
-.l-section + .l-section,
-.l-text-wrapper:has(.l-stack-basic:empty) + .l-section {
-  margin-block-start: calc(var(--section-margin) * -1);
-}
