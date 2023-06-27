@@ -152,6 +152,10 @@ var(--stack-layout-gap) within specific components.
   gap: var(--l-sidebar-gap);
 }
 
+.l-sidebar > * {
+  margin-inline: auto;
+}
+
 .l-sidebar > :first-child {
   flex-basis: var(--l-sidebar-width);
   flex-grow: 1;
@@ -161,4 +165,5 @@ var(--stack-layout-gap) within specific components.
   flex-basis: 0;
   flex-grow: 999;
   min-inline-size: var(--l-sidebar-content-width);
+  max-inline-size: var(--t-measure);
 }
