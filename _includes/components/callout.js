@@ -10,7 +10,7 @@ function renderCallout(content, icon, title){
   const text = markdown.render(content);
 
   return html`
-    <div class="l-section callout">
+    <section class="l-section callout">
       <div class="callout-inner">
         <span class="callout-icon">
           <svg title="${ title || "Important Information" }" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -19,7 +19,7 @@ function renderCallout(content, icon, title){
         </span>
         <div class="l-stack-basic">${ text }</div>
       </div>
-    </div>
+    </section>
   `
 }
 
