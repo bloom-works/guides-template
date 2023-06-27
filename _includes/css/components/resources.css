@@ -1,3 +1,5 @@
+/* Basic layout */
+
 .resources ul,
 .resources li {
   --grid-gap: 1em;
@@ -17,6 +19,12 @@
   min-inline-size: calc(50% - var(--cluster-gap));
 }
 
+.resources li a  > * {
+  padding: 1em;
+}
+
+/* Styling individual links */
+
 .resources li a {
   --c-resource-accent: var(--c-accent);
   color: var(--c-resource-accent);
@@ -25,60 +33,6 @@
   font-size: var(--t-small);
   text-decoration: none;
   position: relative;
-}
-
-@media (prefers-reduced-motion) {
-  .resources li a:hover::before,
-  .resources li a:focus::before,
-  .resources li a:active::before {
-    background: var(--c-accent-light);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .resources li a {
-    transition: all 140ms ease-in-out;
-  }
-
-  .resources li a:hover,
-  .resources li a:focus {
-    transform: scale(1.02) translateZ(0);
-  }
-
-  .resources li a:active {
-    transition-duration: 80ms;
-    transform: scale(1.01) translate3d(0, 0.125em, 0);
-  }
-}
-
-.resources li a:hover::after,
-.resources li a:focus::after {
-  opacity: 1;
-}
-
-.resources li a::before,
-.resources li a::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-}
-
-.resources li a::before {
-  background: #fff;
-  border: 1px solid var(--c-resource-accent);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
-  border-radius: var(--radius);
-}
-
-.resources li a::after {
-  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transition: all 0.2s ease-out;
-}
-
-.resources li a  > * {
-  padding: 1em;
 }
 
 .resource-text {
@@ -98,10 +52,69 @@
   position: relative;
 }
 
-.resources li [data-link-private] {
-  --c-resource-accent: var(--c-accent-dark);
-}
-
 .resource-icon svg {
   inline-size: 100%;
+}
+
+/* Backgrounds are applied to pseudo-elements
+   so they can be distorted by SVG filters
+   independently from their contents
+*/
+
+.resources li a::before,
+.resources li a::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+}
+
+.resources li a::before {
+  background: #fff;
+  border: 1px solid var(--c-resource-accent);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius);
+}
+
+/* Focus, hover and active states */
+
+@media (prefers-reduced-motion) {
+  .resources li a:hover::before,
+  .resources li a:focus::before,
+  .resources li a:active::before {
+    background: var(--c-accent-light);
+  }
+}
+
+.resources li a::after {
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: all 0.2s ease-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .resources li a {
+    transition: all 140ms ease-in-out;
+  }
+
+  .resources li a:hover,
+  .resources li a:focus {
+    transform: scale(1.02) translateZ(0);
+  }
+
+  .resources li a:hover::after,
+  .resources li a:focus::after {
+    opacity: 1;
+  }
+
+  .resources li a:active {
+    transition-duration: 80ms;
+    transform: scale(1.01) translate3d(0, 0.125em, 0);
+  }
+}
+
+/* Private resources */
+
+.resources li [data-link-private] {
+  --c-resource-accent: var(--c-accent-dark);
 }
