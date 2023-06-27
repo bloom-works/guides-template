@@ -4,7 +4,7 @@ layout: layouts/base.njk
 ---
 
 {% Callout %}
-#### Here’s an example of turning a story into a solid recommendation.
+**Here’s an example of turning a story into a solid recommendation.**
 
 **Story:** Kin caregivers that had legal support expressed how much of a positive difference it made
 
