@@ -56,6 +56,7 @@ within specific components.
 */
 
 .l-grid {
+  --grid-col-width: calc(var(--t-measure) / 3);
   --grid-gap: var(--g-column-gap);
   display: grid;
   flex-wrap: wrap;
@@ -64,7 +65,7 @@ within specific components.
 
 @supports (width: Min(30rem, 100%)) {
   .l-grid {
-    grid-template-columns: repeat(auto-fit, minmax(Min(calc(var(--t-measure) / 3), 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(Min(calc(var(--grid-col-width), 100%), 1fr));
   }
 }
 
