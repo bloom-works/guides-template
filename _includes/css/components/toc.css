@@ -11,7 +11,8 @@
   padding-block: 0.25em;
   padding-inline: 1em;
   position: relative;
-  background: var(--c-accent-light);
+  background: var(--c-accent);
+  color: var(--c-accent-text);
   font-weight: var(--t-bold);
   display: flex;
   align-items: center;
@@ -19,9 +20,9 @@
   cursor: pointer;
 }
 
-
 /* Sticky TOC */
-@media (min-width: 101rem) and (prefers-reduced-motion: no-preference) {
+
+@media (min-inline-size: 101rem) and (prefers-reduced-motion: no-preference) {
   .toc {
     position: sticky;
     top: var(--t-paragraph);
@@ -68,10 +69,8 @@
   --counter-size: calc(var(--t-leading-em) * 1.125);
   position: relative;
   counter-increment: toc-menu;
-  margin-bottom: calc(var(--t-paragraph) / 2);
   padding-inline-start: calc(var(--counter-size) + 0.5em);
   padding-block: 0;
-
 }
 
 .toc li:before {
