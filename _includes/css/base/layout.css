@@ -138,7 +138,9 @@ var(--stack-layout-gap) within specific components.
   margin-block-start: calc(var(--section-margin) * -1);
 }
 
-/* .l-sidebar */
+/* For sidebar layouts (like the TOC and main content)
+   The first direct descendant of .l-sidebar will serve as
+   the smallest column. */
 
 .l-sidebar {
   --l-sidebar-content-width: 61.8%;
