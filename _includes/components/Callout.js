@@ -6,7 +6,6 @@ function renderCallout(content, type){
 
   let icon = '';
   let title = '';
-  let isValidType = type : false ? true;
 
   switch (type) {
     case 'event':
