@@ -9,7 +9,7 @@ function renderGridColumn(content, headline, icon){
     <div class="col">
       <div class="grid-icon">
         <svg fill="currentColor">
-          <use xlink:href="./assets/images//bootstrap-icons.svg#${icon}"></use>
+          <use xlink:href="/bootstrap-icons.svg#${icon}"></use>
         </svg>
       </div>
       <h3>${headlineMd}</h3>
