@@ -1,13 +1,19 @@
+const { html } = require('common-tags')
+const markdown = require("../../markdown");
+
 function renderGridColumn(content, headline, icon){
-  return `
+  const headlineMd = markdown.render(headline);
+  const contentMd = markdown.render(content);
+
+  return html`
     <div class="col">
       <div class="grid-icon">
         <svg fill="currentColor">
           <use xlink:href="./assets/images//bootstrap-icons.svg#${icon}"></use>
         </svg>
       </div>
-      <h3>${headline}</h3>
-      <p>${content}</p>
+      <h3>${headlineMd}</h3>
+      <p>${contentMd}</p>
     </div>
   `
 }

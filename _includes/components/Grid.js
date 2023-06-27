@@ -1,12 +1,17 @@
+const { html } = require('common-tags')
+const markdown = require("../../markdown");
+
 function renderGrid(content, columns){
+  const text = markdown.render(content);
+
   const validColumns = columns === 2 || columns === 3;
   if (validColumns) {
-    return `
+    return html`
       </div> <!-- /.l-stack-basic -->
       </div> <!-- /.l-text-wrapper -->
       <div class="l-wrapper">
         <div class="l-grid grid-${columns}col">
-          ${content}
+          ${text}
         </div>
       </div>
       <div class="l-text-wrapper">
