@@ -1,27 +1,14 @@
 const { html } = require('common-tags')
-const markdown = require("../../markdown");
 
-function renderGrid(content, columns){
-  const text = markdown.render(content);
+function renderGrid(content){
 
-  const validColumns = columns === 2 || columns === 3;
-  if (validColumns) {
-    return html`
-      </div> <!-- /.l-stack-basic -->
-      </div> <!-- /.l-text-wrapper -->
-      <div class="l-wrapper">
-        <div class="l-grid grid-${columns}col">
-          ${text}
-        </div>
+  return html`
+    <div class="l-wrapper">
+      <div class="l-grid icon-grid">
+        ${content}
       </div>
-      <div class="l-text-wrapper">
-      <div class="l-stack-basic">
-    `
-  } else {
-    throw new Error(
-    `Grid components can only have 2 columns or 3 columns.`
-  );
-  }
+    </div>
+  `
 }
 
 module.exports = renderGrid;
