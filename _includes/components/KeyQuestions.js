@@ -5,12 +5,12 @@ function renderKeyQuestions(content){
   const items = markdown.render(content);
 
   return html`
-    <div class="l-section icon-list" data-icon-type="key-questions">
+    <section class="l-section icon-list" data-icon-type="key-questions">
       <h3 class="h4">Key Questions</h3>
       <ul class="l-stack-basic">
         ${items}
       </ul>
-    </div>
+    </section>
   `
 }
 

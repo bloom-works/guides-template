@@ -5,12 +5,12 @@ function renderChecklist(content){
   const items = markdown.render(content);
 
   return html`
-    <div class="l-section icon-list" data-icon-type="checklist">
+    <section class="l-section icon-list" data-icon-type="checklist">
       <h3 class="h4">Checklist</h3>
       <ul class="l-stack-basic">
         ${items}
       </ul>
-    </div>
+    </section>
   `
 }
 
