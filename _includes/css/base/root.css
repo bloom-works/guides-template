@@ -2,8 +2,8 @@
   /* TYPOGRAPHY */
 
   /* Font families */
-  --font-primary: "Barlow Semi Condensed", system-ui, sans-serif;
-  --font-secondary: Georgia, serif;
+  --font-primary: "Barlow", system-ui, sans-serif;
+  --font-heading: "Barlow Semi Condensed", system-ui, sans-serif;;
 
   /* Font sizes taken from Bloom Visual Style Guide*/
   --t-huge: 3rem;
