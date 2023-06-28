@@ -56,7 +56,7 @@ within specific components.
 */
 
 .l-grid {
-  --grid-col-width: calc(var(--t-measure) / 2);
+  --grid-col-width: calc(var(--t-measure) / 3);
   --grid-gap: var(--g-column-gap);
   display: grid;
   flex-wrap: wrap;
