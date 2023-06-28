@@ -16,14 +16,40 @@ button,
   cursor: pointer;
   text-decoration: none;
   inline-size: fit-content;
+  position: relative;
+  transition: all 80ms ease-out;
+}
+
+button::after,
+.button::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  opacity: 0;
+  background: var(--c-accent-dark);
+  transition: all 0.2s ease-out;
+}
+
+button:focus::after,
+button:hover::after,
+.button:focus::after,
+.button:hover::after {
+  opacity: 0.2;
+}
+
+button:active,
+.button:active {
+  transform: scale(0.98);
 }
 
 .button[data-icon] {
   justify-content: space-between;
+  gap: var(--t-leading-em);
+  --icon-size: 1em;
 }
 
 .button[data-icon] svg {
-  inline-size: 1em;
+  inline-size: var(--icon-size);
   aspect-ratio: 1 / 1;
 }
 
@@ -39,10 +65,10 @@ button,
 
 .button[data-size="large"] {
   font-size: var(--t-medium);
-  width: 100%;
+  inline-size: 100%;
   padding: 0.75em 2em;
 }
 
 .button[data-size="large"][data-icon] svg {
-  inline-size: 1.5em;
+  --icon-size: 1.5em;
 }

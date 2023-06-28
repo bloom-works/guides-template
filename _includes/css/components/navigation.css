@@ -192,8 +192,12 @@ html:has(dialog[open]) {
   background: transparent;
   box-shadow: none;
   color: var(--c-accent-text);
-  border-radius: 50%;
   transition: background 120ms ease-out;
+}
+
+.all-sections-menu header button,
+.all-sections-menu header button:after {
+  border-radius: 50%;
 }
 
 .all-sections-menu header button:hover,
