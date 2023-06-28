@@ -1,0 +1,95 @@
+table {
+	max-inline-size: unset;
+  position: relative;
+}
+
+td, th {
+	padding: 0.5rem;
+	border: 1px solid;
+	font-size: var(--t-small);
+}
+
+th {
+	background: var(--c-accent);
+	color: var(--c-accent-text);
+  border: 0;
+  border-inline-end: 1px solid var(--c-accent-text);
+	vertical-align: middle;
+}
+
+th:last-child {
+  border-inline-end: 0;
+}
+
+td {
+	border-color: #ccc;
+	vertical-align: top;
+}
+
+@media screen and (max-width: 38rem) {
+  table {
+    border: 0;
+  }
+
+  /* Visually hide the table head while still
+     displaying it to screen readers */
+  thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  tr {
+    display: block;
+    border-end-start-radius: var(--radius);
+    border-end-end-radius: var(--radius);
+    border-block-end: 2px solid var(--c-accent);
+    margin-block-end: var(--t-leading-rem);
+  }
+
+  td {
+    border: 1px solid var(--c-accent);
+    border-block-end: 0;
+    display: flex;
+    position: relative;
+    max-inline-size: unset;
+  }
+
+  td:first-child {
+    border-start-start-radius: var(--radius);
+    border-start-end-radius: var(--radius);
+  }
+
+  td:last-child {
+    border-block-end: 0;
+  }
+
+  td::before {
+    content: attr(data-label);
+    padding-inline-end: var(--t-leading-rem);
+    min-inline-size: 15ch;
+    max-inline-size: 15ch;
+    font-weight: var(--t-bold);
+    color: var(--t-headline);
+    align-self: flex-start;
+  }
+}
+
+@media screen and (max-width: 38rem) and (prefers-reduced-motion: no-preference) {
+  td::before {
+    position: sticky;
+    inset-block-start: 0.5em;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  th {
+    position: sticky;
+    inset-block-start: 0;
+  }
+}
