@@ -54,6 +54,7 @@ h1, h2, h3, h4, h5, h6,
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--font-heading);
   color: var(--c-headline);
   margin-inline: 0;
   margin-block-end: var(--t-paragraph);
@@ -160,7 +161,7 @@ ol li:last-child {
 a {
   text-decoration-color: rgba(var(--c-link-text-rgb, var(--c-accent-dark-rgb)), 0.6);
   color: var(--c-link-text, var(--c-accent-text));
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 0.125em;
   text-decoration-skip-ink: all;
 }
 
