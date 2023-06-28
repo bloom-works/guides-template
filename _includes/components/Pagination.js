@@ -37,8 +37,10 @@ function renderPagination(
   `
   return html`
     <div class="pagination">
-      ${ prevPageTemplate }
-      ${ nextPageTemplate }
+      <div class="pagination-inner">
+        ${ prevPageTemplate }
+        ${ nextPageTemplate }
+      </div>
     </div>
   `
 }
