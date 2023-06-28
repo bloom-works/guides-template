@@ -1,7 +1,6 @@
 // Strip whitespace
 const { html } = require('common-tags');
 
-//
 function renderPageHeader(subhead, title) {
   return html`
     <header role="banner" class="page-header">
