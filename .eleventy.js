@@ -5,9 +5,10 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownLibrary = require("./markdown");
 
-const ResourceGroupComponent = require("./_includes/components/ResourceGroup");
-const ResourcePublicComponent = require("./_includes/components/ResourcePublic");
+const PageHeaderComponent = require("./_includes/components/PageHeader");
 const ResourcePrivateComponent = require("./_includes/components/ResourcePrivate");
+const ResourcePublicComponent = require("./_includes/components/ResourcePublic");
+const ResourceGroupComponent = require("./_includes/components/ResourceGroup");
 
 module.exports = function(eleventyConfig) {
   // Add plugins
@@ -84,9 +85,10 @@ module.exports = function(eleventyConfig) {
     ghostMode: false
   });
 
-  eleventyConfig.addPairedShortcode("ResourceGroup", ResourceGroupComponent);
-  eleventyConfig.addShortcode("PublicResource", ResourcePublicComponent);
+  eleventyConfig.addShortcode("PageHeader", PageHeaderComponent);
   eleventyConfig.addShortcode("PrivateResource", ResourcePrivateComponent);
+  eleventyConfig.addShortcode("PublicResource", ResourcePublicComponent);
+  eleventyConfig.addPairedShortcode("ResourceGroup", ResourceGroupComponent);
 
   return {
     // Control which files Eleventy will process
