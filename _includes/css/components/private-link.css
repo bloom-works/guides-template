@@ -1,0 +1,28 @@
+/* Private links */
+
+.private-link {
+  text-decoration: none;
+}
+
+.private-link svg {
+  inline-size: 1em;
+}
+
+.private-link-text {
+  text-decoration: underline;
+}
+
+.private-link-badge {
+  background: var(--c-accent);
+  color: var(--c-accent-text);
+  font-weight: var(--t-bold);
+  font-size: var(--t-small);
+  margin-inline: 0.375em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  width: fit-content;
+  white-space: nowrap;
+  padding-inline: 0.5em;
+  box-shadow: 0 0 0 0.125em var(--c-accent);
+}

@@ -5,6 +5,8 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownLibrary = require("./markdown");
 
+const PrivateLinkComponent = require("./_includes/components/PrivateLink.js");
+
 module.exports = function(eleventyConfig) {
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
@@ -79,6 +81,8 @@ module.exports = function(eleventyConfig) {
     ui: false,
     ghostMode: false
   });
+
+  eleventyConfig.addPairedShortcode("PrivateLink", PrivateLinkComponent);
 
   return {
     // Control which files Eleventy will process
