@@ -65,7 +65,7 @@ within specific components.
 
 @supports (width: Min(30rem, 100%)) {
   .l-grid {
-    grid-template-columns: repeat(auto-fit, minmax(Min(calc(var(--grid-col-width), 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(Min(var(--grid-col-width), 100%), 1fr));
   }
 }
 
