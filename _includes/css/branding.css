@@ -1,0 +1,109 @@
+/* Reset transforms */
+
+body:not([data-theme="field-guide"]) :is(.callout, .icon-list) {
+  transform: none !important;
+}
+
+/* Apply filters */
+
+[data-theme="field-guide"] .all-sections-menu li a::after,
+[data-theme="field-guide"] .footer::before,
+[data-theme="field-guide"] .footer-sba-banner::before,
+[data-theme="field-guide"] .page-header::before {
+  filter: url("#tornEdge");
+  transform: scaleX(1.02) translateZ(0);
+}
+
+
+[data-theme="field-guide"] :is(.callout, .icon-list) {
+  transform-origin: 0 0;
+}
+
+[data-theme="field-guide"] .callout-icon,
+[data-theme="field-guide"] .callout::after,
+[data-theme="field-guide"] .icon-grid-svg,
+[data-theme="field-guide"] .resources li a::before,
+[data-theme="field-guide"] .toc header::before,
+[data-theme="field-guide"] .toc::before,
+[data-theme="field-guide"] [data-icon-type="checklist"] li::before,
+[data-theme="field-guide"] :is(h1, h2, .h1, .h2, h3, .h3) {
+  filter: url("#tornEdgeSmall");
+  transform: translateZ(0);
+}
+
+/* Make borders thicker when they're distorted by filters */
+
+[data-theme="field-guide"] .resources li a::before,
+[data-theme="field-guide"] .toc header::before,
+[data-theme="field-guide"] .toc::before {
+  border-width: 0.125em;
+}
+
+/* Callout */
+
+[data-theme="field-guide"] .callout::before {
+  /* "Dot graph paper" pattern is a repeating gradient */
+  background-image: radial-gradient(rgba(var(--c-accent-rgb), 0.25) 2px, var(--c-accent-light) 2px);
+  background-size: 2.5em 2.5em;
+}
+
+[data-theme="field-guide"] .callout::after {
+  border: 2px dashed var(--c-accent);
+}
+
+[data-theme="field-guide"] .callout-icon::before {
+  background-image: none;
+  background-color: rgba(var(--c-accent-rgb), 0.92);
+  border-radius: 50%;
+}
+
+/* Checklist / Key Questions */
+
+[data-theme="field-guide"] .icon-list {
+  /* "Index card" pattern is a repeating gradient */
+  background-image: repeating-linear-gradient(0deg, var(--c-bg), var(--c-bg) 1.6px, var(--c-lines) 1.6px, var(--c-lines));
+  background-size: var(--t-leading-em) var(--t-leading-em);
+  background-position: 0 calc(var(--t-paragraph) / 2);
+  box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="field-guide"] .icon-list h3 {
+  filter: none;
+}
+
+[data-theme="field-guide"] [data-icon-type="checklist"] {
+  --c-lines: #faf3eb;
+  /* Place checklist "card" above key questions */
+  position: relative;
+  z-index: 2;
+}
+
+[data-theme="field-guide"] [data-icon-type="key-questions"] {
+  --c-lines: #f9f5f9;
+  /* Key Questions should always overlap with checklists  */
+  margin-block-start: calc(var(--t-paragraph) * -1.5);
+}
+
+/* Page Header */
+
+[data-theme="field-guide"] .page-header {
+  background: var(--c-accent);
+}
+
+[data-theme="field-guide"] .page-header::before {
+  position: absolute;
+  content: "";
+  z-index: 1;
+  inset: 0;
+  background-color: var(--c-accent);
+  background-image: url("/img/sunset-view.jpg");
+  background-blend-mode: soft-light;
+  background-size: 120%;
+  background-position: center;
+  opacity: 0.5;
+}
+
+[data-theme="field-guide"] .page-header * {
+  position: relative;
+  z-index: 3;
+}
