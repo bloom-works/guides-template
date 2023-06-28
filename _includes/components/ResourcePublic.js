@@ -1,4 +1,4 @@
-const { html } = require('common-tags')
+const { html } = require('common-tags');
 const markdown = require("../../markdown");
 
 function renderResourcePublic(content, url){
