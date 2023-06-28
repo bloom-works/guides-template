@@ -7,6 +7,10 @@ const markdownLibrary = require("./markdown");
 
 const ChecklistComponent = require("./_includes/components/Checklist.js");
 const KeyQuestionsComponent = require("./_includes/components/KeyQuestions.js");
+const PageHeaderComponent = require("./_includes/components/PageHeader");
+const ResourcePrivateComponent = require("./_includes/components/ResourcePrivate");
+const ResourcePublicComponent = require("./_includes/components/ResourcePublic");
+const ResourceGroupComponent = require("./_includes/components/ResourceGroup");
 
 module.exports = function(eleventyConfig) {
   // Add plugins
@@ -85,6 +89,10 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPairedShortcode("Checklist", ChecklistComponent);
   eleventyConfig.addPairedShortcode("KeyQuestions", KeyQuestionsComponent);
+  eleventyConfig.addShortcode("PageHeader", PageHeaderComponent);
+  eleventyConfig.addShortcode("PrivateResource", ResourcePrivateComponent);
+  eleventyConfig.addShortcode("PublicResource", ResourcePublicComponent);
+  eleventyConfig.addPairedShortcode("ResourceGroup", ResourceGroupComponent);
 
   return {
     // Control which files Eleventy will process
