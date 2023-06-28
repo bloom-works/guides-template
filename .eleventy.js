@@ -6,6 +6,10 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownLibrary = require("./markdown");
 
 const CalloutComponent = require("./_includes/components/Callout")
+const PageHeaderComponent = require("./_includes/components/PageHeader");
+const ResourcePrivateComponent = require("./_includes/components/ResourcePrivate");
+const ResourcePublicComponent = require("./_includes/components/ResourcePublic");
+const ResourceGroupComponent = require("./_includes/components/ResourceGroup");
 
 module.exports = function(eleventyConfig) {
   // Add plugins
@@ -61,6 +65,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
 
+  // Customize Markdown library and settings:
   eleventyConfig.setLibrary("md", markdownLibrary);
 
   // Override Browsersync defaults (used only with --serve)
@@ -82,6 +87,10 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addPairedShortcode("Callout", CalloutComponent);
+  eleventyConfig.addShortcode("PageHeader", PageHeaderComponent);
+  eleventyConfig.addShortcode("PrivateResource", ResourcePrivateComponent);
+  eleventyConfig.addShortcode("PublicResource", ResourcePublicComponent);
+  eleventyConfig.addPairedShortcode("ResourceGroup", ResourceGroupComponent);
 
   return {
     // Control which files Eleventy will process
