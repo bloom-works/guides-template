@@ -52,6 +52,11 @@ h1, h2, h3, h4, h5, h6,
   padding: 0;
 }
 
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+.h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
+  text-decoration-thickness: 0.125em;
+}
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: var(--font-heading);
@@ -161,7 +166,7 @@ ol li:last-child {
 a {
   text-decoration-color: rgba(var(--c-link-text-rgb, var(--c-accent-dark-rgb)), 0.6);
   color: var(--c-link-text, var(--c-accent-text));
-  text-decoration-thickness: 0.125em;
+  text-decoration-thickness: 0.0625em;
   text-decoration-skip-ink: all;
 }
 
