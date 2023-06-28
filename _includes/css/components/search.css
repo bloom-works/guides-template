@@ -22,8 +22,9 @@
 }
 
 .search-form input:focus {
-  border-color: var(--c-accent);
-  outline: 3px solid var(--c-accent);
+  box-shadow: 0 0 0.5em var(--c-accent-light);
+  border: 0.25em solid •var(--c-accent-dark);
+  outline: none;
 }
 
 .results-wrapper {
@@ -52,7 +53,7 @@
   color: var(--c-secondary);
 }
 
-.results mark {
+.results-wrapper mark {
   background: rgba(var(--c-accent-rgb), 0.8);
   color: var(--c-accent-text);
   padding-inline: 0.25em;
