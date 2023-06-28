@@ -7,6 +7,10 @@ const markdownLibrary = require("./markdown");
 
 const GridComponent = require("./_includes/components/Grid");
 const GridColumnComponent = require("./_includes/components/GridColumn");
+const PageHeaderComponent = require("./_includes/components/PageHeader");
+const ResourcePrivateComponent = require("./_includes/components/ResourcePrivate");
+const ResourcePublicComponent = require("./_includes/components/ResourcePublic");
+const ResourceGroupComponent = require("./_includes/components/ResourceGroup");
 
 module.exports = function(eleventyConfig) {
   // Add plugins
@@ -85,6 +89,10 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPairedShortcode("Grid", GridComponent);
   eleventyConfig.addPairedShortcode("GridColumn", GridColumnComponent);
+  eleventyConfig.addShortcode("PageHeader", PageHeaderComponent);
+  eleventyConfig.addShortcode("PrivateResource", ResourcePrivateComponent);
+  eleventyConfig.addShortcode("PublicResource", ResourcePublicComponent);
+  eleventyConfig.addPairedShortcode("ResourceGroup", ResourceGroupComponent);
 
   return {
     // Control which files Eleventy will process
