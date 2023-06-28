@@ -1,3 +1,5 @@
+/* Basic navbar layout */
+
 .nav {
   background: var(--c-accent-dark);
   padding-block: 0.5em;
@@ -22,7 +24,8 @@
   font-size: var(--t-base);
 }
 
-.nav div {
+.nav div,
+.nav-meta a {
   display: flex;
   gap: 0.5em;
   align-items: center;
@@ -41,6 +44,8 @@
 .nav svg {
   inline-size: 1em;
 }
+
+/* Navbar buttons */
 
 .nav-button {
   padding-block: 0.5em;
@@ -92,6 +97,17 @@
   }
 }
 
+/* "Jump to a sections" <dialog> element */
+
+dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
 .all-sections-menu {
   block-size: 100dvh;
   inline-size: 85dvw;
@@ -117,20 +133,13 @@
   max-inline-size: unset;
 }
 
-dialog:not([open]) {
-  pointer-events: none;
-  opacity: 0;
-}
-
-html:has(dialog[open]) {
-  overflow: hidden;
-}
-
 .all-sections-menu[open] {
   opacity: 1;
   transform: scale(1);
   pointer-events: inherit;
 }
+
+/* Animation upon clicking the "Sections" button */
 
 @keyframes all-sections-transition {
   0% {
@@ -153,9 +162,16 @@ html:has(dialog[open]) {
   }
 }
 
+/*
+  :backdrop styles the background
+   behind the <dialog> element
+*/
+
 .all-sections-menu::backdrop {
   background: rgba(4, 48, 27, 0.8);
 }
+
+/* Basic <dialog> layout */
 
 .all-sections-menu header,
 .all-sections-menu li a {
@@ -176,6 +192,13 @@ html:has(dialog[open]) {
   background: transparent;
   box-shadow: none;
   color: var(--c-accent-text);
+  border-radius: 50%;
+  transition: background 120ms ease-out;
+}
+
+.all-sections-menu header button:hover,
+.all-sections-menu header button:focus {
+  background: var(--c-accent-dark);
 }
 
 .all-sections-menu header svg {
@@ -183,7 +206,6 @@ html:has(dialog[open]) {
 }
 
 .all-sections-menu ol,
-.all-sections-menu ul,
 .all-sections-menu li {
   list-style: none;
   padding: 0;
@@ -199,35 +221,6 @@ html:has(dialog[open]) {
   position: relative;
   counter-increment: all-sections-menu;
   --number-size: calc(var(--t-leading-em) * 1.125);
-}
-
-.all-sections-menu li a::before {
-  position: absolute;
-  inset-inline-start: 1em;
-  inset-block-start: 50%;
-  margin-block-start: calc(var(--number-size) * -0.5);
-  inline-size: var(--number-size);
-  block-size: var(--number-size);
-  color: var(--c-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.all-sections-menu ol li a::before {
-  content: counter(all-sections-menu);
-  font-weight: var(--t-bold);
-  border-radius: 50%;
-  border: 2px solid var(--c-accent);
-  padding: 0.25em;
-}
-
-.all-sections-menu ul li a::before {
-  content: "";
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewbox='0 0 16 16' fill='%232f9764' class='bi bi-book' viewBox='0 0 16 16'%3E%3Cpath d='M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z'/%3E%3C/svg%3E");
-  background-size: 80%;
-  background-position: center center;
-  background-repeat: no-repeat;
 }
 
 .all-sections-menu li a {
@@ -250,21 +243,23 @@ html:has(dialog[open]) {
   text-decoration: underline;
 }
 
-/*.all-sections-menu li a::after {
-  content: "";
-  position: absolute;
-  inset-block-start: 100%;
-  inset-inline: 0;
-  background: rgba(var(--c-accent-rgb), 0.5);
-  block-size: 2px;
-  z-index: 2;
-}*/
+/* Circled numbers before each section
+   in the <dialog> */
 
-.all-sections-menu a:after {
-  content: "";
+.all-sections-menu li a::before {
   position: absolute;
-  inset-block-start: 0;
-  inset-inline-start: 0;
-  inline-size: 100%;
-  block-size: 100%;
+  content: counter(all-sections-menu);
+  inset-inline-start: 1em;
+  inset-block-start: 50%;
+  margin-block-start: calc(var(--number-size) * -0.5);
+  inline-size: var(--number-size);
+  block-size: var(--number-size);
+  color: var(--c-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--t-bold);
+  border-radius: 50%;
+  border: 2px solid var(--c-accent);
+  padding: 0.25em;
 }
