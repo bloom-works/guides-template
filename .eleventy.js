@@ -6,6 +6,8 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 
+const PageHeaderComponent = require("./_includes/components/PageHeader");
+
 module.exports = function(eleventyConfig) {
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
@@ -89,6 +91,8 @@ module.exports = function(eleventyConfig) {
     ui: false,
     ghostMode: false
   });
+
+  eleventyConfig.addShortcode("PageHeader", PageHeaderComponent);
 
   return {
     // Control which files Eleventy will process
