@@ -4,5 +4,6 @@ set -e
 # -----
 # REPLACE THE BELOW WITH YOUR COMMANDS
 # -----
+npx playwright install
 npx playwright test
 npm test
