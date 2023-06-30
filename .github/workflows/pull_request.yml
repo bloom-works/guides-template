@@ -3,11 +3,17 @@
 name: Pull Request
 on: 
   pull_request:
-    types: [opened, reopened, synchronize]
+    branches: [ "main" ]
+    types: [opened, reopened, synchronize]    
 
 jobs:
   pr_checks:
     runs-on: ubuntu-latest
+    
+#     strategy:
+#       matrix:
+#         node-version: [18.x]    
+    
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -18,6 +24,13 @@ jobs:
           file: ./Dockerfile
           load: true
           tags: ${{ github.repository }}:${{ github.head_ref }}
+#       - name: Use Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#           cache: 'npm'
+     
+      
       # --------
       # COMMAND TEMPLATE
       # Use this to run a job within your main Dockerfile built app container
@@ -29,12 +42,15 @@ jobs:
       # --------
       # COMMON PR CHECKS
       # Add/remove what you do/don't use. Common ones provided below
-      # --------  
+      # -------- 
+       
+      
+      
       # LINTER
       - name: Run linter
         run: docker run --rm ${{ github.repository }}:${{ github.head_ref }} sh ci/linter.sh
       
-      # TESTS
+      # JEST TESTS
       - name: Run tests
         run: docker run --rm ${{ github.repository }}:${{ github.head_ref }} sh ci/tests.sh
       
@@ -45,3 +61,11 @@ jobs:
       # CODE QUALITY
       - name: Run code quality scans
         run: docker run --rm ${{ github.repository }}:${{ github.head_ref }} sh ci/code_quality.sh
+        
+      # NODE TESTS 
+      - name: Run linter
+        run: docker run --rm ${{ github.repository }}:${{ github.head_ref }} npm ci 
+      # - run: docker run npm ci
+      # - run: docker run npm run serve --if-present
+      # - run: docker run npm test
+        
