@@ -4,4 +4,4 @@ set -e
 # -----
 # REPLACE THE BELOW WITH YOUR COMMANDS
 # -----
-echo 'Run tests'
+npm ci
