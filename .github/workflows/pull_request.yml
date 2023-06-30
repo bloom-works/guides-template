@@ -29,6 +29,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+      - run: npm ci
+      - run: npm run serve --if-present
+      - run: npm test
+      
       # --------
       # COMMAND TEMPLATE
       # Use this to run a job within your main Dockerfile built app container
@@ -42,9 +46,7 @@ jobs:
       # Add/remove what you do/don't use. Common ones provided below
       # -------- 
       # NODE TESTS      
-      - run: npm ci
-      - run: npm run serve --if-present
-      - run: npm test
+      
       
       # LINTER
       - name: Run linter
