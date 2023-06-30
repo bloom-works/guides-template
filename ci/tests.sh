@@ -4,4 +4,5 @@ set -e
 # -----
 # REPLACE THE BELOW WITH YOUR COMMANDS
 # -----
-npm ci
+npx playwright test
+npm test
