@@ -24,14 +24,12 @@ jobs:
           file: ./Dockerfile
           load: true
           tags: ${{ github.repository }}:${{ github.head_ref }}
-#       - name: Use Node.js ${{ matrix.node-version }}
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: ${{ matrix.node-version }}
-#           cache: 'npm'
-      - run: npm ci
-      - run: npm run serve --if-present
-      - run: npm test
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+     
       
       # --------
       # COMMAND TEMPLATE
@@ -45,7 +43,7 @@ jobs:
       # COMMON PR CHECKS
       # Add/remove what you do/don't use. Common ones provided below
       # -------- 
-      # NODE TESTS      
+       
       
       
       # LINTER
@@ -63,3 +61,9 @@ jobs:
       # CODE QUALITY
       - name: Run code quality scans
         run: docker run --rm ${{ github.repository }}:${{ github.head_ref }} sh ci/code_quality.sh
+        
+      # NODE TESTS   
+      - run: npm ci
+      - run: npm run serve --if-present
+      - run: npm test
+        
