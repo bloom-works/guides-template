@@ -3,21 +3,32 @@
 name: Pull Request
 on: 
   pull_request:
-    types: [opened, reopened, synchronize]
+    branches: [ "node-tests-github" ]
+    types: [opened, reopened, synchronize]    
 
 jobs:
   pr_checks:
     runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x]    
+    
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Build Docker container
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           context: .
           file: ./Dockerfile
           load: true
           tags: ${{ github.repository }}:${{ github.head_ref }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
       # --------
       # COMMAND TEMPLATE
       # Use this to run a job within your main Dockerfile built app container
@@ -29,12 +40,18 @@ jobs:
       # --------
       # COMMON PR CHECKS
       # Add/remove what you do/don't use. Common ones provided below
-      # --------  
+      # -------- 
+      # NODE TESTS
+      - name: Run Node Tests
+      - run: npm ci
+      - run: npm run serve --if-present
+      - run: npm test
+      
       # LINTER
       - name: Run linter
         run: docker run --rm ${{ github.repository }}:${{ github.head_ref }} sh ci/linter.sh
       
-      # TESTS
+      # JEST TESTS
       - name: Run tests
         run: docker run --rm ${{ github.repository }}:${{ github.head_ref }} sh ci/tests.sh
       
