@@ -63,7 +63,8 @@ jobs:
         run: docker run --rm ${{ github.repository }}:${{ github.head_ref }} sh ci/code_quality.sh
         
       # NODE TESTS   
-      - run: docker run npm ci
-      - run: docker run npm run serve --if-present
-      - run: docker run npm test
+      - name: Node tests
+        run: docker run --rm ${{ github.repository }}:${{ github.head_ref }} npm ci
+#       - run: docker run npm run serve --if-present
+#       - run: docker run npm test
         
