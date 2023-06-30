@@ -24,11 +24,11 @@ jobs:
           file: ./Dockerfile
           load: true
           tags: ${{ github.repository }}:${{ github.head_ref }}
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+#       - name: Use Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#           cache: 'npm'
      
       
       # --------
