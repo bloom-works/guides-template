@@ -4,5 +4,6 @@ set -e
 # -----
 # REPLACE THE BELOW WITH YOUR COMMANDS
 # -----
-# npx playwright test
-npm test
+npm ci
+npx playwright test
+# npm test
