@@ -41,8 +41,7 @@ jobs:
       # COMMON PR CHECKS
       # Add/remove what you do/don't use. Common ones provided below
       # -------- 
-      # NODE TESTS
-      - name: Run Node Tests
+      # NODE TESTS      
       - run: npm ci
       - run: npm run serve --if-present
       - run: npm test
