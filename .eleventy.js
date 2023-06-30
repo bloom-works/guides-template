@@ -6,6 +6,7 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownLibrary = require("./markdown");
 
 const PageHeaderComponent = require("./_includes/components/PageHeader");
+const PaginationComponent = require("./_includes/components/Pagination.js");
 const ResourcePrivateComponent = require("./_includes/components/ResourcePrivate");
 const ResourcePublicComponent = require("./_includes/components/ResourcePublic");
 const ResourceGroupComponent = require("./_includes/components/ResourceGroup");
@@ -86,6 +87,7 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addShortcode("PageHeader", PageHeaderComponent);
+  eleventyConfig.addShortcode("Pagination", PaginationComponent);
   eleventyConfig.addShortcode("PrivateResource", ResourcePrivateComponent);
   eleventyConfig.addShortcode("PublicResource", ResourcePublicComponent);
   eleventyConfig.addPairedShortcode("ResourceGroup", ResourceGroupComponent);
