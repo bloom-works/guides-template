@@ -10,9 +10,9 @@ jobs:
   pr_checks:
     runs-on: ubuntu-latest
     
-    strategy:
-      matrix:
-        node-version: [18.x]    
+#     strategy:
+#       matrix:
+#         node-version: [18.x]    
     
     steps:
       - name: Checkout repo
