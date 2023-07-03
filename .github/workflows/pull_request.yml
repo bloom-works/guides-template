@@ -8,12 +8,7 @@ on:
 
 jobs:
   pr_checks:
-    runs-on: ubuntu-latest
-    
-#     strategy:
-#       matrix:
-#         node-version: [18.x]    
-    
+    runs-on: ubuntu-latest   
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -23,13 +18,7 @@ jobs:
           context: .
           file: ./Dockerfile
           load: true
-          tags: ${{ github.repository }}:${{ github.head_ref }}
-#       - name: Use Node.js ${{ matrix.node-version }}
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: ${{ matrix.node-version }}
-#           cache: 'npm'
-     
+          tags: ${{ github.repository }}:${{ github.head_ref }}    
       
       # --------
       # COMMAND TEMPLATE
@@ -42,15 +31,14 @@ jobs:
       # --------
       # COMMON PR CHECKS
       # Add/remove what you do/don't use. Common ones provided below
-      # -------- 
-       
+      # --------       
       
       
       # LINTER
       - name: Run linter
         run: docker run --rm ${{ github.repository }}:${{ github.head_ref }} sh ci/linter.sh
       
-      # JEST TESTS
+      # TESTS
       - name: Run tests
         run: docker run --rm ${{ github.repository }}:${{ github.head_ref }} sh ci/tests.sh
       
@@ -62,10 +50,5 @@ jobs:
       - name: Run code quality scans
         run: docker run --rm ${{ github.repository }}:${{ github.head_ref }} sh ci/code_quality.sh
         
-      # NODE TESTS 
-      - name: Run CI command
-        run: docker run --rm ${{ github.repository }}:${{ github.head_ref }} npm ci 
-      # - run: docker run npm ci
-      # - run: docker run npm run serve --if-present
-      # - run: docker run npm test
+      
         

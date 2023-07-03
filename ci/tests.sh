@@ -4,4 +4,7 @@ set -e
 # -----
 # REPLACE THE BELOW WITH YOUR COMMANDS
 # -----
-echo 'Run tests'
+npm ci
+npx playwright install --with-deps
+npx playwright test
+# npm test
