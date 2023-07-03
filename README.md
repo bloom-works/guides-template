@@ -34,3 +34,8 @@ This uses whatever NPM and Node version you have installed on your machine, and 
 
 From here, changes to files will rebuild the site.
 
+## Checking code before PR
+### Running Linters
+1. Navigate to the base of this repo
+1. Run `sh ./ci/linter.sh`
+1. If there are errors, `npx eslint --ext .js --fix-dry-run [file or directory here]` will perform a dry-run of fixing all errors and those errors will not be saved.  Then `npx eslint --ext .js --fix [file or directory here]` will fix and save all errors.
