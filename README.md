@@ -39,3 +39,8 @@ From here, changes to files will rebuild the site.
 1. Navigate to the base of this repo
 1. Run `sh ./ci/linter.sh`
 1. If there are errors, `npx eslint --ext .js --fix-dry-run [file or directory here]` will perform a dry-run of fixing all errors and those errors will not be saved.  Then `npx eslint --ext .js --fix [file or directory here]` will fix and save all errors.
+## Node Tests
+
+We are using Playwright Tests to accomodate our testing needs for this project on destop and mobile.
+
+Before pushing up a PR, tests can be run using `npx playwright test` for the command line output or `npx playwright test --ui` to open the tests in UI mode.
