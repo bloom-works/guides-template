@@ -11,7 +11,9 @@
 #   3. npm run serve
 ################################
 
-# Debian based base image for Node.js
+# Debian 11 based base image for Node.js
+# We downgraded the Docker image to use Debian 11 vs Debian 12 because Playwright
+# doesn't currently support OS versions above Debian 11
 FROM node:18.16.0-bullseye
 
 # Put files in /app

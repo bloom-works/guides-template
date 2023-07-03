@@ -34,3 +34,8 @@ This uses whatever NPM and Node version you have installed on your machine, and 
 
 From here, changes to files will rebuild the site.
 
+### Node Tests
+
+We are using Playwright Tests to accomodate our testing needs for this project on destop and mobile.
+
+Before pushing up a PR, tests can be run using `npx playwright test` for the command line output or `npx playwright test --ui` to open the tests in UI mode.
