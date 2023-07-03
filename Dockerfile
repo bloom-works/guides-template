@@ -12,7 +12,7 @@
 ################################
 
 # Debian based base image for Node.js
-FROM node:18.16.0 
+FROM node:18.16.0-bullseye
 
 # Put files in /app
 WORKDIR /app
