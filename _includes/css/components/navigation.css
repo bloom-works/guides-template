@@ -50,7 +50,7 @@
 .nav-button {
   padding-block: 0.5em;
   padding-inline: 0;
-  inline-size: 50vi;
+  inline-size: 40dvi;
   font-size: var(--t-small);
   text-transform: uppercase;
   justify-content: start;
@@ -58,15 +58,13 @@
   box-shadow: none;
 }
 
-.nav-search-button {
-  background: var(--c-accent-light);
-  border-radius: var(--radius);
-  color: var(--c-accent-dark);
-  padding: 0.375em;
+[data-nav-button="sections"] {
   position: absolute;
-  inset-inline-end: 0;
-  inset-block-start: 0;
-  flex: none;
+  inset-block-end: 0;
+}
+
+[data-nav-button="search"] {
+  margin-inline-start: 50dvi;
 }
 
 @media screen and (min-width: 45em) {
@@ -85,6 +83,7 @@
   }
 
   .nav-button {
+    position: static;
     padding-inline: 1em;
     padding-block: 0.25em;
     white-space: nowrap;
@@ -92,8 +91,8 @@
     inline-size: fit-content;
   }
 
-  .nav-search-button {
-    position: static;
+  [data-nav-button="search"] {
+    margin-inline-start: 0;
   }
 }
 
