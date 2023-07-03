@@ -4,5 +4,5 @@ set -e
 # -----
 # REPLACE THE BELOW WITH YOUR COMMANDS
 # -----
-npx playwright install
+npx playwright install --with-deps
 npx playwright test
