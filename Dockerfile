@@ -1,6 +1,6 @@
 ################################
 ### TO BUILD IMAGE
-# docker build -t bloom-works/guides-template . 
+# docker build -t bloom-works/guides-template .
 #
 ### TO RUN SERVER (requires rebuild if files change)
 # docker run -it --rm -p "8080:8080" bloom-works/guides-template
@@ -12,7 +12,7 @@
 ################################
 
 # Debian based base image for Node.js
-FROM node:18.16.0 
+FROM node:18.16.0-bullseye
 
 # Put files in /app
 WORKDIR /app
