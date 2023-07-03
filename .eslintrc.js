@@ -4,8 +4,7 @@ module.exports = {
     commonjs: true,
     es2021: true
   },
-  plugins: ['css'],
-  extends: ['standard', 'plugin:css/standard'],
+  extends: ['standard'],
   overrides: [
     {
       env: {
@@ -24,6 +23,7 @@ module.exports = {
   },
   rules: {
     // Semicolon is not required in JS but can be useful to avoid syntax errors when compiler cannot auto-add.  We use it sometimes, if we want to require it "semi: ['error', 'always']"
-    semi: 'off'
+    semi: 'off',
+    'no-unused-vars': 'off'
   }
 }
