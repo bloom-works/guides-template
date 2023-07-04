@@ -38,7 +38,7 @@ From here, changes to files will rebuild the site.
 ### Running Linters
 1. Navigate to the base of this repo
 1. Run `sh ./ci/linter.sh`
-#### CSS -- stylelint hhttps://stylelint.io/user-guide/cli
+#### CSS -- stylelint https://stylelint.io/user-guide/cli
 1. If there are errors, `npx stylelint --fix "**/*.css"` will perform a dry-run of fixing all errors and those errors will not be saved.  Then `npx eslint --ext .js --fix [file or directory here]` will fix and save all errors.
 ## Node Tests
 
