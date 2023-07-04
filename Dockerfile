@@ -23,6 +23,10 @@ COPY . .
 # Build the application
 RUN npm install
 
+# Install dependencies for nunjucks linting
+RUN apt-get update && apt-get install -y \
+  pip && pip install djlint
+
 # Run a server if executing the container (Port 8080 is default)
 ARG PORT=8080
 EXPOSE ${PORT}
