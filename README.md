@@ -34,6 +34,12 @@ This uses whatever NPM and Node version you have installed on your machine, and 
 
 From here, changes to files will rebuild the site.
 
+## Checking code before PR
+### Running Linters
+1. Navigate to the base of this repo
+1. Run `sh ./ci/linter.sh`
+#### Nunjucks -- djlint https://www.djlint.com/docs/linter/
+1. From the base of this repo run `djlint ./ -e .njk --profile=nunjucks` to only run djlint.  Manually fix errors.
 ## Node Tests
 
 We are using Playwright Tests to accomodate our testing needs for this project on destop and mobile.
