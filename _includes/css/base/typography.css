@@ -50,10 +50,6 @@ b, strong {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   padding: 0;
-}
-
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
   color: var(--c-headline);
   margin-inline: 0;
   margin-block-end: var(--t-paragraph);
@@ -88,12 +84,14 @@ h2, .h2 {
   text-decoration-color: var(--c-accent);
   text-underline-offset: 0.3125em;
   margin-block-start: 2.5em;
+
   --l-stack-gap: calc(var(--t-paragraph) * 2.5);
 }
 
 h3, .h3 {  
   font-size: var(--t-medium);
   color: var(--c-accent);
+
   --l-stack-gap: calc(var(--t-paragraph) * 2);
 }
 
@@ -158,7 +156,7 @@ ol li:last-child {
 /* Other elements */
 
 a {
-  text-decoration-color: rgba(var(--c-link-text-rgb, var(--c-accent-dark-rgb)), 0.6);
+  text-decoration-color: rgb(var(--c-link-text-rgb, var(--c-accent-dark-rgb)) 0.6);
   color: var(--c-link-text, var(--c-accent-text));
   text-decoration-thickness: 1px;
   text-decoration-skip-ink: all;
@@ -170,17 +168,18 @@ blockquote {
   color: var(--c-headline);
 }
 
-blockquote + figcaption {
-  margin-block-start: var(--t-paragraph);
-}
-
 figcaption {
   color: var(--c-base);
   font-size: var(--t-small);
 }
 
+blockquote + figcaption {
+  margin-block-start: var(--t-paragraph);
+}
+
 hr {
   --hr-margin: calc(var(--t-leading-rem) * 2);
+
   border: 0;
   border-block-start: 1px solid var(--c-accent-light);
   color: inherit;

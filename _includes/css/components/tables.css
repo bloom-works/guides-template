@@ -26,7 +26,7 @@ td {
 	vertical-align: top;
 }
 
-@media screen and (max-width: 38rem) {
+@media screen and (width <= 38rem) {
   table {
     border: 0;
   }
@@ -80,7 +80,7 @@ td {
   }
 }
 
-@media screen and (max-width: 38rem) and (prefers-reduced-motion: no-preference) {
+@media screen and (width <= 38rem) and (prefers-reduced-motion: no-preference) {
   td::before {
     position: sticky;
     inset-block-start: 0.5em;

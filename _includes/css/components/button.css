@@ -6,8 +6,8 @@ button,
   font-weight: var(--t-bold);
   border: 0;
   padding: 0.75em 3em;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%),
+              0 2px 4px -1px rgb(0 0 0 / 6%);
   border-radius: 0;
   display: flex;
   align-items: center;
@@ -45,6 +45,7 @@ button:active,
 .button[data-icon] {
   justify-content: space-between;
   gap: var(--t-leading-em);
+
   --icon-size: 1em;
 }
 

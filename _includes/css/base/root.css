@@ -5,7 +5,7 @@
   --font-primary: "Barlow", system-ui, sans-serif;
   --font-heading: "Barlow Semi Condensed", system-ui, sans-serif;;
 
-  /* Font sizes taken from Bloom Visual Style Guide*/
+  /* Font sizes taken from Bloom Visual Style Guide */
   --t-huge: 3rem;
   --t-large: 2.25rem;
   --t-medium: 1.875rem;
@@ -35,10 +35,8 @@
   /* COLORS */
 
   --c-bg: #faf7f5;
-
   --c-accent: #19825A;
   --c-accent-rgb: 25, 130, 90;
-
   --c-accent-text: #fff;
   --c-link-text: var(--c-accent);
   --c-accent-light: #f3f9f6;
