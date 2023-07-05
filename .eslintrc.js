@@ -4,6 +4,8 @@ module.exports = {
     commonjs: true,
     es2021: true
   },
+  //Since ESLint ignores files beginning with a `.`, we want to explicity tell eslint we want to include the eleventy config file in the linting process.
+  ignorePatterns: '!.eleventy.js',
   extends: ['standard'],
   overrides: [
     {
