@@ -1,0 +1,74 @@
+button,
+.button {
+  -webkit-appearance: none;
+  background: var(--c-accent);
+  color: var(--c-accent-text);
+  font-weight: var(--t-bold);
+  border: 0;
+  padding: 0.75em 3em;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  inline-size: fit-content;
+  position: relative;
+  transition: all 80ms ease-out;
+}
+
+button::after,
+.button::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  opacity: 0;
+  background: var(--c-accent-dark);
+  transition: all 0.2s ease-out;
+}
+
+button:focus::after,
+button:hover::after,
+.button:focus::after,
+.button:hover::after {
+  opacity: 0.2;
+}
+
+button:active,
+.button:active {
+  transform: scale(0.98);
+}
+
+.button[data-icon] {
+  justify-content: space-between;
+  gap: var(--t-leading-em);
+  --icon-size: 1em;
+}
+
+.button[data-icon] svg {
+  inline-size: var(--icon-size);
+  aspect-ratio: 1 / 1;
+}
+
+.button-inverted {
+  background: var(--c-accent-text);
+  color: var(--c-accent);
+}
+
+.button[data-size="small"] {
+  font-size: var(--t-small);
+  padding: 0.5em 2em;
+}
+
+.button[data-size="large"] {
+  font-size: var(--t-medium);
+  inline-size: 100%;
+  padding: 0.75em 2em;
+}
+
+.button[data-size="large"][data-icon] svg {
+  --icon-size: 1.5em;
+}

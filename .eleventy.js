@@ -6,7 +6,10 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginTOC = require('eleventy-plugin-nesting-toc');
 const markdownLibrary = require("./markdown");
 
+const GridComponent = require("./_includes/components/Grid");
+const GridColumnComponent = require("./_includes/components/GridColumn");
 const PageHeaderComponent = require("./_includes/components/PageHeader");
+const PaginationComponent = require("./_includes/components/Pagination.js");
 const ResourcePrivateComponent = require("./_includes/components/ResourcePrivate");
 const ResourcePublicComponent = require("./_includes/components/ResourcePublic");
 const ResourceGroupComponent = require("./_includes/components/ResourceGroup");
@@ -92,7 +95,10 @@ module.exports = function(eleventyConfig) {
     ghostMode: false
   });
 
+  eleventyConfig.addPairedShortcode("Grid", GridComponent);
+  eleventyConfig.addPairedShortcode("GridColumn", GridColumnComponent);
   eleventyConfig.addShortcode("PageHeader", PageHeaderComponent);
+  eleventyConfig.addShortcode("Pagination", PaginationComponent);
   eleventyConfig.addShortcode("PrivateResource", ResourcePrivateComponent);
   eleventyConfig.addShortcode("PublicResource", ResourcePublicComponent);
   eleventyConfig.addPairedShortcode("ResourceGroup", ResourceGroupComponent);
