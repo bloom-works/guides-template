@@ -1,7 +1,7 @@
 const { html } = require('common-tags');
-const markdown = require("../../markdown");
+const markdown = require('../../markdown');
 
-function renderGridColumn(content, headline, icon){
+function renderGridColumn (content, headline, icon) {
   const contentMd = markdown.render(content);
 
   return html`
