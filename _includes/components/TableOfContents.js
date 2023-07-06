@@ -1,6 +1,6 @@
 const { html } = require('common-tags');
 
-function renderTableOfContents(content) {
+function renderTableOfContents (content) {
   return html`
     <nav class="toc" aria-labelledby="toc-nav">
       <header id="toc-nav">In this section</header>
