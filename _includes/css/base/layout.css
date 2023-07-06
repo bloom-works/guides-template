@@ -135,6 +135,38 @@ var(--stack-layout-gap) within specific components.
   max-inline-size: var(--t-measure);
 }
 
+/* For sidebar layouts (like the TOC and main content)
+   The first direct descendant of .l-sidebar will serve as
+   the smallest column. */
+
+.l-sidebar {
+  --l-sidebar-content-width: 61.8%;
+  --l-sidebar-width: 15rem;
+  --l-sidebar-gap: var(--g-column-gap);
+
+  max-inline-size: var(--w-max);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--l-sidebar-gap);
+}
+
+.l-sidebar > * {
+  margin-inline: auto;
+}
+
+.l-sidebar > :first-child {
+  flex-basis: var(--l-sidebar-width);
+  flex-grow: 1;
+}
+
+.l-sidebar > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: var(--l-sidebar-content-width);
+  max-inline-size: var(--t-measure);
+}
+
 /* Creating a sticky footer */
 
 body {

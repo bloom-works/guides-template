@@ -1,0 +1,23 @@
+.icon-grid {
+  margin-block: calc(var(--t-paragraph) * 2);
+}
+
+.icon-grid h3 {
+  margin-block-start: calc(var(--t-leading-em) / 8);
+}
+
+.icon-grid-svg,
+.icon-grid-svg svg {
+  aspect-ratio: 1 / 1;
+}
+
+.icon-grid-svg {
+  color: var(--c-accent);
+  margin-block-end: 0.5em;
+  display: inline-block;
+}
+
+.icon-grid-svg svg {
+  inline-size: calc(var(--t-leading-rem) * 2);
+  display: block;
+}

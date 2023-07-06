@@ -1,7 +1,8 @@
 # Fail if any command exits with a non-zero exit code
-set -e 
+set -e
 
 # -----
 # REPLACE THE BELOW WITH YOUR COMMANDS
 # -----
-echo 'Run tests'
+npx playwright install --with-deps
+npx playwright test

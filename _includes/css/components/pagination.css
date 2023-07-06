@@ -1,0 +1,44 @@
+
+.pagination {
+  container: pagination / inline-size;
+}
+
+.pagination-inner {
+  margin-block-start: var(--t-leading-em);
+  display: flex;
+  gap: 0.5em;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.pagination .button[data-icon] {
+  display: flex;
+  min-inline-size: 100%;
+  text-wrap: balance;
+  --icon-size: calc(var(--t-leading-em) * 1.25);
+}
+
+.pagination .button:focus svg,
+.pagination .button:hover svg {
+  transform: scale(1.08);
+}
+
+.pagination-button-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.pagination-subhead {
+  font-size: 0.75em;
+  opacity: 0.85;
+}
+
+@container pagination (min-inline-size: 30rem) {
+  .pagination-inner {
+    flex-direction: row;
+  }
+
+  .pagination .button[data-icon] {
+    min-inline-size: fit-content;
+  }
+}
