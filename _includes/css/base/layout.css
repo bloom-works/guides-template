@@ -130,13 +130,9 @@ var(--stack-layout-gap) within specific components.
 
 .l-section {
   padding-block: var(--section-padding);
+  padding-inline: var(--t-paragraph);
   margin-block: var(--section-margin);
-  max-inline-size: unset;
-}
-
-.l-section + .l-section,
-.l-text-wrapper:has(.l-stack-basic:empty) + .l-section {
-  margin-block-start: calc(var(--section-margin) * -1);
+  max-inline-size: var(--t-measure);
 }
 
 /* For sidebar layouts (like the TOC and main content)
