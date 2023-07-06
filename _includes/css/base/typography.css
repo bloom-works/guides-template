@@ -156,7 +156,7 @@ ol li:last-child {
 /* Other elements */
 
 a {
-  text-decoration-color: rgb(var(--c-link-text-rgb, var(--c-accent-dark-rgb)) 0.6);
+  text-decoration-color: rgb(var(--c-link-text-rgb, var(--c-accent-dark-rgb)) / 60%);
   color: var(--c-link-text, var(--c-accent-text));
   text-decoration-thickness: 1px;
   text-decoration-skip-ink: all;
