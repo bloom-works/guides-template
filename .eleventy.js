@@ -1,23 +1,30 @@
-const { DateTime } = require('luxon');
-const fs = require('fs');
-const pluginRss = require('@11ty/eleventy-plugin-rss');
-const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const pluginNavigation = require('@11ty/eleventy-navigation');
-const markdownLibrary = require('./markdown');
+const { DateTime } = require("luxon");
+const fs = require("fs");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginNavigation = require("@11ty/eleventy-navigation");
+const pluginTOC = require('eleventy-plugin-nesting-toc');
+const markdownLibrary = require("./markdown");
 
-const GridComponent = require('./_includes/components/Grid');
-const GridColumnComponent = require('./_includes/components/GridColumn');
-const PageHeaderComponent = require('./_includes/components/PageHeader');
-const PaginationComponent = require('./_includes/components/Pagination.js');
-const ResourcePrivateComponent = require('./_includes/components/ResourcePrivate');
-const ResourcePublicComponent = require('./_includes/components/ResourcePublic');
-const ResourceGroupComponent = require('./_includes/components/ResourceGroup');
+const GridComponent = require("./_includes/components/Grid");
+const GridColumnComponent = require("./_includes/components/GridColumn");
+const PageHeaderComponent = require("./_includes/components/PageHeader");
+const PaginationComponent = require("./_includes/components/Pagination.js");
+const ResourcePrivateComponent = require("./_includes/components/ResourcePrivate");
+const ResourcePublicComponent = require("./_includes/components/ResourcePublic");
+const ResourceGroupComponent = require("./_includes/components/ResourceGroup");
+const TableOfContentsComponent = require("./_includes/components/TableOfContents");
 
 module.exports = function (eleventyConfig) {
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.addPlugin(pluginTOC, {
+    tags: ['h2'],
+    wrapper: 'div',
+    wrapperClass: 'l-stack'
+  });
 
   // https://www.11ty.dev/docs/data-deep-merge/
   eleventyConfig.setDataDeepMerge(true);
@@ -89,13 +96,14 @@ module.exports = function (eleventyConfig) {
     ghostMode: false
   });
 
-  eleventyConfig.addPairedShortcode('Grid', GridComponent);
-  eleventyConfig.addPairedShortcode('GridColumn', GridColumnComponent);
-  eleventyConfig.addShortcode('PageHeader', PageHeaderComponent);
-  eleventyConfig.addShortcode('Pagination', PaginationComponent);
-  eleventyConfig.addShortcode('PrivateResource', ResourcePrivateComponent);
-  eleventyConfig.addShortcode('PublicResource', ResourcePublicComponent);
-  eleventyConfig.addPairedShortcode('ResourceGroup', ResourceGroupComponent);
+  eleventyConfig.addPairedShortcode("Grid", GridComponent);
+  eleventyConfig.addPairedShortcode("GridColumn", GridColumnComponent);
+  eleventyConfig.addShortcode("PageHeader", PageHeaderComponent);
+  eleventyConfig.addShortcode("Pagination", PaginationComponent);
+  eleventyConfig.addShortcode("PrivateResource", ResourcePrivateComponent);
+  eleventyConfig.addShortcode("PublicResource", ResourcePublicComponent);
+  eleventyConfig.addPairedShortcode("ResourceGroup", ResourceGroupComponent);
+  eleventyConfig.addPairedShortcode("TableOfContents", TableOfContentsComponent);
 
   return {
     // Control which files Eleventy will process
