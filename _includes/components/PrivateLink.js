@@ -1,6 +1,6 @@
 const { oneLine } = require('common-tags');
 
-function renderPrivateLink(content, url){
+function renderPrivateLink (content, url) {
   return oneLine`
     <a href="${url}" class="private-link">
       <span class="private-link-text">${content}</span>

@@ -1,7 +1,7 @@
 const { html } = require('common-tags');
-const markdown = require("../../markdown");
+const markdown = require('../../markdown');
 
-function renderResourcePrivate(content, url){
+function renderResourcePrivate (content, url) {
   const resourceText = markdown.render(content);
 
   return html`

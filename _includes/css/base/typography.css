@@ -52,8 +52,14 @@ h1, h2, h3, h4, h5, h6,
   padding: 0;
 }
 
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+.h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
+  text-decoration-thickness: 0.125em;
+}
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--font-heading);
   color: var(--c-headline);
   margin-inline: 0;
   margin-block-end: var(--t-paragraph);
@@ -89,6 +95,14 @@ h2, .h2 {
   text-underline-offset: 0.3125em;
   margin-block-start: 2.5em;
   --l-stack-gap: calc(var(--t-paragraph) * 2.5);
+}
+
+h2 a {
+  text-decoration: none;
+}
+
+h2:has(a:hover, a:focus) {
+  text-decoration-thickness: 0.1875em;
 }
 
 h3, .h3 {  
@@ -160,7 +174,7 @@ ol li:last-child {
 a {
   text-decoration-color: rgba(var(--c-link-text-rgb, var(--c-accent-dark-rgb)), 0.6);
   color: var(--c-link-text, var(--c-accent-text));
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 0.0625em;
   text-decoration-skip-ink: all;
 }
 
