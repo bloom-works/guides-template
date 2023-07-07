@@ -91,6 +91,14 @@ h2, .h2 {
   --l-stack-gap: calc(var(--t-paragraph) * 2.5);
 }
 
+h2 a {
+  text-decoration: none;
+}
+
+h2:has(a:hover, a:focus) {
+  text-decoration-thickness: 0.1875em;
+}
+
 h3, .h3 {  
   font-size: var(--t-medium);
   color: var(--c-accent);
