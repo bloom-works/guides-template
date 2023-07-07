@@ -39,6 +39,7 @@
   --c-accent-rgb: 25, 130, 90;
   --c-accent-text: #fff;
   --c-link-text: var(--c-accent);
+  --c-link-text-rgb: var(--c-accent-rgb);
   --c-accent-light: #f3f9f6;
   --c-accent-light-rgb: 243, 249, 246;
   --c-accent-dark: #04301B;
@@ -57,8 +58,8 @@
 
   /* Padding between sections */
 
-  --section-padding: calc(var(--t-leading-rem) * 3);
-  --section-margin: calc(var(--t-leading-rem) * 2);
+  --section-padding: var(--t-leading-rem);
+  --section-margin: var(--t-paragraph);
 
   /*  Sizing for pictographic bullets like:
       - Checklist boxes
