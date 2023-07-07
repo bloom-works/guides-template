@@ -1,0 +1,108 @@
+/* Basic layout */
+
+.toc {
+  background: #fff;
+  align-self: start;
+  position: relative;
+  max-inline-size: var(--t-measure);
+}
+
+.toc header {
+  padding-block: 0.25em;
+  padding-inline: 1em;
+  position: relative;
+  background: var(--c-accent);
+  color: var(--c-accent-text);
+  font-weight: var(--t-bold);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+/* Sticky TOC */
+
+/* This media query has a custom name the linter doesn't recognize so this particular error is being supressed by the following line */
+/* stylelint-disable media-feature-name-no-unknown */
+@media (min-inline-size: 101rem) and (prefers-reduced-motion: no-preference) {
+  .toc {
+    position: sticky;
+    top: var(--t-paragraph);
+  }
+}
+
+
+/* Backgrounds are applied to pseudo-elements
+   so they can be distorted by SVG filters
+   independently from their contents
+*/
+
+.toc::before,
+.toc header::before {
+  content: "";
+  background: transparent;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: var(--radius);
+}
+
+.toc::before {
+  border: 1px solid var(--c-accent);
+}
+
+.toc header::before {
+  border-block-end: 1px solid var(--c-accent);
+}
+
+/* List of sections */
+
+.toc ol {
+  padding: 1em;
+  margin: 0;
+  font-size: var(--t-small);
+  max-inline-size: unset;
+  counter-reset: toc-menu;
+  list-style: none;
+  position: relative;
+  z-index: 9;
+}
+
+.toc li {
+  position: relative;
+  counter-increment: toc-menu;
+  padding-inline-start: calc(var(--counter-size) + 0.5em);
+  padding-block: 0;
+
+  /* There should be an empty space before custom properties per CSS linter rules */
+  --counter-size: calc(var(--t-leading-em) * 1.125);
+}
+
+.toc li::before {
+  content: counter(toc-menu);
+  font-weight: var(--t-bold);
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: calc(var(--t-leading-em) / 2);
+  margin-block-start: calc(var(--counter-size) * -0.5);
+  border-radius: 50%;
+  color: var(--c-accent);
+  border: 1px solid var(--c-accent);
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--counter-size);
+  block-size: var(--counter-size);
+}
+
+.toc li a {
+  font-weight: var(--t-bold);
+  text-decoration-color: var(--c-accent);
+}
+
+.toc li a:hover,
+.toc li a:focus,
+.toc li a:active {
+  text-decoration-thickness: 2px;
+}

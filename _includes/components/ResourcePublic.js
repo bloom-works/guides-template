@@ -1,18 +1,18 @@
 const { html } = require('common-tags');
-const markdown = require("../../markdown");
+const markdown = require('../../markdown');
 
-function renderResourcePublic(content, url){
+function renderResourcePublic (content, url) {
   const resourceText = markdown.render(content);
 
-  let icon = `link-45deg`;
-  let title = `Link`;
+  let icon = 'link-45deg';
+  let title = 'Link';
 
   if (url.includes('docs.google.com')) {
-    icon = `file-earmark-text`;
-    title = `Google Doc`;
+    icon = 'file-earmark-text';
+    title = 'Google Doc';
   } else if (url.endsWith('.pdf')) {
-    icon = `filetype-pdf`;
-    title = `PDF`;
+    icon = 'filetype-pdf';
+    title = 'PDF';
   }
 
   return html`

@@ -1,0 +1,105 @@
+/* Callout theming */
+
+.callout {
+  position: relative;
+  border-radius: var(--radius);
+  container-type: inline-size;
+
+/* There should be an empty space before custom properties per CSS linter rules */
+  --callout-bg: var(--c-accent-light);
+  --callout-accent: var(--c-accent);
+}
+
+.callout[data-type="warning"] {
+  --callout-bg: #f5e0e0;
+  --callout-accent: #97312f;
+}
+
+
+.callout[data-type="pep-talk"] {
+  --callout-bg: #fff0f6;
+  --callout-accent: #ff3381;
+}
+
+.callout[data-type="event"] {
+  --callout-bg: #eef3fc;
+  --callout-accent: #194182;
+}
+
+/*
+  Backgrounds and borders are on pseudo-elements
+  so they can be distorted by SVG filters
+  independently from their contents
+*/
+
+.callout::before,
+.callout::after,
+.callout-inner::before,
+.callout-icon::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  z-index: -1;
+}
+
+.callout::before {
+  background-color: var(--callout-bg);
+}
+
+.callout::after {
+  border-radius: var(--radius);
+  opacity: 0.3;
+  border: 1px solid var(--callout-accent);
+}
+
+.callout-icon::before {
+  --mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='currentColor' d='M7.61732 0.158513C7.86234 0.0570186 8.13766 0.0570187 8.38268 0.158513L13.2742 2.18463C13.5192 2.28613 13.7139 2.4808 13.8154 2.72583L15.8415 7.61732C15.943 7.86234 15.943 8.13766 15.8415 8.38268L13.8154 13.2742C13.7139 13.5192 13.5192 13.7139 13.2742 13.8154L8.38268 15.8415C8.13766 15.943 7.86234 15.943 7.61732 15.8415L2.72583 13.8154C2.4808 13.7139 2.28613 13.5192 2.18463 13.2742L0.158513 8.38268C0.0570187 8.13766 0.0570187 7.86234 0.158513 7.61732L2.18463 2.72583C2.28613 2.4808 2.4808 2.28613 2.72583 2.18463L7.61732 0.158513Z' /%3E%3C/svg%3E");
+
+  /* There should be an empty space before custom properties per CSS linter rules */
+  background: var(--callout-accent);
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+
+/* Basic layout */
+
+.callout-inner {
+  display: flex;
+  gap: var(--g-column-gap);
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+}
+
+@container (min-inline-size: 20em) {
+  .callout-inner {
+    flex-direction: row;
+  }
+}
+
+.callout-icon {
+  padding: var(--t-leading-em);
+  border-radius: var(--radius);
+  flex: none;
+  position: relative;
+  color: var(--c-accent-text);
+}
+
+.callout-icon svg {
+  inline-size: 2rem;
+  aspect-ratio: 1 / 1;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+/* Optically adjusting icons
+   within their container */
+
+.callout[data-type="warning"] svg {
+  transform: scale(1.5);
+}
+
+.callout[data-type="pep-talk"] svg {
+  transform: translateY(7%);
+}

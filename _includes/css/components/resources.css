@@ -4,6 +4,7 @@
 .resources li {
   --grid-gap: 1em;
   --grid-col-width: calc(var(--t-measure) / 3);
+
   max-inline-size: unset;
   margin: 0;
   padding: 0;
@@ -27,6 +28,7 @@
 
 .resources li a {
   --c-resource-accent: var(--c-accent);
+
   color: var(--c-resource-accent);
   display: flex;
   inline-size: 100%;
@@ -41,7 +43,6 @@
 }
 
 .resource-icon {
-  display: block;
   align-self: stretch;
   inline-size: calc(var(--t-leading-rem) * 2);
   color: var(--c-accent-text);
@@ -72,7 +73,7 @@
 .resources li a::before {
   background: #fff;
   border: 1px solid var(--c-resource-accent);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 6%);
   border-radius: var(--radius);
 }
 
@@ -87,7 +88,7 @@
 }
 
 .resources li a::after {
-  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5em 1em rgb(0 0 0 / 10%);
   opacity: 0;
   transition: all 0.2s ease-out;
 }
