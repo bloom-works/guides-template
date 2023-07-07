@@ -6,6 +6,7 @@ const pluginNavigation = require('@11ty/eleventy-navigation');
 const pluginTOC = require('eleventy-plugin-nesting-toc');
 const markdownLibrary = require('./markdown');
 
+const CalloutComponent = require('./_includes/components/Callout')
 const ChecklistComponent = require('./_includes/components/Checklist.js');
 const KeyQuestionsComponent = require('./_includes/components/KeyQuestions.js');
 const GridComponent = require('./_includes/components/Grid');
@@ -98,6 +99,7 @@ module.exports = function (eleventyConfig) {
     ghostMode: false
   });
 
+  eleventyConfig.addPairedShortcode('Callout', CalloutComponent);
   eleventyConfig.addPairedShortcode('Grid', GridComponent);
   eleventyConfig.addPairedShortcode('GridColumn', GridColumnComponent);
   eleventyConfig.addPairedShortcode('Checklist', ChecklistComponent);
