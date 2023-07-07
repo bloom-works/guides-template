@@ -24,7 +24,7 @@ svg {
 
 /* Visually hidden content */
 
-.sr-only:not(:focus):not(:active) {
+.sr-only:not(:focus, :active) {
   clip: rect(0 0 0 0);
   clip-path: inset(100%);
   inline-size: 1px;
