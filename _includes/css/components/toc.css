@@ -22,12 +22,14 @@
 
 /* Sticky TOC */
 
+/* stylelint-disable media-feature-name-no-unknown */
 @media (min-inline-size: 101rem) and (prefers-reduced-motion: no-preference) {
   .toc {
     position: sticky;
     top: var(--t-paragraph);
   }
 }
+
 
 /* Backgrounds are applied to pseudo-elements
    so they can be distorted by SVG filters
@@ -66,14 +68,16 @@
 }
 
 .toc li {
-  --counter-size: calc(var(--t-leading-em) * 1.125);
   position: relative;
   counter-increment: toc-menu;
   padding-inline-start: calc(var(--counter-size) + 0.5em);
   padding-block: 0;
+
+  /* There should be an empty space before custom properties per CSS linter rules */
+  --counter-size: calc(var(--t-leading-em) * 1.125);
 }
 
-.toc li:before {
+.toc li::before {
   content: counter(toc-menu);
   font-weight: var(--t-bold);
   position: absolute;

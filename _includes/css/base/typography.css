@@ -57,6 +57,17 @@ h1, h2, h3, h4, h5, h6,
   padding: 0;
 }
 
+a {
+  text-decoration-color: rgb(var(--c-link-text-rgb, var(--c-accent-dark-rgb)) / 60%);
+  color: var(--c-link-text, var(--c-accent-text));
+  text-decoration-thickness: 0.0625em;
+  text-decoration-skip-ink: all;
+}
+
+h2 a {
+  text-decoration: none;
+}
+
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
 .h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
   text-decoration-thickness: 0.125em;
@@ -92,10 +103,6 @@ h2, .h2 {
   margin-block-start: 2.5em;
 
   --l-stack-gap: calc(var(--t-paragraph) * 2.5);
-}
-
-h2 a {
-  text-decoration: none;
 }
 
 h2:has(a:hover, a:focus) {
@@ -168,13 +175,6 @@ ol li:last-child {
 }
 
 /* Other elements */
-
-a {
-  text-decoration-color: rgb(var(--c-link-text-rgb, var(--c-accent-dark-rgb)) / 60%);
-  color: var(--c-link-text, var(--c-accent-text));
-  text-decoration-thickness: 0.0625em;
-  text-decoration-skip-ink: all;
-}
 
 blockquote {
   border-inline-start: 0.5rem solid var(--c-accent);
