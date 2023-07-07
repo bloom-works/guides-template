@@ -59,8 +59,8 @@
 
   /* Padding between sections */
 
-  --section-padding: var(--t-leading-rem);
-  --section-margin: var(--t-paragraph);
+  --section-padding: calc(var(--t-leading-rem) * 3);
+  --section-margin: calc(var(--t-leading-rem) * 2);
 
   /*  Sizing for pictographic bullets like:
       - Checklist boxes
