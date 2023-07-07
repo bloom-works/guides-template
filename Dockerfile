@@ -23,6 +23,10 @@ COPY . .
 # Build the application
 RUN npm install
 
+# Install dependencies for nunjucks linting. At time of adding, requires: Python >=3.8.0, <4.0.0
+RUN apt-get update && apt-get install -y \
+  pip && pip install djlint==1.31.1
+
 # Run a server if executing the container (Port 8080 is default)
 ARG PORT=8080
 EXPOSE ${PORT}
