@@ -22,6 +22,7 @@
 
 /* Sticky TOC */
 
+/* This media query has a custom name the linter doesn't recognize so this particular error is being supressed by the following line */
 /* stylelint-disable media-feature-name-no-unknown */
 @media (min-inline-size: 101rem) and (prefers-reduced-motion: no-preference) {
   .toc {
