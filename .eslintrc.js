@@ -2,11 +2,15 @@ module.exports = {
   env: {
     browser: true,
     commonjs: true,
-    es2021: true
+    es2021: true,
+    jest: true
   },
   // Since ESLint ignores files beginning with a `.`, we want to explicity tell eslint to include the eleventy config file in the linting process.
   ignorePatterns: '!.eleventy.js',
   extends: ['standard'],
+  globals: {
+    cy: true
+  },
   overrides: [
     {
       env: {
@@ -24,7 +28,7 @@ module.exports = {
     ecmaVersion: 'latest'
   },
   rules: {
-    // Semicolon is not required in JS but can be useful to avoid syntax errors when compiler cannot auto-add.  We use it sometimes, if we want to require it "semi: ['error', 'always']"
+    // Semicolon is not required in JS but can be useful to avoid syntax errors when compiler cannot auto-add.  We use it sometimes, if we want to require it 'semi: ['error', 'always']'
     semi: 'off',
     'no-unused-vars': 'off'
   }
