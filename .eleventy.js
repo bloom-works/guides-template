@@ -13,6 +13,7 @@ const GridComponent = require('./_includes/components/Grid');
 const GridColumnComponent = require('./_includes/components/GridColumn');
 const PageHeaderComponent = require('./_includes/components/PageHeader');
 const PaginationComponent = require('./_includes/components/Pagination.js');
+const PrivateLinkComponent = require('./_includes/components/PrivateLink.js');
 const ResourcePrivateComponent = require('./_includes/components/ResourcePrivate');
 const ResourcePublicComponent = require('./_includes/components/ResourcePublic');
 const ResourceGroupComponent = require('./_includes/components/ResourceGroup');
@@ -105,6 +106,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPairedShortcode('Checklist', ChecklistComponent);
   eleventyConfig.addPairedShortcode('KeyQuestions', KeyQuestionsComponent);
   eleventyConfig.addShortcode('PageHeader', PageHeaderComponent);
+  eleventyConfig.addPairedShortcode('PrivateLink', PrivateLinkComponent);
   eleventyConfig.addShortcode('Pagination', PaginationComponent);
   eleventyConfig.addShortcode('PrivateResource', ResourcePrivateComponent);
   eleventyConfig.addShortcode('PublicResource', ResourcePublicComponent);

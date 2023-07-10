@@ -1,0 +1,11 @@
+{ 
+    "extends": ["stylelint-config-standard"],
+    "ignoreFiles": [
+        "_site/**/*.css"
+    ],
+    "rules": {
+        "selector-no-vendor-prefix": null,
+        "property-no-vendor-prefix": null
+
+    }
+}

@@ -34,6 +34,7 @@ and var(--l-frame-height) within specific components.
 .l-frame {
   --l-frame-width: 16;
   --l-frame-height: 9;
+
   aspect-ratio: var(--l-frame-width) / var(--l-frame-height);
   overflow: hidden;
   display: flex;
@@ -58,6 +59,7 @@ within specific components.
 .l-grid {
   --grid-col-width: calc(var(--t-measure) / 3);
   --grid-gap: var(--g-column-gap);
+
   display: grid;
   flex-wrap: wrap;
   gap: var(--grid-gap);
@@ -65,7 +67,7 @@ within specific components.
 
 @supports (width: Min(30rem, 100%)) {
   .l-grid {
-    grid-template-columns: repeat(auto-fit, minmax(Min(var(--grid-col-width), 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--grid-col-width), 100%), 1fr));
   }
 }
 
@@ -172,6 +174,7 @@ var(--stack-layout-gap) within specific components.
 body {
   min-height: 100dvh;
   display: grid;
+
   /* 4 rows for:
      - Site navigation
      - Page headers

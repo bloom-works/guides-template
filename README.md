@@ -33,14 +33,20 @@ This uses whatever NPM and Node version you have installed on your machine, and 
 1. View the site in your browser at [http://localhost:8080](http://localhost:8080)
 
 From here, changes to files will rebuild the site.
-
 ## Checking code before PR
 ### Running Linters
 1. Navigate to the base of this repo
 1. Run `sh ./ci/linter.sh`
+
+#### CSS -- stylelint https://stylelint.io/user-guide/cli
+1. If there are errors, `npx stylelint --fix "**/*.css"` will perform a dry-run of fixing all errors and those errors will not be saved.  Then `npx eslint --ext .js --fix [file or directory here]` will fix and save all errors.
+
 #### JS -- ESLint https://eslint.org/docs/latest/use/command-line-interface
 1. If there are errors, `npx eslint --ext .js --fix-dry-run [file or directory here]` will perform a dry-run of fixing all errors and those errors will not be saved.  Then `npx eslint --ext .js --fix [file or directory here]` will fix and save all errors.
 
+#### Nunjucks -- djlint https://www.djlint.com/docs/linter/
+1. From the base of this repo run `djlint ./ -e .njk --profile=nunjucks` to only run djlint.  Manually fix errors.
+   
 ## Node Tests
 
 We are using Playwright Tests to accomodate our testing needs for this project on destop and mobile.

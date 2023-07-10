@@ -49,15 +49,28 @@ b, strong {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  padding: 0;
-}
-
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--font-heading);
   color: var(--c-headline);
   margin-inline: 0;
   margin-block-end: var(--t-paragraph);
   inline-size: fit-content;
+  padding: 0;
+}
+
+a {
+  text-decoration-color: rgb(var(--c-link-text-rgb, var(--c-accent-dark-rgb)) / 60%);
+  color: var(--c-link-text, var(--c-accent-text));
+  text-decoration-thickness: 0.0625em;
+  text-decoration-skip-ink: all;
+}
+
+h2 a {
+  text-decoration: none;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+.h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
+  text-decoration-thickness: 0.125em;
 }
 
 h1, h2, h3, h4, h5,
@@ -88,20 +101,18 @@ h2, .h2 {
   text-decoration-color: var(--c-accent);
   text-underline-offset: 0.3125em;
   margin-block-start: 2.5em;
-  --l-stack-gap: calc(var(--t-paragraph) * 2.5);
-}
 
-h2 a {
-  text-decoration: none;
+  --l-stack-gap: calc(var(--t-paragraph) * 2.5);
 }
 
 h2:has(a:hover, a:focus) {
   text-decoration-thickness: 0.1875em;
 }
 
-h3, .h3 {  
+h3, .h3 {
   font-size: var(--t-medium);
   color: var(--c-accent);
+
   --l-stack-gap: calc(var(--t-paragraph) * 2);
 }
 
@@ -165,21 +176,10 @@ ol li:last-child {
 
 /* Other elements */
 
-a {
-  text-decoration-color: rgba(var(--c-link-text-rgb, var(--c-accent-dark-rgb)), 0.6);
-  color: var(--c-link-text, var(--c-accent-text));
-  text-decoration-thickness: 1px;
-  text-decoration-skip-ink: all;
-}
-
 blockquote {
   border-inline-start: 0.5rem solid var(--c-accent);
   padding-inline-start: var(--t-paragraph);
   color: var(--c-headline);
-}
-
-blockquote + figcaption {
-  margin-block-start: var(--t-paragraph);
 }
 
 figcaption {
@@ -187,8 +187,13 @@ figcaption {
   font-size: var(--t-small);
 }
 
+blockquote + figcaption {
+  margin-block-start: var(--t-paragraph);
+}
+
 hr {
   --hr-margin: calc(var(--t-leading-rem) * 2);
+
   border: 0;
   border-block-start: 1px solid var(--c-accent-light);
   color: inherit;
