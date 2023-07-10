@@ -1,9 +1,10 @@
 /* Basic navbar layout */
 
 .nav {
+  --search-button-padding: 2em;
+
   background: var(--c-accent-dark);
   padding-block: 0.5em;
-  --search-button-padding: 2em;
 }
 
 .nav .l-wrapper {
@@ -67,7 +68,7 @@
   margin-inline-start: 50dvi;
 }
 
-@media screen and (min-width: 45em) {
+@media screen and (width >= 45em) {
   .nav .l-wrapper {
     flex-direction: row;
     align-items: center;
@@ -123,7 +124,7 @@ html:has(dialog[open]) {
   border: transparent;
   border-start-start-radius: var(--radius);
   border-end-end-radius: var(--radius);
-  box-shadow: 0.5em 0 0.5em rgba(0, 0, 0, 0.15);
+  box-shadow: 0.5em 0 0.5em rgb(0, 0, 0 / 15%);
   pointer-events: none;
   z-index: 999;
 }
@@ -167,7 +168,7 @@ html:has(dialog[open]) {
 */
 
 .all-sections-menu::backdrop {
-  background: rgba(4, 48, 27, 0.8);
+  background: rgb(4, 48, 27 / 80%);
 }
 
 /* Basic <dialog> layout */
@@ -195,7 +196,7 @@ html:has(dialog[open]) {
 }
 
 .all-sections-menu header button,
-.all-sections-menu header button:after {
+.all-sections-menu header button::after {
   border-radius: 50%;
 }
 
@@ -221,9 +222,10 @@ html:has(dialog[open]) {
 }
 
 .all-sections-menu li {
+  --number-size: calc(var(--t-leading-em) * 1.125);
+
   position: relative;
   counter-increment: all-sections-menu;
-  --number-size: calc(var(--t-leading-em) * 1.125);
 }
 
 .all-sections-menu li a {
