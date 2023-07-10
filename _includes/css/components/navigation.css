@@ -124,7 +124,7 @@ html:has(dialog[open]) {
   border: transparent;
   border-start-start-radius: var(--radius);
   border-end-end-radius: var(--radius);
-  box-shadow: 0.5em 0 0.5em rgb(0, 0, 0 / 15%);
+  box-shadow: 0.5em 0 0.5em rgb(0 0 0 / 15%);
   pointer-events: none;
   z-index: 999;
 }
@@ -168,7 +168,7 @@ html:has(dialog[open]) {
 */
 
 .all-sections-menu::backdrop {
-  background: rgb(4, 48, 27 / 80%);
+  background: rgb(4 48 27 / 80%);
 }
 
 /* Basic <dialog> layout */
