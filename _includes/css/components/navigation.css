@@ -1,0 +1,270 @@
+/* Basic navbar layout */
+
+.nav {
+  --search-button-padding: 2em;
+
+  background: var(--c-accent-dark);
+  padding-block: 0.5em;
+}
+
+.nav .l-wrapper {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  position: relative;
+}
+
+.nav-meta {
+  padding-inline-end: var(--search-button-padding);
+}
+
+.nav strong {
+  color: #fff;
+  text-transform: unset;
+  font-size: var(--t-base);
+}
+
+.nav div,
+.nav-meta a {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+.nav svg,
+.nav-home {
+  flex: none;
+}
+
+.nav-home {
+  display: flex;
+  align-items: center;
+}
+
+.nav svg {
+  inline-size: 1em;
+}
+
+/* Navbar buttons */
+
+.nav-button {
+  padding-block: 0.5em;
+  padding-inline: 0;
+  inline-size: 40dvi;
+  font-size: var(--t-small);
+  text-transform: uppercase;
+  justify-content: start;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-nav-button="sections"] {
+  position: absolute;
+  inset-block-end: 0;
+}
+
+[data-nav-button="search"] {
+  margin-inline-start: 50dvi;
+}
+
+@media screen and (width >= 45em) {
+  .nav .l-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-meta {
+    padding-inline-end: 0;
+  }
+
+  .nav-buttons {
+    padding-inline-end: var(--search-button-padding);
+  }
+
+  .nav-button {
+    position: relative;
+    padding-inline: 1em;
+    padding-block: 0.25em;
+    white-space: nowrap;
+    justify-content: center;
+    inline-size: fit-content;
+  }
+
+  [data-nav-button="search"] {
+    margin-inline-start: 0;
+  }
+}
+
+/* "Jump to a sections" <dialog> element */
+
+dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+.all-sections-menu {
+  block-size: 100dvh;
+  inline-size: 85dvw;
+  max-block-size: unset;
+  max-inline-size: var(--t-measure);
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  inset-inline-end: unset;
+  overflow: scroll;
+  text-align: start;
+  padding: 0;
+  font-size: var(--t-small);
+  border: transparent;
+  border-start-start-radius: var(--radius);
+  border-end-end-radius: var(--radius);
+  box-shadow: 0.5em 0 0.5em rgb(0 0 0 / 15%);
+  pointer-events: none;
+  z-index: 999;
+}
+
+.all-sections-menu * {
+  max-inline-size: unset;
+}
+
+.all-sections-menu[open] {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: inherit;
+}
+
+/* Animation upon clicking the "Sections" button */
+
+@keyframes all-sections-transition {
+  0% {
+    opacity: 0;
+    transform: translateX(-2dvw) translateZ(0);
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0) translateZ(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .all-sections-menu[open] {
+    animation: all-sections-transition 150ms ease-in-out;
+  }
+}
+
+/*
+  :backdrop styles the background
+   behind the <dialog> element
+*/
+
+.all-sections-menu::backdrop {
+  background: rgb(4 48 27 / 80%);
+}
+
+/* Basic <dialog> layout */
+
+.all-sections-menu header,
+.all-sections-menu li a {
+  padding-inline: 1em;
+}
+
+.all-sections-menu header {
+  font-weight: var(--t-bold);
+  padding-block: 0.5em;
+  background: var(--c-accent);
+  color: var(--c-accent-text);
+  display: flex;
+  justify-content: space-between;
+}
+
+.all-sections-menu header button {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--c-accent-text);
+  transition: background 120ms ease-out;
+}
+
+.all-sections-menu header button,
+.all-sections-menu header button::after {
+  border-radius: 50%;
+}
+
+.all-sections-menu header button:hover,
+.all-sections-menu header button:focus {
+  background: var(--c-accent-dark);
+}
+
+.all-sections-menu header svg {
+  inline-size: var(--t-paragraph);
+}
+
+.all-sections-menu ol,
+.all-sections-menu li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.all-sections-menu ol {
+  counter-reset: all-sections-menu;
+  position: relative;
+}
+
+.all-sections-menu li {
+  --number-size: calc(var(--t-leading-em) * 1.125);
+
+  position: relative;
+  counter-increment: all-sections-menu;
+}
+
+.all-sections-menu li a {
+  display: block;
+  padding-block: calc(var(--t-leading-em) * 0.5);
+  padding-inline-start: calc(var(--t-leading-em) * 3);
+  padding-inline-end: 0.5em;
+  margin: 0;
+  font-weight: var(--t-bold);
+  font-size: var(--t-small);
+  position: relative;
+  text-decoration: none;
+  border-block-end: 1px solid var(--c-accent);
+}
+
+.all-sections-menu li a:hover,
+.all-sections-menu li a:focus,
+.all-sections-menu li a:active {
+  background: var(--c-accent-light);
+  text-decoration: underline;
+}
+
+/* Circled numbers before each section
+   in the <dialog> */
+
+.all-sections-menu li a::before {
+  position: absolute;
+  content: counter(all-sections-menu);
+  inset-inline-start: 1em;
+  inset-block-start: 50%;
+  margin-block-start: calc(var(--number-size) * -0.5);
+  inline-size: var(--number-size);
+  block-size: var(--number-size);
+  color: var(--c-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--t-bold);
+  border-radius: 50%;
+  border: 2px solid var(--c-accent);
+  padding: 0.25em;
+}

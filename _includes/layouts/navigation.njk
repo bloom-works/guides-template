@@ -1,0 +1,44 @@
+<nav class="nav">
+  <div class="l-wrapper">
+    <button class="nav-button" id="all-sections-button" data-nav-button="sections">
+      <svg viewbox="0 0 16 16" fill="currentColor">
+        <use xlink:href="/bootstrap-icons.svg#book"></use>
+      </svg>
+      <span>Sections</span>
+      </button>
+      <div class="nav-meta">
+        <a href="https://bloomworks.digital" class="nav-home">
+          {% include "bloom-logo-graphic.svg" %}
+          <strong> {{ guide }}</strong>
+        </a>
+      </div>
+      <button class="nav-button" data-nav-button="search">
+        <svg viewbox="0 0 16 16" fill="currentColor">
+          <use xlink:href="/bootstrap-icons.svg#search"></use>
+        </svg>
+        <span>Search</span>
+      </button>
+  </div>
+</nav>
+<dialog id="all-sections-modal" class="all-sections-menu">
+  <header>
+    <span>Jump to a section</span>
+    <form method="dialog">
+      <button>
+       <svg viewbox="0 0 16 16" fill="currentColor">
+         <use xlink:href="/bootstrap-icons.svg#x-circle"></use>
+       </svg>
+       <span class="sr-only">Close</span>
+      </button>
+    </form>
+  </header>
+  <section class="dialog-body">
+    <ol>
+      {% for chapter in collections[tags] %}
+        <li>
+          <a href="{{ chapter.page.url }}">{% if chapter.data.subhead %}{{ chapter.data.subhead }}: {% endif %}{{ chapter.data.title }}</a>
+        </li>
+      {% endfor %}
+    </ol>
+  </section>
+</dialog>
