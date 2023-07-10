@@ -83,7 +83,7 @@
   }
 
   .nav-button {
-    position: static;
+    position: relative;
     padding-inline: 1em;
     padding-block: 0.25em;
     white-space: nowrap;
