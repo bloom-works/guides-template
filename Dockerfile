@@ -29,7 +29,6 @@ RUN apt-get update && apt-get install -y \
 
 # Install dependencies for cypress axe-core e2e testing
 RUN npm install cypress && npm install axe-core
-# RUN apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
 
 # Run a server if executing the container (Port 8080 is default)
 ARG PORT=8080

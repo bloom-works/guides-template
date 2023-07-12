@@ -9,7 +9,8 @@
     "serve": "npx @11ty/eleventy --serve",
     "start": "npx @11ty/eleventy --serve",
     "debug": "DEBUG=* npx @11ty/eleventy",
-    "cypress:open": "cypress open"
+    "cypress:open": "npx cypress open",
+    "cypress:run": "npx cypress run"
   },
   "repository": {
     "type": "git",

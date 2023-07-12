@@ -38,17 +38,24 @@ From here, changes to files will rebuild the site.
 1. Navigate to the base of this repo
 1. Run `sh ./ci/linter.sh`
 
-#### CSS -- stylelint https://stylelint.io/user-guide/cli
+ #### CSS -- [Stylelint Docs](https://stylelint.io/user-guide/cli)
 1. If there are errors, `npx stylelint --fix "**/*.css"` will perform a dry-run of fixing all errors and those errors will not be saved.  Then `npx eslint --ext .js --fix [file or directory here]` will fix and save all errors.
 
-#### JS -- ESLint https://eslint.org/docs/latest/use/command-line-interface
+#### JS -- [ESLint Docs](https://eslint.org/docs/latest/use/command-line-interface)
 1. If there are errors, `npx eslint --ext .js --fix-dry-run [file or directory here]` will perform a dry-run of fixing all errors and those errors will not be saved.  Then `npx eslint --ext .js --fix [file or directory here]` will fix and save all errors.
 
-#### Nunjucks -- djlint https://www.djlint.com/docs/linter/
+ #### Nunjucks -- [djLint Docs](https://www.djlint.com/docs/linter/)
 1. From the base of this repo run `djlint ./ -e .njk --profile=nunjucks` to only run djlint.  Manually fix errors.
-   
-## Node Tests
+
+## Running Node Tests
 
 We are using Playwright Tests to accomodate our testing needs for this project on destop and mobile.
 
-Before pushing up a PR, tests can be run using `npx playwright test` for the command line output or `npx playwright test --ui` to open the tests in UI mode.
+1. From the base of this repo run `npx playwright test` for the command line output or `npx playwright test --ui` to open the tests in UI mode.
+
+## Running Accessibility Tests
+
+We are using [Cypress](https://docs.cypress.io/guides/overview/why-cypress) and [Axe core](https://github.com/dequelabs/axe-core#axe-core) as our testing framework and engine for our accessibility tests.
+
+1. Start your local server and make sure it's running at http://localhost:8080
+1. Navigate to the base of this repo and run `npx cypress run` for tests to execute in the command line. To execute tests in Cypress' UI window, run `npx cypress open` and select E2E testing.
