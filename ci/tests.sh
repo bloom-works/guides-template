@@ -4,6 +4,8 @@ set -e
 # -----
 # REPLACE THE BELOW WITH YOUR COMMANDS
 # -----
+echo 'Run Node tests'
+# Run Playwright tests
 npx playwright install --with-deps
 npx playwright test
 
