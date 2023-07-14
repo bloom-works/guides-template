@@ -39,7 +39,7 @@ jobs:
         run: docker run --rm ${{ github.repository }}:${{ github.head_ref }} sh ci/linter.sh
 
       # TESTS
-      - name: Run Node and Accessibility tests
+      - name: Run node and accessibility tests
         run: docker run --rm ${{ github.repository }}:${{ github.head_ref }} sh ci/tests.sh
 
       # SECURITY
