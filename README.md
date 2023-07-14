@@ -67,4 +67,4 @@ We are using [Cypress](https://docs.cypress.io/guides/overview/why-cypress) and 
 
 - If you are running Cypress tests in Docker and/or on a virtual machine, there are [additional dependencies](https://docs.cypress.io/guides/continuous-integration/introduction#Dependencies) you will need to install depending on what type of environment you have.
 
-- If you are running Docker on your machine and get an error that `Cypress is not installed` and that it cannot find the cypress file, this could be a permissions issue and you would run `node_modules/.bin/cypress install` inside of the Docker container to install Cypress.
+- If you are running Docker on your machine and get an error that `Cypress is not installed` and that it cannot find the cypress file at `/root/.cache/Cypress/12.17.1/Cypress`, this could be a permissions issue and you would run `node_modules/.bin/cypress install` inside of the Docker container to install Cypress.
