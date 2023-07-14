@@ -59,7 +59,7 @@ We are using [Cypress](https://docs.cypress.io/guides/overview/why-cypress) and 
 
 1. Start your local server and make sure it's running at http://localhost:8080
 1. Navigate to the base of this repo and run `npx cypress run` for tests to execute in the command line. To execute tests in Cypress' UI window, run `npx cypress open` and select E2E testing.
-1. We have added functionality that will print an error table in the command line on test execution. This table includes the name and description of the error along with a `helpUrl` containing a URL where more information on how to fix that particular error can be found.
+1. We have added functionality that will print an error table in the command line on test execution. This table includes the name and description of the error along with a `helpUrl` containing a URL where more information on how to fix that particular error can be found. Additionally, you can visit the official [axe-core rules](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md) github to view the different axe-core rule descriptions.
 1. Cypress captures snapshots at the time of test execution, these can be viewed by navigating to the `cypress/screenshots` folder.
 ### **Additional Notes on Cypress Testing for Local Development
 
