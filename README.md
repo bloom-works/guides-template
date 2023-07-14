@@ -59,3 +59,12 @@ We are using [Cypress](https://docs.cypress.io/guides/overview/why-cypress) and 
 
 1. Start your local server and make sure it's running at http://localhost:8080
 1. Navigate to the base of this repo and run `npx cypress run` for tests to execute in the command line. To execute tests in Cypress' UI window, run `npx cypress open` and select E2E testing.
+1. We have added functionality that will print an error table in the command line on test execution. This table includes the name and description of the error along with a `helpUrl` containing a URL where more information on how to fix that particular error can be found.
+1. Cypress captures snapshots at the time of test execution, these can be viewed by navigating to the `cypress/screenshots` folder.
+### **Additional Notes on Cypress Testing for Local Development
+
+- During local development, it is important to restart your server if you're making code or package changes while http://localhost:8080 is still running. This will ensure the Cypress tests are running and passing correctly in your local environment.
+
+- If you are running Cypress tests in Docker and/or on a virtual machine, there are [additional dependencies](https://docs.cypress.io/guides/continuous-integration/introduction#Dependencies) you will need to install depending on what type of environment you have.
+
+- If you are running Docker on your machine and get an error that `Cypress is not installed` and that it cannot find the cypress file, this could be a permissions issue and you would run `node_modules/.bin/cypress install` inside of the Docker container to install Cypress.
