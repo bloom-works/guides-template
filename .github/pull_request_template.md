@@ -4,8 +4,8 @@ Provide a brief overview of the work completed here.
 ### GitHub Issue
 Replace this text with the GitHub issue link.
 
-### What Changed 
-List any major changes to files and/or project functionality for this project. 
+### What Changed
+List any major changes to files and/or project functionality for this project.
 - [ ] Change 1
 - [ ] Change 2
 - [ ] Change 3
@@ -21,6 +21,8 @@ Please outline the steps you've already taken to validate this body of work, alo
 - [ ] README doc was updated with developer instructions, if needed.
 
 ### Automated Testing
+If this pull request required an addition to any of the testing, please describe why this was needed here.
+
 - [ ] All node tests are passing.
 - [ ] All linter tests are passing.
 - [ ] All accessibility tests are passing.
