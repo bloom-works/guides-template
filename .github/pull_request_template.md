@@ -4,11 +4,17 @@ Provide a brief overview of the work completed here.
 ### GitHub Issue
 Replace this text with the GitHub issue link.
 
-### What was changed 
-List any major changes to files and project functionality within this repo. 
+### What Changed 
+List any major changes to files and/or project functionality for this project. 
+- [ ] Change 1
+- [ ] Change 2
+- [ ] Change 3
 
-### How to check change
+### How to Check Change
 Please outline the steps you've already taken to validate this body of work, along with any additional steps that need to be taken in order to complete testing.
+- [ ] Step 1
+- [ ] Step 2
+- [ ] Step 3
 
 ### Tech Specs
 - [ ] If any new components were created/updated/removed, the URL array in the Cypress spec file was adjusted so accessibility tests will cover this change.
