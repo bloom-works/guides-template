@@ -6,9 +6,9 @@ Replace this text with the GitHub issue link.
 
 ### What Changed
 List any major changes to files and/or project functionality for this project.
-- [ ] Change 1
-- [ ] Change 2
-- [ ] Change 3
+- Change 1
+- Change 2
+- Change 3
 
 ### How to Check Change
 Please outline the steps you've already taken to validate this body of work, along with any additional steps that need to be taken in order to complete testing.
@@ -17,7 +17,7 @@ Please outline the steps you've already taken to validate this body of work, alo
 - [ ] Step 3
 
 ### Tech Specs
-- [ ] If any new components were created/updated/removed, the URL array in the Cypress spec file was adjusted so accessibility tests will cover this change.
+- [ ] If any new components were created/updated/removed, accessibility tests were updated in the Cypress spec file to cover this change.
 - [ ] README doc was updated with developer instructions, if needed.
 
 ### Automated Testing
