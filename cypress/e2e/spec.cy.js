@@ -19,36 +19,42 @@ function terminalLog (violations) {
 }
 
 // Accessibility Testing
-// Array of page urls to map through for accessibility testing
-const urls = ['/', '/components/callout', '/components/checklist', '/components/table-of-contents', '/components/grid', '/components/key-questions', '/components/resources', '/components/page-header'];
+// Testing for MD file that contains all components at '/components/main-page'. Serves as a proof of concept for accessibility tests.
 
-describe('Component accessibility', () => {
-  urls.forEach(url => {
-    describe(`url: ${url}`, () => {
-      beforeEach(() => {
-        cy.visit(url)
-        cy.injectAxe();
-      });
+const mainUrl = 'components/main-page'
 
-      it('should pass accessibility check', () => {
-        cy.checkA11y(null, {
-          rules: {
-            'color-contrast': { enabled: false },
-            'heading-order': { enabled: false },
-            'landmark-one-main': { enabled: false }
-          }
-        });
-      });
-
-      it('Logs violations to the terminal', () => {
-        cy.checkA11y(null, {
-          rules: {
-            'color-contrast': { enabled: false },
-            'heading-order': { enabled: false },
-            'landmark-one-main': { enabled: false }
-          }
-        }, terminalLog)
-      })
+describe('All Components Accessiblity Test Page', () => {
+  describe(`url: ${mainUrl}`, () => {
+    it('Logs main accessibility testing page violations to the terminal', () => {
+      cy.visit(mainUrl);
+      cy.injectAxe();
+      cy.checkA11y(null, null, terminalLog);
     });
   });
 });
+
+// Leaving the below accessibility tests as an example of some features that can be implemented for future devs if needed.
+
+// Array of page urls to map through for accessibility testing
+// const urls = ['/', '/components/callout', '/components/checklist', '/components/table-of-contents', '/components/grid', '/components/key-questions', '/components/resources', '/components/page-header'];
+
+// describe('Component accessibility', () => {
+//   urls.forEach(url => {
+//     describe(`url: ${url}`, () => {
+//       beforeEach(() => {
+//         cy.visit(url)
+//         cy.injectAxe();
+//       });
+
+//       it('Logs violations to the terminal', () => {
+//         cy.checkA11y(null, {
+//           rules: {
+//             'color-contrast': { enabled: false },
+//             'heading-order': { enabled: false },
+//             'landmark-one-main': { enabled: false }
+//           }
+//         }, terminalLog);
+//       });
+//     });
+//   });
+// });
