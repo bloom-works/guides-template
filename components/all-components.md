@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.njk
-permalink: "/components/main-page/"
+permalink: "/components/all-components/"
 subhead: "Section 2"
 title: "About the Playbook"
 tags: playbook

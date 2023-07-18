@@ -21,7 +21,7 @@ function terminalLog (violations) {
 // Accessibility Testing
 // Testing for MD file that contains all components at '/components/main-page'. Serves as a proof of concept for accessibility tests.
 
-const mainUrl = 'components/main-page'
+const mainUrl = 'components/all-components'
 
 describe('All Components Accessiblity Test Page', () => {
   describe(`url: ${mainUrl}`, () => {
