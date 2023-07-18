@@ -21,7 +21,7 @@ Please outline the steps you've already taken to validate this body of work, alo
 - [ ] README doc was updated with developer instructions, if needed.
 
 ### Automated Testing
-If this pull request required an addition to any of the testing, please describe why this was needed here.
+If this pull request required any additional code involving the individual tests or testing frameworks, please describe why this was needed here.
 
 - [ ] All node tests are passing.
 - [ ] All linter tests are passing.
