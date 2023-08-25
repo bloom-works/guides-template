@@ -64,6 +64,14 @@ module.exports = function (eleventyConfig) {
     return (tags || []).filter(tag => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1);
   })
 
+  // Create a collection for sections in alphabetical title order
+  eleventyConfig.addCollection("sections", function(collection) {
+    return collection.getFilteredByTag("section").sort((a, b) => {
+      return a.data.title.localeCompare(b.data.title);
+    });
+  });
+
+
   // Create an array of all tags
   eleventyConfig.addCollection('tagList', function (collection) {
     const tagSet = new Set();
