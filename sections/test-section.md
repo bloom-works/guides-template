@@ -3,6 +3,6 @@ layout: layouts/section
 title: Test Section
 ---
 
-# Test Section
+# Header 1
 
 Test content!
