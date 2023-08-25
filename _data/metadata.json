@@ -4,15 +4,5 @@
   "googlesitevertification" : "",
   "language": "en",
   "robots": "index, follow",
-  "description": "Guides from Bloom Works",
-  "feed": {
-    "subtitle": "Guides from Bloom Works",
-    "filename": "feed.xml",
-    "path": "/feed/feed.xml",
-    "id": "https://text11ty.pages.dev/"
-  },
-  "jsonfeed": {
-    "path": "/feed/feed.json",
-    "url": "https://text11ty.pages.dev/feed/feed.json"
-  }
+  "description": "Guides from Bloom Works"
 }
