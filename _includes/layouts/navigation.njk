@@ -36,7 +36,7 @@
     <ol>
       {% for chapter in collections[tags] %}
         <li>
-          <a href="{{ chapter.page.url }}">{% if chapter.data.subhead %}{{ chapter.data.subhead }}: {% endif %}{{ chapter.data.title }}</a>
+          <a href="{{ chapter.page.url }}">{{ chapter.data.title }}</a>
         </li>
       {% endfor %}
     </ol>
