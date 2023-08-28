@@ -65,12 +65,11 @@ module.exports = function (eleventyConfig) {
   })
 
   // Create a collection for sections in alphabetical title order
-  eleventyConfig.addCollection("sections", function(collection) {
-    return collection.getFilteredByTag("section").sort((a, b) => {
+  eleventyConfig.addCollection('sections', function (collection) {
+    return collection.getFilteredByTag('section').sort((a, b) => {
       return a.data.title.localeCompare(b.data.title);
     });
   });
-
 
   // Create an array of all tags
   eleventyConfig.addCollection('tagList', function (collection) {
