@@ -9,7 +9,7 @@
       <div class="nav-meta">
         <a href="https://bloomworks.digital" aria-label="Bloom Works Logo" class="nav-home">
           {% include "bloom-logo-graphic.svg" %}
-          <strong> {{ guide }}</strong>
+          <strong> {{ metadata.guide }}</strong>
         </a>
       </div>
       <button class="nav-button" data-nav-button="search">
@@ -34,9 +34,9 @@
   </header>
   <section class="dialog-body">
     <ol>
-      {% for chapter in collections[tags] %}
+      {% for section in collections.sections %}
         <li>
-          <a href="{{ chapter.page.url }}">{% if chapter.data.subhead %}{{ chapter.data.subhead }}: {% endif %}{{ chapter.data.title }}</a>
+          <a href="{{ section.page.url }}">{{ section.data.title }}</a>
         </li>
       {% endfor %}
     </ol>
