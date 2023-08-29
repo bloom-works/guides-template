@@ -6,4 +6,4 @@ title: "About the Playbook"
 {% include "layouts/head.njk" %}
 {% include "layouts/seo.njk" %}
 {% include "layouts/css.njk" %}
-{%- PageHeader subhead, title -%}
+{%- PageHeader title -%}
