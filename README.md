@@ -33,6 +33,21 @@ This uses whatever NPM and Node version you have installed on your machine, and 
 1. View the site in your browser at [http://localhost:8080](http://localhost:8080)
 
 From here, changes to files will rebuild the site.
+
+## Editing Instructions
+
+### Adding a Section
+
+To add a new section to the site:
+
+1. Add a new Markdown file to the `sections` folder (example: `sections/my-new-section.md`)
+1. At the top of the file, add two lines with `---` and between those two lines put:
+    - `layout: layouts/section`
+    - `title: My New Section's Title`
+1. Add content below the second `---`
+
+Feel free to look at any of the existing sections as a starting point.
+
 ## Checking code before PR
 ### Running Linters
 1. Navigate to the base of this repo
