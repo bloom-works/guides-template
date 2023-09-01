@@ -80,3 +80,5 @@ We are using [Cypress](https://docs.cypress.io/guides/overview/why-cypress) and 
 ### **Additional Notes on Cypress Testing for Local Development
 
 - During local development, it is important to restart your server if you're making code or package changes while http://localhost:8080 is still running. This will ensure the Cypress tests are running and passing correctly in your local environment.
+- If you are running Cypress tests in Docker and/or on a virtual machine, there are [additional dependencies](https://docs.cypress.io/guides/continuous-integration/introduction#Dependencies) you will need to install depending on what type of environment you have.
+- If you are running Docker on your machine and get an error that `Cypress is not installed` and that it cannot find the cypress file at `/root/.cache/Cypress/12.17.1/Cypress`, this could be a permissions issue and you would run `node_modules/.bin/cypress install` inside of the Docker container to install Cypress.
