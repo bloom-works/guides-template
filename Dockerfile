@@ -27,8 +27,12 @@ RUN npm install
 RUN apt-get update && apt-get install -y \
   pip && pip install djlint==1.31.1
 
-# Install dependencies for cypress axe-core e2e testing
-RUN npm install cypress && npm install axe-core
+# Install tools for functional tests
+RUN npx playwright install --with-deps
+
+# Install tools for accessibility tests
+RUN node_modules/.bin/cypress install
+
 
 # Run a server if executing the container (Port 8080 is default)
 ARG PORT=8080
