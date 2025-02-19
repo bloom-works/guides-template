@@ -3,8 +3,7 @@ set -e
 
 echo 'Running ESLint'
 # Add JavaScript files or directories here.  Using ESLint for JS https://eslint.org/.
-#npx eslint ./_includes/components/ --ext .js
-npx eslint --ext .js ./
+npx eslint
 
 echo 'Running stylelint'
 # Using stylelint for CSS https://stylelint.io/user-guide/cli
