@@ -14,17 +14,18 @@ const compat = new FlatCompat({
 
 export default [{
     ignores: [".eleventy.js","cypress/support/e2e.js", "eslint.config.mjs"],
-}, ...compat.extends("standard"), {
-    languageOptions: {
-        globals: {
-            ...globals.browser,
-            ...globals.commonjs,
-            ...globals.jest,
-            cy: true,
-        },
+    },  
+    {
+        languageOptions: {
+            globals: {
+                ...globals.browser,
+                ...globals.commonjs,
+                ...globals.jest,
+                cy: true,
+            },
 
-        ecmaVersion: "latest",
-        sourceType: "script",
+            ecmaVersion: "latest",
+            sourceType: "script",
     },
 
     rules: {
