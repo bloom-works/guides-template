@@ -36,6 +36,13 @@ From here, changes to files will rebuild the site.
 
 ## Editing Instructions
 
+### Available Components
+
+To see examples of different components, see the following:
+
+- [Rendered](https://bloom-guides-template.netlify.app/components/all-components)
+- Code: See `/components/all-components.md`
+
 ### Adding a Section
 
 To add a new section to the site:
