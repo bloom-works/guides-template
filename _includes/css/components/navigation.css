@@ -231,8 +231,7 @@ html:has(dialog[open]) {
 .all-sections-menu li a {
   display: block;
   padding-block: calc(var(--t-leading-em) * 0.5);
-  padding-inline-start: calc(var(--t-leading-em) * 3);
-  padding-inline-end: 0.5em;
+  padding-inline: calc(var(--t-leading-em) * 3) 0.5em;
   margin: 0;
   font-weight: var(--t-bold);
   font-size: var(--t-small);
